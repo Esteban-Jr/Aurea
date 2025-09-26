@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Successful</title>
+</head>
+<body>
+    <h1>Booking Successful!</h1>
+    <p>Thank you, {{ user.get_full_name }}, your booking has been recorded.</p>
+    <a href="{% url 'create_booking' %}">Make another booking</a>
+</body>
+</html>
