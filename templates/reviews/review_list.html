@@ -1,0 +1,19 @@
+<h1>Reviews</h1>
+<ul>
+  {% for r in reviews %}
+    <li>
+      <strong>{{ r.user.username }}</strong> – {{ r.rating }}★<br>
+      {{ r.comment }}
+      
+      {% if r.user == request.user %}
+        <!-- Show only to the author of the review -->
+        <a href="{% url 'edit_review' r.pk %}">Edit</a> |
+        <a href="{% url 'delete_review' r.pk %}">Delete</a>
+      {% endif %}
+    </li>
+  {% empty %}
+    <li>No reviews yet.</li>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'add_review' %}">Add a review</a>
