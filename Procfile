@@ -1,0 +1,1 @@
+web: gunicorn aurea_project.wsgi
