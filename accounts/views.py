@@ -1,15 +1,44 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login
-from .forms import SignUpForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LoginView, LogoutView
+from .forms import SignUpForm, UserUpdateForm
 
-# Create your views here.
 def signup_view(request):
-    if request.method == "POST":
+    if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, user)  # automatically log in the new user
-            return redirect("/")  # redirect to home page or dashboard
+            form.save()
+            return redirect('login')
     else:
         form = SignUpForm()
-    return render(request, "registration/signup.html", {"form": form})
+    return render(request, 'accounts/signup.html', {'form': form})
+
+class LoginViewCustom(LoginView):
+    template_name = 'accounts/login.html'
+
+class LogoutViewCustom(LogoutView):
+    template_name = 'accounts/logout.html'
+
+@login_required
+def profile_view(request):
+    return render(request, 'accounts/profile.html')
+
+@login_required
+def profile_edit_view(request):
+    if request.method == 'POST':
+        form = UserUpdateForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = UserUpdateForm(instance=request.user)
+    return render(request, 'accounts/profile_edit.html', {'form': form})
+
+from django.shortcuts import render
+
+def preview_template(request, name):
+    """
+    Quick way to preview password templates without migrations or email.
+    Example:  /accounts/preview/password_reset.html
+    """
+    return render(request, f"accounts/{name}")
