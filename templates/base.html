@@ -3,17 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Aurea{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    <!-- Header -->
     <header>
+        <h1>Welcome to Aurea</h1>
         <nav>
-            <a href="/">Home</a> |
-            <a href="/bookings/book/">Book</a> |
-            <a href="/accounts/login/">Login</a>
+            <a href="{% url 'review_list' %}">Reviews</a> |
+            <a href="{% url 'create_booking' %}">Book Now</a> |
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}">Profile</a> |
+                <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a> |
+                <a href="{% url 'signup' %}">Sign Up</a>
+            {% endif %}
         </nav>
     </header>
 
-    {% block content %}
-    {% endblock %}
+    <!-- Messages -->
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <!-- Page Content -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Aurea. All rights reserved.</p>
+    </footer>
 </body>
 </html>
