@@ -1,0 +1,14 @@
+<form method="post">
+  {% csrf_token %}
+  <div>
+    {{ form.comment.label_tag }}<br>
+    {{ form.comment }}
+  </div>
+
+  <div class="rating-field">
+    {{ form.rating.label_tag }}<br>
+    {{ form.rating }}
+  </div>
+
+  <button type="submit">Submit Review</button>
+</form>
