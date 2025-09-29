@@ -34,4 +34,4 @@ def full_phone(self):
 
 def __str__(self):
         # Useful string representation for admin list
-        return f"{self.name} - {self.full_phone()} on {self.booking_date}"
+        return f"{self.name} - {self.date} at {self.time}"
