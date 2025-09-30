@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Welcome to Aurea</h1>
+  <p>We’re glad you’re here. Explore our menu, book a table, or read reviews from our guests.</p>
+
+  <div class="links">
+    <a href="{% url 'menu' %}">See Menu</a> |
+    <a href="{% url 'create_booking' %}">Book a Table</a> |
+    <a href="{% url 'review_list' %}">Read Reviews</a>
+  </div>
+{% endblock %}
