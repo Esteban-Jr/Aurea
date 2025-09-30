@@ -11,13 +11,13 @@ def signup_view(request):
             return redirect('login')
     else:
         form = SignUpForm()
-    return render(request, 'accounts/signup.html', {'form': form})
+    return render(request, 'registration/signup.html', {'form': form})
 
 class LoginViewCustom(LoginView):
-    template_name = 'accounts/login.html'
+    template_name = 'registration/login.html'
 
 class LogoutViewCustom(LogoutView):
-    template_name = 'accounts/logout.html'
+    template_name = 'registration/logout.html'
 
 @login_required
 def profile_view(request):
