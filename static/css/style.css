@@ -1,0 +1,45 @@
+/* Active link underline only */
+.nav-link.active-link {
+  position: relative;
+  color: #fff !important; /* stay white even when active */
+}
+
+.nav-link.active-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* adjust underline position */
+  width: 100%;
+  height: 2px;
+  background-color: #ffc107; /* gold underline */
+}
+
+/* Hover effect: gold text */
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+body {
+  background: url("https://res.cloudinary.com/diktmeiui/image/upload/v1759269337/white_smoke_a27nkx.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+footer.text-banner {
+  width: 100%;
+  max-width: 100vw;
+  margin: 0;
+  padding: 1rem 0;        /* add some vertical space */
+  text-align: center;
+  background: #000;       /* optional: dark footer bg */
+}
+
+footer .outlined-text {
+  display: inline-block;
+  font-size: clamp(2rem, 12vw, 6rem);
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255,255,255,.55); /* white outline for footer */
+  margin: 0 auto;
+  line-height: 1;
+  white-space: nowrap;
+}
