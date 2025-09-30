@@ -1,12 +1,48 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home | Aurea{% endblock %}
 
 {% block content %}
-  <h1>Welcome to Aurea</h1>
-  <p>We’re glad you’re here. Explore our menu, book a table, or read reviews from our guests.</p>
+<!-- Hero Section -->
+<div class="position-relative text-center py-5">
+  
+  <!-- Social Icons (left side) -->
+  <div class="position-absolute top-50 start-0 translate-middle-y ms-3 d-flex flex-column gap-3">
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+    <i class="bi bi-instagram fs-4 text-dark"></i>
+  </a>
 
-  <div class="links">
-    <a href="{% url 'menu' %}">See Menu</a> |
-    <a href="{% url 'create_booking' %}">Book a Table</a> |
-    <a href="{% url 'review_list' %}">Read Reviews</a>
+  <!-- TikTok -->
+  <a href="https://www.tiktok.com/" target="_blank" rel="noopener">
+    <i class="bi bi-tiktok fs-4 text-dark"></i>
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+    <i class="bi bi-facebook fs-4 text-dark"></i>
+  </a>
+</div>
+
+
+  <!-- Food Images -->
+  <div class="container">
+    <div class="row justify-content-center g-5">
+      <div class="col-md-5">
+        <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759266418/spaghetti_kkczq0.jpg" class="img-fluid" style="width: 450px; height: 600px; object-fit: cover; border-radius: 50% / 35%;" alt="Pasta">
+      </div>
+      <div class="col-md-5">
+        <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759268554/pizza_tlxmkn.jpg" class="img-fluid" style="width: 450px; height: 600px; object-fit: cover; border-radius: 50% / 35%;" alt="Pizza">
+      </div>
+    </div>
   </div>
+</div>
+
+{% endblock %}
+
+{% block footer_text %}
+<div class="text-banner">
+  <h1 class="outlined-text">ITALIAN FOOD</h1>
+</div>
 {% endblock %}
