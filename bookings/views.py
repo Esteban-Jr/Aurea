@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-
+from django.contrib import messages
 from .models import Booking
 from .forms import BookingForm
+
 
 # Only logged-in users can create bookings
 @login_required
@@ -30,3 +31,26 @@ def create_bookings(request):
 def booking_success(request):
     # Simple confirmation page shown after a successful booking.
     return render(request, 'bookings/booking_success.html')
+
+@login_required
+def edit_booking(request, pk):
+    booking = get_object_or_404(Booking, pk=pk, user=request.user)
+    if request.method == "POST":
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Your booking has been updated successfully!")
+            return redirect("profile")
+    else:
+        form = BookingForm(instance=booking)
+    return render(request, "bookings/edit_booking.html", {"form": form})
+
+
+@login_required
+def delete_booking(request, pk):
+    booking = get_object_or_404(Booking, pk=pk, user=request.user)
+    if request.method == "POST":
+        booking.delete()
+        messages.warning(request, "Your booking has been cancelled.")
+        return redirect("profile")
+    return render(request, "bookings/delete_booking.html", {"booking": booking})
