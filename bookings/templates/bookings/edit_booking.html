@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Edit Booking | Aurea{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="card shadow p-4 mx-auto" style="max-width: 600px;">
+    <h2 class="about-title text-center mb-4">Edit Booking</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-dark px-4">Save Changes</button>
+        <a href="{% url 'profile' %}" class="btn btn-outline-dark ms-2">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer_text %}
+<div class="text-banner">
+  <h1 class="outlined-text">BOOKINGS</h1>
+</div>
+{% endblock %}
