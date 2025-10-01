@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView, LogoutView
 from .forms import SignUpForm, UserUpdateForm
 from django.contrib.auth import logout
+from bookings.models import Booking
+from datetime import date
 
 def signup_view(request):
     if request.method == 'POST':
@@ -26,7 +28,11 @@ def logout_confirm(request):
 
 @login_required
 def profile_view(request):
-    return render(request, 'accounts/profile.html')
+    bookings = Booking.objects.filter(user=request.user).order_by('-date', '-time')
+    return render(request, 'accounts/profile.html', {
+        'bookings': bookings,
+        'today': date.today()
+    })
 
 @login_required
 def profile_edit_view(request):
