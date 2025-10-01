@@ -1,5 +1,69 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}About | Aurea{% endblock %}
+
 {% block content %}
-<h1>About Us</h1>
-<p>Welcome to our restaurant! This is where we tell our story.</p>
+<div class="about-section container-fluid position-relative py-5">
+
+  <!-- Main Content -->
+  <div class="container text-center">
+    <!-- Restaurant Image -->
+     <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759277223/restaurant_r8qm92.png" 
+     alt="Aurea Restaurant" 
+     class="about-img mb-4">
+
+    <!-- Title -->
+    <h2 class="about-title">About Us</h2>
+
+    <!-- Intro -->
+    <h3 class="about-subtitle mt-4">Welcome to <span class="highlight">AUREA Italian Food</span></h3>
+    <p class="about-paragraph">
+      At <strong>AUREA</strong>, we believe that every meal should be more than just food — 
+      it should be an <span class="highlight">experience</span>. Our name, AUREA, meaning “golden,” 
+      reflects our commitment to creating moments that are timeless, warm, and unforgettable, 
+      just like the glow of Italy’s rich culinary heritage.
+    </p>
+
+    <!-- Story -->
+    <p class="about-paragraph">
+      Our story began with a passion for Italian cuisine and a dream to bring 
+      <span class="highlight">authentic flavors</span>, fresh ingredients, and the spirit of Italy 
+      to our community. Inspired by the artistry of traditional recipes and the vibrancy of modern 
+      dining, we built AUREA to be more than a restaurant — it’s a place where family, friends, 
+      and good food come together.
+    </p>
+
+    <!-- Experience -->
+    <h3 class="about-subtitle mt-5">The AUREA Experience</h3>
+    <p class="about-paragraph">
+      Every detail of our space, from the warm brick walls to the elegant chandeliers and greenery, 
+      is designed to transport you to a <span class="highlight">modern Italian oasis</span>. 
+      Whether you’re enjoying a glass of wine at our marble bar or sharing a handmade pasta dish 
+      at one of our tables, our goal is to create an atmosphere that feels both refined and welcoming.
+    </p>
+
+    <!-- Philosophy -->
+    <h3 class="about-subtitle mt-5">Our Philosophy</h3>
+    <ul class="about-list text-start mx-auto">
+      <li><span class="highlight">Authenticity:</span> Honoring the roots of Italian tradition.</li>
+      <li><span class="highlight">Quality:</span> Using only the finest ingredients.</li>
+      <li><span class="highlight">Hospitality:</span> Treating every guest like part of our <em>famiglia</em>.</li>
+    </ul>
+
+    <!-- Closing -->
+<p class="about-paragraph mt-4">
+  We invite you to join us at <span class="highlight">AUREA Italian Food</span> — 
+  where Italy meets elegance, and every dish tells a story.
+</p>
+
+<h4 class="about-subtitle tagline">
+  Mangia Bene, Vivi Bene — Eat well, live well.
+</h4>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer_text %}
+ABOUT US
 {% endblock %}
