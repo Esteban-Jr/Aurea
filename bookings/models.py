@@ -25,13 +25,13 @@ class Booking(models.Model):
     )
 
 
-def full_phone(self):
-        """
-        Returns the full phone number with the +44 prefix,
-        so templates or emails can display it correctly.
-        """
-        return f"+44{self.phone_number}"
+    def full_phone(self):
+            """
+            Returns the full phone number with the +44 prefix,
+            so templates or emails can display it correctly.
+            """
+            return f"+44{self.phone_number}"
 
-def __str__(self):
-        # Useful string representation for admin list
-        return f"{self.name} - {self.date} at {self.time}"
+    def __str__(self):
+            # Useful string representation for admin list
+            return f"{self.name} - {self.date} at {self.time}"
