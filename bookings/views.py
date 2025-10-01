@@ -9,22 +9,20 @@ from .forms import BookingForm
 # Only logged-in users can create bookings
 @login_required
 def create_bookings(request):
-    # Display booking form pre-filled with user's info
     if request.method == 'POST':
-        form = BookingForm(request.POST)
+        form = BookingForm(request.POST, user=request.user)  # pass user
         if form.is_valid():
-            booking = form.save(commit=False)  # Don't save yet
-            booking.user = request.user        # Link booking to logged-in user
-            booking.save()                     # Now save
+            booking = form.save(commit=False)
+            booking.user = request.user
+            booking.save()
             return redirect('booking_success')
     else:
-        # Pre-fill the form with user's info
         initial_data = {
-            'name': request.user.get_full_name(),  # full name from user model
-            'email': request.user.email,  # pre-fill email from user model
-            'phone_number': request.user.profile.phone_number if hasattr(request.user, 'profile') else ''
+            'name': request.user.get_full_name(),
+            'email': request.user.email,
+            'phone_number': getattr(request.user, 'profile', None) and request.user.profile.phone_number or ''
         }
-        form = BookingForm(initial=initial_data)
+        form = BookingForm(initial=initial_data, user=request.user)  # pass user
 
     return render(request, 'bookings/create_bookings.html', {'form': form})
 
@@ -36,15 +34,14 @@ def booking_success(request):
 def edit_booking(request, pk):
     booking = get_object_or_404(Booking, pk=pk, user=request.user)
     if request.method == "POST":
-        form = BookingForm(request.POST, instance=booking)
+        form = BookingForm(request.POST, instance=booking, user=request.user)  # pass user
         if form.is_valid():
             form.save()
             messages.success(request, "Your booking has been updated successfully!")
             return redirect("profile")
     else:
-        form = BookingForm(instance=booking)
+        form = BookingForm(instance=booking, user=request.user)  # pass user
     return render(request, "bookings/edit_booking.html", {"form": form})
-
 
 @login_required
 def delete_booking(request, pk):
