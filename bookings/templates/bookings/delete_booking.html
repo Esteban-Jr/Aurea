@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Cancel Booking | Aurea{% endblock %}
+
+{% block content %}
+<div class="container py-5 text-center">
+  <div class="card shadow p-5 mx-auto" style="max-width: 600px;">
+    <h2 class="about-title mb-4">Cancel Booking</h2>
+    <p class="mb-4">Are you sure you want to cancel your booking?</p>
+
+    <p><strong>{{ booking.date }} at {{ booking.time }}</strong><br>
+    Guests: {{ booking.guests }}</p>
+
+    <form method="post" class="mt-4">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger px-4">Yes, Cancel</button>
+      <a href="{% url 'profile' %}" class="btn btn-outline-dark ms-2">No, Go Back</a>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer_text %}
+<div class="text-banner">
+  <h1 class="outlined-text">BOOKINGS</h1>
+</div>
+{% endblock %}
