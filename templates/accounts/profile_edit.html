@@ -1,9 +1,27 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}Edit Profile | Aurea{% endblock %}
+
 {% block content %}
-<h2>Edit Profile</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Save changes</button>
-</form>
+<div class="container py-5 text-center">
+  <div class="card shadow p-4 mx-auto" style="max-width: 500px;">
+    <h2 class="about-title mb-4">Edit Profile</h2>
+
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="mt-3">
+        <button type="submit" class="btn btn-dark">Save Changes</button>
+        <a href="{% url 'profile' %}" class="btn btn-outline-dark ms-2">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer_text %}
+<div class="text-banner">
+  <h1 class="outlined-text">EDIT PROFILE</h1>
+</div>
 {% endblock %}
