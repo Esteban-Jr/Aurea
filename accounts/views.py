@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView, LogoutView
 from .forms import SignUpForm, UserUpdateForm
+from django.contrib.auth import logout
 
 def signup_view(request):
     if request.method == 'POST':
@@ -16,8 +17,12 @@ def signup_view(request):
 class LoginViewCustom(LoginView):
     template_name = 'registration/login.html'
 
-class LogoutViewCustom(LogoutView):
-    template_name = 'registration/logout.html'
+@login_required
+def logout_confirm(request):
+    if request.method == "POST":
+        logout(request)
+        return redirect("home")  # after logging out, send them to home page
+    return render(request, "registration/logout.html")
 
 @login_required
 def profile_view(request):

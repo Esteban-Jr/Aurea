@@ -1,6 +1,24 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}Logout | Aurea{% endblock %}
 
 {% block content %}
-  <h2>You have been logged out.</h2>
-  <p><a href="{% url 'login' %}">Click here</a> to log back in.</p>
+<div class="container py-5 text-center">
+  <div class="card shadow p-4 mx-auto" style="max-width: 500px;">
+    <h2 class="about-title mb-4">Logout</h2>
+    <p>Are you sure you want to log out?</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Logout</button>
+      <a href="{% url 'profile' %}" class="btn btn-outline-dark ms-2">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer_text %}
+<div class="text-banner">
+  <h1 class="outlined-text">LOGOUT</h1>
+</div>
 {% endblock %}
