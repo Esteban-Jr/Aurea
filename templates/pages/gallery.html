@@ -1,5 +1,133 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}Gallery | Aurea{% endblock %}
+
 {% block content %}
-<h1>Photo Gallery</h1>
-<p>Pictures of our place, food, and events will go here.</p>
+<style>
+  /* Grid images */
+  .gallery-card {
+  overflow: hidden;
+  border-radius: 12px;
+  border: 6px solid transparent; /* default invisible border */
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+
+.gallery-card img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px; /* slightly smaller so border shows around it */
+  cursor: pointer;
+  transition: transform .35s ease;
+}
+
+.gallery-card:hover {
+  border-color: #d4af37; /* Aurea gold */
+  box-shadow: 0 8px 24px rgba(212,175,55,.45);
+}
+
+.gallery-card img:hover {
+  transform: scale(1.06);
+}
+
+  /* Lightbox */
+  #lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 5vh 5vw;
+  }
+  #lightbox.open { display: flex; }
+
+  #lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.5);
+  }
+
+  #lightbox .close-btn,
+  #lightbox .arrow {
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    transition: color .3s ease;
+  }
+  #lightbox .close-btn { top: 20px; right: 30px; font-size: 38px; }
+  #lightbox .arrow { font-size: 60px; top: 50%; transform: translateY(-50%); }
+  #lightbox .arrow.left { left: 40px; }
+  #lightbox .arrow.right { right: 40px; }
+  #lightbox .arrow:hover, #lightbox .close-btn:hover { color: #d4af37; }
+</style>
+
+<div class="container py-5">
+  <h2 class="about-title text-center mb-5">Gallery</h2>
+
+  <div class="row g-4">
+    <div class="col-md-4"><div class="card shadow-sm gallery-card"><img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759277224/restaurant_inside3_xlelue.jpg" alt="Restaurant 1"></div></div>
+    <div class="col-md-4"><div class="card shadow-sm gallery-card"><img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759277223/restaurant_inside2_ncelao.jpg" alt="Restaurant 2"></div></div>
+    <div class="col-md-4"><div class="card shadow-sm gallery-card"><img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759277224/restaurant_inside4_n07bsn.jpg" alt="Restaurant 3"></div></div>
+    <div class="col-md-4"><div class="card shadow-sm gallery-card"><img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759277224/restaurant_inside6_qgpggz.jpg" alt="Restaurant 4"></div></div>
+    <div class="col-md-4"><div class="card shadow-sm gallery-card"><img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759277224/restaurant_inside5_xfeef1.jpg" alt="Restaurant 5"></div></div>
+    <div class="col-md-4"><div class="card shadow-sm gallery-card"><img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759339315/restaurant_inside8_agldst.jpg" alt="Restaurant 6"></div></div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" aria-hidden="true">
+  <span class="close-btn" id="lightbox-close">&times;</span>
+  <span class="arrow left" id="lightbox-prev">&#10094;</span>
+  <img id="lightbox-img" alt="Preview">
+  <span class="arrow right" id="lightbox-next">&#10095;</span>
+</div>
+
+<script>
+  const images = [...document.querySelectorAll('.gallery-card img')];
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    lightboxImg.src = images[currentIndex].src;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function showNext() { openLightbox((currentIndex + 1) % images.length); }
+  function showPrev() { openLightbox((currentIndex - 1 + images.length) % images.length); }
+
+  images.forEach((img, i) => img.addEventListener('click', () => openLightbox(i)));
+  document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+  document.getElementById('lightbox-next').addEventListener('click', showNext);
+  document.getElementById('lightbox-prev').addEventListener('click', showPrev);
+
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft') showPrev();
+  });
+</script>
+{% endblock %}
+
+{% block footer_text %}
+<div class="text-banner">
+  <h1 class="outlined-text">GALLERY</h1>
+</div>
 {% endblock %}
