@@ -131,10 +131,17 @@ footer .outlined-text {
   margin-top: 0.5rem;
 }
 
-.review-rating {
-  color: #d4af37; /* gold stars */
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+.review-rating { color: inherit !important; }
+
+/* Default/empty star */
+.review-rating .star {
+  font-size: 1.3rem;
+  color: #ccc; /* gray for empty */
+}
+
+/* Filled star */
+.review-rating .star.filled {
+  color: #d4af37; /* Aurea gold */
 }
 
 .review-card {
@@ -149,12 +156,12 @@ footer .outlined-text {
 }
 
 .star-rating {
-  direction: rtl; /* render stars right-to-left */
   display: inline-flex;
+  flex-direction: row-reverse; /* stars go right-to-left */
 }
 
 .star-input {
-  display: none; /* hide radio buttons */
+  display: none; /* hide radios */
 }
 
 .star-label {
@@ -164,12 +171,12 @@ footer .outlined-text {
   padding: 0 5px;
 }
 
-/* Turn gold when selected */
+/* Gold when checked and for all previous stars */
 .star-input:checked ~ .star-label {
   color: #d4af37;
 }
 
-/* Hover effect preview */
+/* Hover preview */
 .star-label:hover,
 .star-label:hover ~ .star-label {
   color: #d4af37;
