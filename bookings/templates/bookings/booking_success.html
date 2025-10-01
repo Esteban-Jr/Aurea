@@ -1,11 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Booking Successful</title>
-</head>
-<body>
-    <h1>Booking Successful!</h1>
-    <p>Thank you, {{ user.get_full_name }}, your booking has been recorded.</p>
-    <a href="{% url 'create_bookings' %}">Make another booking</a>
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Booking Confirmed | Aurea{% endblock %}
+
+{% block content %}
+<div class="container py-5 text-center">
+  <div class="card shadow p-5 mx-auto" style="max-width: 600px;">
+    <h2 class="about-title mb-4">Booking Confirmed</h2>
+    <p class="mb-4">Grazie! Your booking has been successfully made.</p>
+
+    <div class="mb-4">
+      <i class="bi bi-check-circle-fill text-success" style="font-size: 3rem;"></i>
+    </div>
+
+    <p class="text-muted">We look forward to welcoming you at Aurea.</p>
+
+    <div class="mt-4">
+      <a href="{% url 'home' %}" class="btn btn-dark">Back to Home</a>
+      <a href="{% url 'menu' %}" class="btn btn-outline-dark ms-2">See Our Menu</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer_text %}
+<div class="text-banner">
+  <h1 class="outlined-text">BOOKINGS</h1>
+</div>
+{% endblock %}
