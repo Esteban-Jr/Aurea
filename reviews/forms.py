@@ -6,8 +6,17 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = ['comment', 'rating']
         widgets = {
-            # Radio buttons for 1–5
+            'comment': forms.Textarea(attrs={
+                'class': 'form-control',
+                'rows': 4,
+                'placeholder': 'Write your review here...'
+            }),
             'rating': forms.RadioSelect(
-                choices=[(i, '★' * i) for i in range(1, 6)]
+                attrs={'class': 'star-radio'}
             ),
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # ✅ Force choices to be stars
+        self.fields['rating'].choices = [(i, "★" * i) for i in range(1, 6)]

@@ -1,19 +1,68 @@
-<h1>Reviews</h1>
-<ul>
-  {% for r in reviews %}
-    <li>
-      <strong>{{ r.user.username }}</strong> – {{ r.rating }}★<br>
-      {{ r.comment }}
-      
-      {% if r.user == request.user %}
-        <!-- Show only to the author of the review -->
-        <a href="{% url 'edit_review' r.pk %}">Edit</a> |
-        <a href="{% url 'delete_review' r.pk %}">Delete</a>
-      {% endif %}
-    </li>
-  {% empty %}
-    <li>No reviews yet.</li>
-  {% endfor %}
-</ul>
+{% extends "base.html" %}
+{% load static %}
 
-<a href="{% url 'add_review' %}">Add a review</a>
+{% block title %}Reviews | Aurea{% endblock %}
+
+{% block content %}
+<div class="reviews-section container py-5">
+
+  <div class="row align-items-center mb-5">
+  <!-- Empty left column -->
+  <div class="col-4"></div>
+
+  <!-- Centered title -->
+  <div class="col-4 text-center">
+    <h2 class="about-title m-0">Customer Reviews</h2>
+  </div>
+
+  <!-- Right button -->
+  <div class="col-4 text-end">
+    <a href="{% url 'add_review' %}" class="btn btn-dark">
+      <i class="bi bi-plus-circle"></i> Add Review
+    </a>
+  </div>
+</div>
+
+  <!-- Reviews Grid -->
+  <div class="row g-4">
+    {% for review in reviews %}
+      <div class="col-md-6 col-lg-4">
+        <div class="review-card p-4 shadow-sm h-100">
+          
+          <!-- Rating as stars -->
+          <p class="review-rating">
+            {% for i in "12345"|slice:":review.rating"|make_list %}
+              ⭐
+            {% endfor %}
+          </p>
+
+          <!-- Comment -->
+          <p class="review-text">“{{ review.comment }}”</p>
+
+          <!-- Author and date -->
+          <p class="review-author">
+            – {{ review.user.username }} <br>
+            <small class="text-muted">{{ review.created_at|date:"F j, Y" }}</small>
+          </p>
+
+          <!-- Delete button (only show if it's their own review) -->
+          {% if user.is_authenticated and user == review.user %}
+            <a href="{% url 'delete_review' review.id %}" 
+               class="btn btn-sm btn-outline-danger mt-3">
+              Delete
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% empty %}
+      <p class="text-muted">No reviews yet. Be the first to share your experience!</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+{% block footer_text %}
+<div class="text-banner">
+  <h1 class="outlined-text">REVIEWS</h1>
+</div>
+{% endblock %}

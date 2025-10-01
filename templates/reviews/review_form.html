@@ -1,14 +1,59 @@
-<form method="post">
-  {% csrf_token %}
-  <div>
-    {{ form.comment.label_tag }}<br>
-    {{ form.comment }}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Add Review | Aurea{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <!-- Title -->
+  <div class="text-center mb-4">
+    <h2 class="about-title">Add Your Review</h2>
   </div>
 
-  <div class="rating-field">
-    {{ form.rating.label_tag }}<br>
-    {{ form.rating }}
-  </div>
+  <!-- Form -->
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="review-card p-4 shadow">
+        <form method="post">
+          {% csrf_token %}
+          
+          <!-- Comment field -->
+          <div class="mb-3">
+            {{ form.comment.label_tag }}
+            {{ form.comment }}
+          </div>
+          
+          <!-- Rating field -->
+          <div class="mb-3">
+            <label class="form-label">Rating</label>
+            <div class="star-rating">
+              {% for radio in form.rating reversed %}
+                <input type="radio" 
+                      id="{{ radio.id_for_label }}" 
+                      name="{{ radio.name }}" 
+                      value="{{ radio.choice_value }}" 
+                      class="star-input" />
+                <label for="{{ radio.id_for_label }}" class="star-label">★</label>
+              {% endfor %}
+            </div>
+          </div>
 
-  <button type="submit">Submit Review</button>
-</form>
+          <!-- Buttons -->
+          <div class="text-end">
+            <button type="submit" class="btn btn-dark">
+              <i class="bi bi-check-circle"></i> Submit Review
+            </button>
+            <a href="{% url 'review_list' %}" class="btn btn-outline-secondary">
+              Cancel
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer_text %}
+ADD REVIEW
+{% endblock %}

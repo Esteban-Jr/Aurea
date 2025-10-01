@@ -7,7 +7,7 @@ from django.contrib import messages
 
 def review_list(request):
     # Only show approved reviews
-    reviews = Review.objects.filter(approved=True).order_by('-created_at')
+    reviews = Review.objects.all().order_by('-created_at')
     return render(request, 'reviews/review_list.html', {'reviews': reviews})
 
 @login_required

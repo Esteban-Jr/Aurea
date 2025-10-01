@@ -1,3 +1,21 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: url("https://res.cloudinary.com/diktmeiui/image/upload/v1759269337/white_smoke_a27nkx.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Page content grows, footer stays pushed down */
+.main-content {
+  flex: 1;
+}
+
 /* Active link underline only */
 .nav-link.active-link {
   position: relative;
@@ -17,11 +35,6 @@
 /* Hover effect: gold text */
 .nav-link:hover {
   color: #ffc107 !important;
-}
-
-body {
-  background: url("https://res.cloudinary.com/diktmeiui/image/upload/v1759269337/white_smoke_a27nkx.png") no-repeat center center fixed;
-  background-size: cover;
 }
 
 footer.text-banner {
@@ -116,4 +129,48 @@ footer .outlined-text {
   font-style: italic;
   color: #666;         /* softer contrast */
   margin-top: 0.5rem;
+}
+
+.review-rating {
+  color: #d4af37; /* gold stars */
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.review-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.star-rating {
+  direction: rtl; /* render stars right-to-left */
+  display: inline-flex;
+}
+
+.star-input {
+  display: none; /* hide radio buttons */
+}
+
+.star-label {
+  font-size: 2rem;
+  color: #ccc; /* gray by default */
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+/* Turn gold when selected */
+.star-input:checked ~ .star-label {
+  color: #d4af37;
+}
+
+/* Hover effect preview */
+.star-label:hover,
+.star-label:hover ~ .star-label {
+  color: #d4af37;
 }
