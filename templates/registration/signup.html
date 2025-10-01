@@ -9,6 +9,25 @@
     <div class="col-md-6 col-lg-4">
       <div class="card shadow p-4">
         <h2 class="text-center mb-4 about-title">Sign Up</h2>
+
+        <!-- Error messages as a Bootstrap alert -->
+        {% if form.errors %}
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Signup failed!</strong> Please fix the following:
+            <ul class="mb-0">
+              {% for field in form %}
+                {% for error in field.errors %}
+                  <li>{{ field.label }}: {{ error }}</li>
+                {% endfor %}
+              {% endfor %}
+              {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        {% endif %}
+
         <form method="post">
           {% csrf_token %}
           {{ form.as_p }}
@@ -17,7 +36,8 @@
           </div>
         </form>
         <p class="text-center mt-3">
-          Already have an account? <a href="{% url 'login' %}" class="text-decoration-none text-dark fw-bold">Login</a>
+          Already have an account? 
+          <a href="{% url 'login' %}" class="text-decoration-none text-dark fw-bold">Login</a>
         </p>
       </div>
     </div>
