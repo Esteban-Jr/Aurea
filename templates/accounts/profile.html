@@ -1,9 +1,28 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}Profile | Aurea{% endblock %}
+
 {% block content %}
-<h2>Your Profile</h2>
-<p>Username: {{ user.username }}</p>
-<p>Email: {{ user.email }}</p>
-<p>Name: {{ user.first_name }} {{ user.last_name }}</p>
-<a href="{% url 'profile_edit' %}">Edit Profile</a> |
-<a href="{% url 'password_change' %}">Change Password</a>
+<div class="container py-5 text-center">
+  <div class="card shadow p-4 mx-auto" style="max-width: 500px;">
+    <h2 class="about-title mb-4">My Profile</h2>
+
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>First Name:</strong> {{ user.first_name }}</p>
+    <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    
+    <div class="mt-4">
+      <a href="{% url 'profile_edit' %}" class="btn btn-dark">Edit Profile</a>
+      <a href="{% url 'home' %}" class="btn btn-outline-dark ms-2">Back to Home</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer_text %}
+<div class="text-banner">
+  <h1 class="outlined-text">PROFILE</h1>
+</div>
 {% endblock %}
