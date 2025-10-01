@@ -76,6 +76,7 @@ footer .outlined-text {
   border-radius: 50px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 /* Subtitles */
@@ -180,4 +181,31 @@ footer .outlined-text {
 .star-label:hover,
 .star-label:hover ~ .star-label {
   color: #d4af37;
+}
+
+/* FAQ Accordion */
+.accordion-button {
+  background-color: #fff !important;
+  color: #000 !important;
+  font-weight: 600;
+  border: 1px solid #d4af37 !important;
+  box-shadow: none !important;
+}
+
+.accordion-button:hover {
+  background-color: #f8f8f8 !important;
+}
+
+/* Remove Bootstrap's blue outline and replace with gold */
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.5) !important; /* soft gold glow */
+  border-color: #d4af37 !important;
+  outline: none !important;
+}
+
+/* When accordion is expanded (active), make text bold */
+.accordion-button:not(.collapsed) {
+  font-weight: 700 !important; /* bold */
+  background-color: #d4af37 !important; /* gold */
+  color: #000 !important; /* black text */
 }
