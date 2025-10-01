@@ -11,8 +11,64 @@
 
     <form method="post">
       {% csrf_token %}
-      {{ form.as_p }}
 
+      {% if form.non_field_errors %}
+        <div class="alert alert-danger">
+          {{ form.non_field_errors }}
+        </div>
+      {% endif %}
+
+      <!-- Name -->
+      <div class="mb-3">
+        <label for="{{ form.name.id_for_label }}" class="form-label">Name <span class="text-danger">*</span></label>
+        {{ form.name }}
+        <div class="text-danger small">{{ form.name.errors }}</div>
+      </div>
+
+      <!-- Date -->
+      <div class="mb-3">
+        <label for="{{ form.date.id_for_label }}" class="form-label">Date <span class="text-danger">*</span></label>
+        {{ form.date }}
+        <div class="text-danger small">{{ form.date.errors }}</div>
+      </div>
+
+      <!-- Time -->
+      <div class="mb-3">
+        <label for="{{ form.time.id_for_label }}" class="form-label">Time <span class="text-danger">*</span></label>
+        {{ form.time }}
+        <div class="text-danger small">{{ form.time.errors }}</div>
+      </div>
+
+      <!-- Guests -->
+      <div class="mb-3">
+        <label for="{{ form.guests.id_for_label }}" class="form-label">Guests <span class="text-danger">*</span></label>
+        {{ form.guests }}
+        <div class="text-danger small">{{ form.guests.errors }}</div>
+      </div>
+
+      <!-- Phone Number -->
+      <div class="mb-3">
+        <label for="{{ form.phone_number.id_for_label }}" class="form-label">Phone Number <span class="text-danger">*</span></label>
+        {{ form.phone_number }}
+        <div class="form-text">Enter the number without the +44 prefix.</div>
+        <div class="text-danger small">{{ form.phone_number.errors }}</div>
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="{{ form.email.id_for_label }}" class="form-label">Email <span class="text-danger">*</span></label>
+        {{ form.email }}
+        <div class="text-danger small">{{ form.email.errors }}</div>
+      </div>
+
+      <!-- Special Requests -->
+      <div class="mb-3">
+        <label for="{{ form.special_requests.id_for_label }}" class="form-label">Special requests</label>
+        {{ form.special_requests }}
+        <div class="text-danger small">{{ form.special_requests.errors }}</div>
+      </div>
+
+      <!-- Buttons -->
       <div class="text-center mt-4">
         <button type="submit" class="btn btn-dark px-4">Confirm Booking</button>
         <a href="{% url 'home' %}" class="btn btn-outline-dark ms-2">Cancel</a>
