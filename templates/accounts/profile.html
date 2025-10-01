@@ -5,7 +5,7 @@
 
 {% block content %}
 <div class="container py-5">
-  <div class="card shadow p-4 mx-auto" style="max-width: 600px;">
+  <div class="card shadow p-4 mx-auto" style="max-width: 800px;">
     <h2 class="about-title text-center mb-4">Your Profile</h2>
 
     <div class="mb-3">
@@ -18,12 +18,62 @@
       <strong>Username:</strong> {{ user.username }}
     </div>
 
-    <div class="d-flex justify-content-center mt-4">
+    <div class="d-flex justify-content-center mt-4 mb-5">
       <a href="{% url 'profile_edit' %}" class="btn btn-outline-dark me-2">Edit Profile</a>
       <a href="{% url 'password_change' %}" class="btn btn-dark">Change Password</a>
     </div>
+
+    <!-- Bookings Section -->
+    <h3 class="mb-4 text-center fw-bold">Your Bookings</h3>
+
+    {% if bookings %}
+      {% for booking in bookings %}
+        <div class="card booking-card mb-3">
+          <div class="card-body d-flex justify-content-between align-items-center">
+            <div>
+              <h5 class="mb-1 fw-bold text-dark">
+                {{ booking.date|date:"M d, Y" }} at {{ booking.time|time:"g:i A" }}
+              </h5>
+              <p class="mb-0 text-muted">Guests: {{ booking.guests }}</p>
+              {% if booking.special_requests %}
+                <p class="mb-0"><small><em>Note: {{ booking.special_requests }}</em></small></p>
+              {% endif %}
+            </div>
+            <div>
+              {% if booking.date >= today %}
+                <a href="{% url 'edit_booking' booking.id %}" class="btn btn-gold btn-sm me-2">
+                  <i class="bi bi-pencil"></i> Edit
+                </a>
+                <a href="{% url 'delete_booking' booking.id %}" class="btn btn-danger btn-sm">
+                  <i class="bi bi-x-circle"></i> Cancel
+                </a>
+              {% else %}
+                <span class="text-muted"><em>Past booking (cannot edit)</em></span>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="text-center text-muted">You don’t have any bookings yet.</p>
+    {% endif %}
   </div>
 </div>
+<style>
+  .btn-gold {
+    background-color: #d4af37 !important;
+    border: 1px solid #d4af37 !important;
+    color: #000 !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .btn-gold:hover {
+    background-color: #c19d2b !important;
+    border-color: #c19d2b !important;
+    color: #000 !important;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+  }
+</style>
 {% endblock %}
 
 {% block footer_text %}
