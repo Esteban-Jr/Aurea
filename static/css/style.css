@@ -209,3 +209,71 @@ footer .outlined-text {
   background-color: #d4af37 !important; /* gold */
   color: #000 !important; /* black text */
 }
+
+/* Special Requests textarea (extra styling if needed) */
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical; /* allow resizing */
+}
+
+/* Submit + cancel buttons */
+.btn-dark {
+  background-color: #000;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.btn-dark:hover {
+  background-color: #333;
+}
+
+.btn-outline-dark {
+  border: 1px solid #000;
+  transition: all 0.3s ease;
+}
+.btn-outline-dark:hover {
+  background-color: #d4af37;
+  color: #000;
+  border-color: #d4af37;
+}
+
+.alert {
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.alert-success {
+  background-color: #d4af37;   /* Aurea gold */
+  color: #000;                 /* black text */
+  border: none;
+}
+
+.alert-warning {
+  background-color: #fff3cd;   /* soft gold */
+  color: #000;
+  border: none;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #000;
+  border: none;
+}
+
+.alert-info {
+  background-color: #e2e3e5;
+  color: #000;
+  border: none;
+}
+
+/* Booking cards */
+.booking-card {
+  border: 2px solid #d4af37;   /* Aurea gold border */
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for interactivity */
+.booking-card:hover {
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); /* gold glow */
+  transform: translateY(-3px);
+}
