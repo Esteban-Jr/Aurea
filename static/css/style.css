@@ -132,7 +132,9 @@ footer .outlined-text {
   margin-top: 0.5rem;
 }
 
-.review-rating { color: inherit !important; }
+.review-rating { 
+  color: inherit !important; 
+}
 
 /* Default/empty star */
 .review-rating .star {
