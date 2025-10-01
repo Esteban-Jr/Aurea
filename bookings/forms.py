@@ -1,10 +1,10 @@
 from django import forms
-from .models import Booking
 from django.core.exceptions import ValidationError
 from django.forms import TextInput, DateInput, NumberInput, Textarea
-from datetime import datetime
+from datetime import datetime, date
+from .models import Booking
 
-# Generate choices: every 30 minutes between 09:00 and 21:00
+# Every 30 minutes between 09:00–21:00
 TIME_CHOICES = [(f"{h:02d}:{m:02d}", f"{h:02d}:{m:02d}") for h in range(9, 22) for m in (0, 30)]
 
 class BookingForm(forms.ModelForm):
@@ -25,32 +25,44 @@ class BookingForm(forms.ModelForm):
             'special_requests': Textarea(attrs={
                 'class': 'form-control',
                 'rows': 4,
-                'placeholder': 'Any special requests? (e.g. allergies, celebrations, seating preference)'
+                'placeholder': 'Any special requests?'
             }),
         }
 
-    def clean(self):
-        cleaned_data = super().clean()
-        date = cleaned_data.get("date")
-        time = cleaned_data.get("time")
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
 
-        if date:
+    def clean(self):
+        cleaned = super().clean()
+        d = cleaned.get("date")
+        t_str = cleaned.get("time")
+
+        if d:
             today = date.today()
             now = datetime.now().time()
 
-            # Block editing of past bookings entirely
-            if self.instance and self.instance.pk:
-                if self.instance.date < today:
-                    raise ValidationError("Past bookings cannot be edited.")
+            # Editing: prevent editing past bookings
+            if self.instance and self.instance.pk and self.instance.date < today:
+                raise ValidationError("Past bookings cannot be edited.")
 
-            # Block selecting a past date
-            if date < today:
+            # Prevent selecting past dates
+            if d < today:
                 raise ValidationError("You cannot book a date in the past.")
 
-            # Block selecting a past time on the same day
-            if date == today and time:
-                t = datetime.strptime(time, "%H:%M").time()
+            # Prevent past times for today
+            if d == today and t_str:
+                t = datetime.strptime(t_str, "%H:%M").time()
                 if t <= now:
                     raise ValidationError("You cannot book a time that has already passed today.")
 
-        return cleaned_data
+        # Prevent double booking
+        if self.user and d and t_str:
+            t = datetime.strptime(t_str, "%H:%M").time()  # convert string to time
+            exists = Booking.objects.filter(
+                user=self.user, date=d, time=t
+            ).exclude(id=self.instance.id if self.instance else None).exists()
+            if exists:
+                raise ValidationError("You already have a booking at this time.")
+
+        return cleaned
