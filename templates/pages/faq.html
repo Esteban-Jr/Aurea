@@ -1,5 +1,157 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}FAQ | Aurea{% endblock %}
+
 {% block content %}
-<h1>Frequently Asked Questions</h1>
-<p>Q: Example question?<br>A: Example answer.</p>
+<!-- 🔥 Nuclear Option: inline style override -->
+<style>
+  /* Open (expanded) state: gold + bold */
+  .accordion .accordion-button:not(.collapsed) {
+    background-color: #d4af37 !important;  /* Aurea gold */
+    color: #000 !important;                 /* black text */
+    border-color: #d4af37 !important;
+    box-shadow: none !important;
+    font-weight: 700 !important;            /* <— bold when open */
+  }
+
+  /* Focus ring: soft gold instead of blue */
+  .accordion .accordion-button:focus {
+    outline: none !important;
+    border-color: #d4af37 !important;
+    box-shadow: 0 0 0 .25rem rgba(212, 175, 55, 0.45) !important;  /* gold glow */
+  }
+
+  /* Optional: nicer hover on closed items */
+  .accordion .accordion-button.collapsed:hover {
+    background-color: #fff7d6 !important;   /* pale gold tint */
+  }
+</style>
+
+<div class="container py-5">
+    <div class="text-center mb-4">
+        <h2 class="about-title">Frequently Asked Questions</h2>
+    </div>
+  <p class="text-center mb-5">Here are some common questions about Aurea Italian Food.</p>
+
+  <div class="accordion" id="faqAccordion">
+    <!-- Item 1 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button collapsed custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+          What type of cuisine do you serve?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          We specialize in authentic Italian cuisine — handmade pastas, wood-fired pizzas, and fresh Mediterranean-inspired dishes.
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+          Do you have vegetarian or vegan options?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Yes! We offer a variety of vegetarian and vegan dishes prepared with fresh seasonal ingredients.
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+          How can I book a table?
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          You can book online through our website or call us directly. Walk-ins are welcome too!
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 4 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+          Do you offer delivery or takeaway?
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Yes! We offer both delivery and takeaway options. You can order online or by phone.
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 5 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFive">
+        <button class="accordion-button collapsed custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+          Do you accommodate food allergies?
+        </button>
+      </h2>
+      <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Absolutely! Please inform our staff about any allergies, and we’ll do our best to provide safe and delicious options.
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 6 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingSix">
+        <button class="accordion-button collapsed custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix">
+          What are your opening hours?
+        </button>
+      </h2>
+      <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          We are open Monday to Sunday, from 12:00 PM to 10:00 PM.
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 7 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingSeven">
+        <button class="accordion-button collapsed custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven">
+          Do you cater for events?
+        </button>
+      </h2>
+      <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Yes! We provide catering services for private parties, weddings, and corporate events. Contact us for more details.
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 8 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingEight">
+        <button class="accordion-button collapsed custom-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight">
+          Do you have parking available?
+        </button>
+      </h2>
+      <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Yes, we have free parking available for all our guests.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer_text %}
+<div class="text-banner">
+  <h1 class="outlined-text">FAQ</h1>
+</div>
 {% endblock %}
