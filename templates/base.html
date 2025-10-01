@@ -19,6 +19,15 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <style>
+      /* Override Bootstrap blue focus outline */
+      .form-control:focus {
+        border-color: #d4af37 !important;   /* Aurea gold */
+        box-shadow: 0 0 8px rgba(212, 175, 55, 0.5) !important;
+        outline: none !important;
+      }
+    </style>
 </head>
 <body>
 
