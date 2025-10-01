@@ -1,10 +1,32 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}Sign Up | Aurea{% endblock %}
 
 {% block content %}
-  <h2>Sign Up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Create account</button>
-  </form>
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow p-4">
+        <h2 class="text-center mb-4 about-title">Sign Up</h2>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div class="d-grid">
+            <button type="submit" class="btn btn-dark">Sign Up</button>
+          </div>
+        </form>
+        <p class="text-center mt-3">
+          Already have an account? <a href="{% url 'login' %}" class="text-decoration-none text-dark fw-bold">Login</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer_text %}
+<div class="text-banner">
+  <h1 class="outlined-text">SIGN UP</h1>
+</div>
 {% endblock %}
