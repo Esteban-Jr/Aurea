@@ -43,3 +43,77 @@ footer .outlined-text {
   line-height: 1;
   white-space: nowrap;
 }
+
+.about-img {
+  max-width: 800px;   /* adjust as needed */
+  width: 100%;        /* keeps it responsive */
+  height: auto;
+  margin: 0 auto;     /* centers inside container */
+  display: block;
+}
+
+/* Title pill */
+.about-title {
+  display: inline-block;
+  background-color: #000;
+  color: #d4af37;
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding: 0.6rem 2.5rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Subtitles */
+.about-subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  color: #000;
+}
+
+/* Highlighted words in gold */
+.highlight {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+/* Paragraph text */
+.about-paragraph {
+  max-width: 850px;
+  margin: 1rem auto;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #333;
+}
+
+/* Philosophy list */
+.about-list {
+  max-width: 650px;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  padding-left: 0;
+  list-style: none;
+}
+.about-list li {
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 1.8rem;
+}
+.about-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #d4af37;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.about-subtitle.tagline {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #666;         /* softer contrast */
+  margin-top: 0.5rem;
+}
