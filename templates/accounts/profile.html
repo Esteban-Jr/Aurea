@@ -4,18 +4,23 @@
 {% block title %}Profile | Aurea{% endblock %}
 
 {% block content %}
-<div class="container py-5 text-center">
-  <div class="card shadow p-4 mx-auto" style="max-width: 500px;">
-    <h2 class="about-title mb-4">My Profile</h2>
+<div class="container py-5">
+  <div class="card shadow p-4 mx-auto" style="max-width: 600px;">
+    <h2 class="about-title text-center mb-4">Your Profile</h2>
 
-    <p><strong>Username:</strong> {{ user.username }}</p>
-    <p><strong>First Name:</strong> {{ user.first_name }}</p>
-    <p><strong>Last Name:</strong> {{ user.last_name }}</p>
-    <p><strong>Email:</strong> {{ user.email }}</p>
-    
-    <div class="mt-4">
-      <a href="{% url 'profile_edit' %}" class="btn btn-dark">Edit Profile</a>
-      <a href="{% url 'home' %}" class="btn btn-outline-dark ms-2">Back to Home</a>
+    <div class="mb-3">
+      <strong>Name:</strong> {{ user.first_name }} {{ user.last_name }}
+    </div>
+    <div class="mb-3">
+      <strong>Email:</strong> {{ user.email }}
+    </div>
+    <div class="mb-3">
+      <strong>Username:</strong> {{ user.username }}
+    </div>
+
+    <div class="d-flex justify-content-center mt-4">
+      <a href="{% url 'profile_edit' %}" class="btn btn-outline-dark me-2">Edit Profile</a>
+      <a href="{% url 'password_change' %}" class="btn btn-dark">Change Password</a>
     </div>
   </div>
 </div>
