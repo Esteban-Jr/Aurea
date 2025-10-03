@@ -1,5 +1,378 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}Menu | Aurea{% endblock %}
+
 {% block content %}
-<h1>Our Menu</h1>
-<p>Here will be the list of our dishes and drinks.</p>
+<div class="container py-5 text-center">
+  <!-- Centered Menu Title -->
+  <h2 class="about-title mb-5">Our Menu</h2>
+
+  <style>
+    .carousel-indicators button[data-bs-target] {
+      width: 12px !important;
+      height: 12px !important;
+      border-radius: 50% !important;     /* circles */
+      background-color: #d4af37 !important;
+      margin: 0 6px;
+      opacity: 0.6;
+      border: none !important;
+      padding: 0 !important;
+      box-sizing: content-box !important;
+      transition: all 0.3s ease;
+    }
+
+    .carousel-indicators button.active {
+      background-color: #000 !important; /* active = black */
+      opacity: 1 !important;
+      transform: scale(1.2);
+    }
+
+    /* Move indicators further below the carousel cards */
+    #menuCarousel .carousel-indicators {
+        position: relative;       /* keep them in normal flow */
+        margin-top: 40px;         /* push them further down */
+        justify-content: center;  /* keep centered */
+        z-index: 5;               /* make sure they're above */
+    }
+    
+  </style>
+
+  <!-- Carousel -->
+  <div id="menuCarousel" class="carousel slide" data-bs-ride="false"> 
+
+    <div class="carousel-inner">
+
+      <!-- Entrées -->
+      <div class="carousel-item active">
+        <h3 class="mb-4">Entrées</h3>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759422796/Bruschetta_Classica_ta4dr1.png" class="card-img-top" alt="Bruschetta">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Bruschetta Classica</h5>
+                <p class="card-text">Toasted rustic bread with marinated tomatoes, basil, and a drizzle of extra virgin olive oil.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759422887/Carpaccio_di_Manzo_s0rcwz.png" class="card-img-top" alt="Carpaccio">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Carpaccio di Manzo</h5>
+                <p class="card-text">Thinly sliced beef tenderloin with arugula, parmesan shavings, and truffle oil.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759423160/Arancini_Siciliani_mau34k.png" class="card-img-top" alt="Arancini">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Arancini Siciliani</h5>
+                <p class="card-text">Golden risotto croquettes filled with mozzarella and herbs.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759423190/Caprese_Elegante_jthe6u.png" class="card-img-top" alt="Caprese">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Caprese Elegante</h5>
+                <p class="card-text">Fresh buffalo mozzarella layered with heirloom tomatoes and basil, finished with balsamic pearls.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759422977/Antipasto_Aurea_ra5isn.png" class="card-img-top" alt="Antipasto">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Antipasto Aurea</h5>
+                <p class="card-text">A curated selection of Italian cured meats, artisanal cheeses, and olives.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759422941/Frittura_di_Calamari_s3ly8j.png" class="card-img-top" alt="Calamari">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Frittura di Calamari</h5>
+                <p class="card-text">Lightly fried calamari with lemon aioli and fresh herbs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mains -->
+      <div class="carousel-item">
+        <h3 class="mb-4">Mains</h3>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759425649/Tagliatelle_Bolognese_yyf6fr.png" class="card-img-top" alt="Bolognese">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Tagliatelle Bolognese</h5>
+                <p class="card-text">Fresh ribbon pasta with a slow-cooked beef ragù.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759425551/Risotto_al_Tartufo_byixjj.png" class="card-img-top" alt="Risotto">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Risotto al Tartufo</h5>
+                <p class="card-text">Creamy arborio rice infused with black truffle and parmesan.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759425607/SeaBassallaGriglia_d5f81x.png" class="card-img-top" alt="Sea Bass">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Sea Bass alla Griglia</h5>
+                <p class="card-text">Grilled Mediterranean sea bass with lemon butter and roasted fennel.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759425475/Pollo_alla_Parmigiana_u1s6mc.png" class="card-img-top" alt="Pollo alla Parmigiana">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Pollo alla Parmigiana</h5>
+                <p class="card-text">Breaded chicken breast with mozzarella, parmesan, and a light tomato sauce.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759425439/OssoBucoMilanese_retdqq.png" class="card-img-top" alt="Osso Buco Milanese">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Osso Buco Milanese</h5>
+                <p class="card-text">Braised veal shank with saffron risotto and gremolata.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759425400/LinguineaiFruttidiMare_u7blwx.png" class="card-img-top" alt="Linguine">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Linguine ai Frutti di Mare</h5>
+                <p class="card-text">Pasta with clams, mussels, shrimp, and calamari in a white wine sauce.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desserts -->
+      <div class="carousel-item">
+        <h3 class="mb-4">Desserts</h3>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759426231/Tiramisu_Classico_fgmfy5.png" class="card-img-top" alt="Tiramisu">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Tiramisu Classico</h5>
+                <p class="card-text">Layers of espresso-soaked ladyfingers with mascarpone cream and cocoa.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759426192/PannaCottaallaVaniglia_epxxqd.png" class="card-img-top" alt="Panna Cotta alla Vaniglia">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Panna Cotta alla Vaniglia</h5>
+                <p class="card-text">Silky vanilla cream topped with a wild berry coulis.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759426080/CannoliSiciliani_n7d9fk.png" class="card-img-top" alt="Cannoli Siciliani">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Cannoli Siciliani</h5>
+                <p class="card-text">Crisp pastry shells filled with ricotta cream and candied orange.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759426041/AffogatoalCaff%C3%A8_zkmf0r.png" class="card-img-top" alt="Affogato al Caffè">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Affogato al Caffè</h5>
+                <p class="card-text">Vanilla gelato drowned in hot espresso.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759426272/TortaCaprese_p0lltz.png" class="card-img-top" alt="Torta Caprese">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Torta Caprese</h5>
+                <p class="card-text">Flourless chocolate and almond cake with powdered sugar.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759426153/GelatoArtigianale_zmmweh.png" class="card-img-top" alt="Gelato Artigianale">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Gelato Artigianale</h5>
+                <p class="card-text">Chef’s selection of artisanal Italian gelato flavors.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extras -->
+      <div class="carousel-item">
+        <h3 class="mb-4">Extras</h3>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759427474/FocacciaalRosmarino_udanyy.png" class="card-img-top" alt="Focaccia al Rosmarino">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Focaccia al Rosmarino</h5>
+                <p class="card-text">Warm rosemary focaccia with olive oil.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759427889/PatatealTartufo_ypk6oj.png" class="card-img-top" alt="Patate al Tartufo">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Patate al Tartufo</h5>
+                <p class="card-text">Truffle-dusted potato wedges.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759427808/VerdureGrigliate_ryr30x.png" class="card-img-top" alt="Verdure Grigliate">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Verdure Grigliate</h5>
+                <p class="card-text">Grilled seasonal vegetables.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759427608/PolentaCremosa_hac3wz.png" class="card-img-top" alt="Polenta Cremosa">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Polenta Cremosa</h5>
+                <p class="card-text">Creamy parmesan polenta.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759427748/FunghiTrifolati_qbrwak.png" class="card-img-top" alt="Funghi Trifolati">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Funghi Trifolati</h5>
+                <p class="card-text">Sautéed mushrooms with garlic, parsley, and olive oil</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759427522/PanedellaCasa_cbzajc.png" class="card-img-top" alt="Pane della Casa">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Pane della Casa</h5>
+                <p class="card-text">Assorted house bread with dipping oils.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Drinks -->
+      <div class="carousel-item">
+        <h3 class="mb-4">Drinks</h3>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759428874/Prosecco_di_Valdobbiadene_amtugp.png" class="card-img-top" alt="Prosecco di Valdobbiadene">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Prosecco di Valdobbiadene</h5>
+                <p class="card-text">Sparkling, crisp, refreshing.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759428831/Pinot_Grigio_delle_Venezie_u4obbs.png" class="card-img-top" alt="Pinot Grigio delle Venezie">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Pinot Grigio delle Venezie</h5>
+                <p class="card-text">Classic light Italian white.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759428746/Chianti_Classico_Riserva_sdfqij.png" class="card-img-top" alt="Chianti Classico Riserva">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Chianti Classico Riserva</h5>
+                <p class="card-text">Robust Tuscan red.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759428704/Barolo_DOCG_vont2k.png" class="card-img-top" alt="Barolo DOCG">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Barolo DOCG</h5>
+                <p class="card-text">The “King of Wines” from Piedmont.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759428644/Amaro_Averna_uhgmwr.png" class="card-img-top" alt="Amaro Averna">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Amaro Averna</h5>
+                <p class="card-text">Traditional Sicilian digestif.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card menu-card shadow-sm">
+              <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759428789/Limoncello_di_Sorrento_cice3s.png" class="card-img-top" alt="Limoncello di Sorrento">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Limoncello di Sorrento</h5>
+                <p class="card-text">Iconic lemon liqueur from the Amalfi coast.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+     <div class="carousel-indicators">
+        <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="3"></button>
+        <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="4"></button>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#menuCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#menuCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer_text %}
+<div class="text-banner">
+  <h1 class="outlined-text">MENU</h1>
+</div>
 {% endblock %}
