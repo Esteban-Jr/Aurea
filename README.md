@@ -1,131 +1,351 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Aurea Restaurant
 
-Welcome USER_NAME,
+[*Link to the live website*](https://aurea-project-53c55f91b857.herokuapp.com/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# Project Overview
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+Aurea Italian Food is a modern, elegant web application designed to showcase the unique dining
+experience of an authentic Italian restaurant. Built as part of my journey in full-stack web
+development at Code Institute, the project highlights responsive design, smooth user interactions,
+and clear navigation that reflect the welcoming, family-inspired atmosphere of Aurea.
 
-## Gitpod Reminders
+Note: This project was initially started in a diﬀerent repository without the Code Institute template.
+That version is available here: https://github.com/Esteban-Jr/Aurea1.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Features
 
-`python3 -m http.server`
+### Homepage
 
-A blue button should appear to click: _Make Public_,
+[WIREFRAME]
+[HOMEPAGE SCREENSHOT]
 
-Another blue button should appear to click: _Open Browser_.
+*Design Rationale:*
+- Clean hero section with restaurant branding and Italian-themed imagery.
+- Bold headline and inviting introduction to communicate Aurea’s story.
+- Prominent navigation menu for quick access to all key sections.
+- Links to social media channels for extended user engagement.
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+### About Page
 
-A blue button should appear to click: _Make Public_,
+[WIREFRAME]
+[HOMEPAGE SCREENSHOT]
 
-Another blue button should appear to click: _Open Browser_.
+*Design Rationale:*
+- Story of Aurea’s origins, emphasising passion for Italian cuisine and community.
+- Philosophy section highlighting Authenticity, Quality, and Hospitality.
+- Designed to reflect the values of a modern yet traditional Italian dining experience.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### About Page
 
-To log into the Heroku toolbelt CLI:
+[WIREFRAME]
+[HOMEPAGE SCREENSHOT]
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+*Design Rationale:*
+- Card-based layout showcasing appetisers, entrées, and mains.
+- High-quality food photography to entice users.
+- Clear descriptions of each dish, including traditional Italian names.
+- Consistent design with prices and details easy to scan.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+### Gallery Page
 
-### Connecting your Mongo database
+[WIREFRAME]
+[HOMEPAGE SCREENSHOT]
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+*Design Rationale:*
+- Grid layout featuring photographs of the restaurant’s interior.
+- Showcases ambiance, seating arrangements, and décor.
+- Provides potential visitors with a virtual tour of the space.
 
-------
+### Customer Reviews
 
-## Release History
+[WIREFRAME]
+[HOMEPAGE SCREENSHOT]
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+*Design Rationale:*
+- Displays user-generated reviews with ratings, comments, and author names.
+- Simple card design for readability.
+- Option to add new reviews for logged-in users.
 
-**June 18, 2024,** Add Mongo back into template
+### FAQ Page
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+[WIREFRAME]
+[HOMEPAGE SCREENSHOT]
 
-**May 28 2024:** Fix Mongo and Links installs
+*Design Rationale:*
+Accordion-style drop downs answering common questions:
+- Cuisine type
+- Vegetarian/vegan options
+- Table bookings
+- Delivery/takeaway availability
+- Opening hours
+- Events and catering
+- Parking availability
+- Simple and responsive design for accessibility.
 
-**April 26 2024:** Update node version to 16
+### Authentication (Login & Sign Up)
 
-**September 20 2023:** Update Python version to 3.9.17.
+[WIREFRAME]
+[HOMEPAGE SCREENSHOT]
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+*Design Rationale:*
+- User sign-up with fields for username, email, and secure password.
+- Django authentication system with secure login/logout.
+- Allows users to leave reviews and engage with the site.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Key Features
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- *Authentic Italian Atmosphere:*
+  - A warm, inviting digital presence that mirrors the restaurant’s philosophy.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- *Dynamic Menu & Customer Reviews:*
+  - Engaging menu presentation and a review system that builds trust with new visitors.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- *FAQ Integration:*
+  - Practical, customer-first approach with quick answers to common questions.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- *Account Functionality:*
+  - Users can create accounts, log in, and leave reviews.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- *Cloud Integration & Modern Tech Stack:*
+  - Django for the backend, Bootstrap for responsive design, and Cloudinary for image hosting.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+# User Experience
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Project Goals
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- Showcase Aurea’s Dining Experience: Present dishes, ambiance, and philosophy clearly.
+- Build Customer Trust: Feature testimonials and transparent FAQs.
+- Encourage Bookings and Visits: Highlight menu items, atmosphere, and values.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+#### Problems We Are Trying to Solve
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+1. Limited Online Presence - A professional and responsive restaurant website.
+2. Lack of Transparency - FAQs, menu details, and reviews provide clarity.
+3. Customer Engagement - Reviews, gallery, and sign-up create a sense of community.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+## Technical Features
 
-## FAQ about the uptime script
+### Data and Security
 
-**Why have you added this script?**
+- Environment variables for sensitive information (SECRET_KEY, database URL, Cloudinary).
+- Django authentication for secure logins and password hashing.
+- CSRF protection across forms.
+- Reservations, reviews, and messages stored in a PostgreSQL database (SQLite in dev).
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Languages Used
 
-**How will this affect me?**
+HTML, CSS, JavaScript, Python
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Frameworks & Libraries
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+- Django (backend framework)
+- Bootstrap 5 (frontend styling)
+- django-allauth (authentication)
+- pillow (image handling)
+- psycopg2 (PostgreSQL compatibility)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Databases
 
-**So….?**
+- SQLite3 (development)
+- Heroku PostgreSQL (production)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+##User Stories
 
-**Can I opt out?**
+As a First Time Visitor, I want to:
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+- Easily Navigate the Site so I can quickly find the menu, restaurant story, and contact details
+without confusion.
+- Experience the Atmosphere Virtually by viewing high-quality images in the gallery to see what
+the restaurant looks like before visiting.
+- Understand the Food Oﬀerings by reading clear descriptions of menu items and seeing
+authentic Italian dish names.
+- Check Practical Information such as opening hours, parking availability, and whether
+vegetarian/vegan options exist.
+- Read Customer Reviews to learn from others’ dining experiences and decide if the restaurant
+suits my expectations.
+- Access a Responsive Website that works smoothly on both desktop and mobile devices.
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+As a Returning Visitor, I want to:
 
-**Anything more?**
+- View Updated Menus and Specials so I know if new dishes or seasonal oﬀerings are available.
+- Easily Make or Update Reservations with a streamlined booking process.
+- Log In for a Personalized Experience to leave a review and engage with the community.
+- Stay Informed with Fresh Content by checking new testimonials, FAQs, or gallery images that
+show recent events.
+- Experience Fast Loading Times that make browsing easy and enjoyable.
+As a Registered User, I want to:
+- Create an Account Easily so I can log in and share my own reviews.
+- Submit and Manage Reviews to contribute feedback and edit or remove my comments if
+needed.
+- Save My Details Securely so I can log in quickly without re-entering all my information.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+As a Superuser (Restaurant Manager), I want to:
+
+- Oversee Reviews to approve or remove inappropriate comments.
+- Monitor Reservations and User Activity to ensure smooth restaurant operations.
+- Keep the Website Secure and Accessible so users trust the site and enjoy a consistent
+experience.
+
+## Deployment
+
+### Local Deployment
+
+1. *Clone the repository:*
+bash
+git clone https://github.com/Esteban-Jr/Aurea.git
+
+2. *Create and activate a virtual environment:*
+bash
+python3 -m venv venv
+source venv/bin/activate
+
+3. *Install dependencies:*
+bash
+pip install -r requirements.txt
+
+4. **Create a .env file in the project root (do not commit this file) with the following variables:**
+
+SECRET_KEY=<your-secret-key>
+DATABASE_URL=sqlite:///db.sqlite3
+CLOUDINARY_URL=<your-cloudinary-url>
+DEBUG=True
+
+5. *Run migrations:*
+bash
+python manage.py migrate
+
+6. *Start the server:*
+bash
+python manage.py runserver
+
+Visit [http://127.0.0.1:8000](http://127.0.0.1:8000) to view the site locally.
 
 ---
 
-Happy coding!
+### Heroku Deployment
+
+Aurea is deployed on Heroku.
+Follow these steps to deploy your own instance:
+
+1. *Prerequisites:*
+- A [Heroku](https://www.heroku.com/) account.
+- A [Cloudinary](https://cloudinary.com/) account for image hosting.
+- Git and [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed locally.
+
+2. *Prepare your project for deployment:*
+Ensure the following files exist in your repository:
+- requirements.txt – installable dependencies:
+bash
+pip freeze > requirements.txt
+
+- runtime.txt – Python version (e.g.):
+
+python-3.12.2
+
+- Procfile – tells Heroku how to run the app:
+
+web: gunicorn nova.wsgi
+
+- Add these dependencies if not already included:
+
+django-heroku
+dj-database-url
+gunicorn
+psycopg2
+cloudinary
+
+3. *Push your code to GitHub* (Heroku will deploy from there).
+
+4. *Create the Heroku app:*
+bash
+heroku login
+heroku create your-app-name
+
+5. *Add Heroku Postgres:*
+bash
+heroku addons:create heroku-postgresql:hobby-dev
+
+6. *Set environment variables in Heroku:*
+In the Heroku dashboard:
+- Go to *Settings → Reveal Config Vars* and add:
+
+SECRET_KEY=<your-secret-key>
+DATABASE_URL=<provided by Heroku Postgres>
+CLOUDINARY_URL=<your-cloudinary-url>
+DISABLE_COLLECTSTATIC=1 # Temporarily for first deploy if static files cause errors
+DEBUG=False
+ALLOWED_HOSTS=your-app-name.herokuapp.com
+
+7. *Deploy to Heroku:*
+bash
+git push heroku main
+
+8. *Run migrations on Heroku:*
+bash
+heroku run python manage.py migrate
+
+9. *(Optional) Create a superuser for Heroku:*
+bash
+heroku run python manage.py createsuperuser
+
+10. *Collect static files (if disabled earlier):*
+bash
+heroku run python manage.py collectstatic
+
+11. *Open your live app:*
+bash
+heroku open
+
+Or visit:
+```
+https://your-app-name.herokuapp.com/
+
+
+## Features Left to Implement
+
+- Email confirmations for reviews/reservations.
+- Personalized user dashboards with order/review history.
+- Pre-order functionality for a faster in-restaurant experience.
+
+## Accessibility
+- High colour contrast for readability.
+- Alt text included on all images.
+- Keyboard navigation for all interactive elements.
+- ARIA roles where necessary.
+
+## Testing
+• HTML validated with W3C Validator.
+• CSS validated with Jigsaw Validator.
+• Python checked with flake8 for PEP8 compliance.
+• Manual testing of navigation, login, signup, review submission, and
+responsiveness.
+• Lighthouse used to evaluate performance, accessibility, SEO, and best practices.
+
+---
+
+### Responsiveness Testing
+
+The site’s responsiveness was tested using:
+
+- *Chrome DevTools Device Toolbar* for multiple screen sizes.
+- Physical devices: iPhone, iPad, and Android smartphones.
+
+All pages adapt correctly to diﬀerent screen sizes without layout issues.
+
+—
+
+### Known Issues
+
+- Occasionally, Cloudinary images may take a moment to load on very slow connections. This is
+due to network speed rather than a site bug.
+- No other significant issues were found during testing.
+
+## Credits & Acknowledgements
+
+- Code Institute for guidance and structure.
+- Code Institute Slack community for peer support.
+- Django, Bootstrap, and Cloudinary documentation for technical reference.
+- Unsplash and AI-generated images for placeholders.
+- Special thanks to friends and family who provided feedback on usability.
