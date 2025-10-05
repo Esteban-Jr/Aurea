@@ -317,10 +317,14 @@ https://your-app-name.herokuapp.com/
 
 ## Testing
 • HTML validated with W3C Validator.
+
 • CSS validated with Jigsaw Validator.
+
 • Python checked with flake8 for PEP8 compliance.
+
 • Manual testing of navigation, login, signup, review submission, and
 responsiveness.
+
 • Lighthouse used to evaluate performance, accessibility, SEO, and best practices.
 
 ---
