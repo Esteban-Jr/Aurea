@@ -316,14 +316,17 @@ https://your-app-name.herokuapp.com/
 - ARIA roles where necessary.
 
 ## Testing
-• HTML validated with W3C Validator.
+- **HTML** — All HTML templates were tested using the [W3C Markup Validation Service](https://validator.w3.org/).  
+![W3C HTML Screenshot](./static/readme_images/w3c.png)
 
-• CSS validated with Jigsaw Validator.
+- **CSS** — All custom CSS was tested with the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/).  
+![W3C CSS Screenshot](./static/readme_images/css_validator.jpg)
 
-• Python checked with flake8 for PEP8 compliance.
+- **Python** — Python code was checked using the terminal-based `flake8` command to confirm it met PEP8 style guidelines.  
+![PEP8 Python Screenshot](./static/readme_images/flake8.png)
 
-• Manual testing of navigation, login, signup, review submission, and
-responsiveness.
+- **JavaScript** — Custom JavaScript was tested with [JSHint](https://jshint.com/) to ensure there were no syntax errors.  
+![JShint Screenshot](./static/readme_images/JStest.png)
 
 • Lighthouse used to evaluate performance, accessibility, SEO, and best practices.
 
