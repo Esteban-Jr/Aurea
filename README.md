@@ -16,8 +16,8 @@ That version is available here: https://github.com/Esteban-Jr/Aurea1.
 
 ### Homepage
 
-[WIREFRAME](./static/readme_images/wireframe_home.png)
-[HOMEPAGE SCREENSHOT](./static/readme_images/homepage.jpg)
+![WIREFRAME](./static/readme_images/wireframe_home.png)
+![HOMEPAGE SCREENSHOT](./static/readme_images/homepage.jpg)
 
 *Design Rationale:*
 - Clean hero section with restaurant branding and Italian-themed imagery.
@@ -27,8 +27,8 @@ That version is available here: https://github.com/Esteban-Jr/Aurea1.
 
 ### About Page
 
-[WIREFRAME](./static/readme_images/wireframe_about.png)
-[HOMEPAGE SCREENSHOT](./static/readme_images/about_us.jpg)
+![WIREFRAME](./static/readme_images/wireframe_about.png)
+![HOMEPAGE SCREENSHOT](./static/readme_images/about_us.jpg)
 
 *Design Rationale:*
 - Story of Aurea’s origins, emphasising passion for Italian cuisine and community.
