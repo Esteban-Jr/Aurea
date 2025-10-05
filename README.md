@@ -299,9 +299,11 @@ bash
 heroku open
 
 Or visit:
+
 ```
 https://your-app-name.herokuapp.com/
 
+---
 
 ## Features Left to Implement
 
