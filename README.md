@@ -37,8 +37,8 @@ That version is available here: https://github.com/Esteban-Jr/Aurea1.
 
 ### Menu Page
 
-[WIREFRAME]
-[HOMEPAGE SCREENSHOT]
+![WIREFRAME](./static/readme_images/wireframe_menu.png)
+![HOMEPAGE SCREENSHOT](./static/readme_images/menu_page.png)
 
 *Design Rationale:*
 - Card-based layout showcasing appetisers, entrées, and mains.
@@ -48,8 +48,8 @@ That version is available here: https://github.com/Esteban-Jr/Aurea1.
 
 ### Gallery Page
 
-[WIREFRAME]
-[HOMEPAGE SCREENSHOT]
+![WIREFRAME](./static/readme_images/wireframe_gallery.png)
+![HOMEPAGE SCREENSHOT](./static/readme_images/gallery_page.png)
 
 *Design Rationale:*
 - Grid layout featuring photographs of the restaurant’s interior.
@@ -58,8 +58,8 @@ That version is available here: https://github.com/Esteban-Jr/Aurea1.
 
 ### Customer Reviews
 
-[WIREFRAME]
-[HOMEPAGE SCREENSHOT]
+![WIREFRAME](./static/readme_images/wireframe_reviews.png)
+![HOMEPAGE SCREENSHOT](./static/readme_images/reviews_page.png)
 
 *Design Rationale:*
 - Displays user-generated reviews with ratings, comments, and author names.
@@ -68,8 +68,8 @@ That version is available here: https://github.com/Esteban-Jr/Aurea1.
 
 ### FAQ Page
 
-[WIREFRAME]
-[HOMEPAGE SCREENSHOT]
+![WIREFRAME](./static/readme_images/wireframe_faq.png)
+![HOMEPAGE SCREENSHOT](./static/readme_images/faq_page.png)
 
 *Design Rationale:*
 Accordion-style drop downs answering common questions:
@@ -84,8 +84,8 @@ Accordion-style drop downs answering common questions:
 
 ### Authentication (Login & Sign Up)
 
-[WIREFRAME]
-[HOMEPAGE SCREENSHOT]
+![WIREFRAME](./static/readme_images/wireframe_login.png)
+![HOMEPAGE SCREENSHOT](./static/readme_images/login_page.png)
 
 *Design Rationale:*
 - User sign-up with fields for username, email, and secure password.
@@ -300,10 +300,8 @@ heroku open
 
 Or visit:
 
-```
 https://your-app-name.herokuapp.com/
 
----
 
 ## Features Left to Implement
 
