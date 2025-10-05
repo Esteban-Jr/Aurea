@@ -35,7 +35,7 @@ That version is available here: https://github.com/Esteban-Jr/Aurea1.
 - Philosophy section highlighting Authenticity, Quality, and Hospitality.
 - Designed to reflect the values of a modern yet traditional Italian dining experience.
 
-### About Page
+### Menu Page
 
 [WIREFRAME]
 [HOMEPAGE SCREENSHOT]
