@@ -353,6 +353,20 @@ The booking workflow was tested by logging in as a registered user, navigating t
 This manual testing confirms that the bookings feature functions correctly under normal conditions and that appropriate validation is in place to prevent invalid bookings from being created.
 
 
+### Automated Testing – Accounts
+
+Automated tests were implemented using Django’s built-in `TestCase` framework to validate authentication and account-related functionality. The tests verify that the login page renders correctly, that new users can sign up successfully, that valid credentials authenticate a user, and that invalid credentials are rejected (edge case). Logout behaviour was also tested to confirm that protected pages cannot be accessed after logging out.
+
+
+### Manual Functional Testing – Accounts
+
+Manual functional testing was conducted in a browser to verify the authentication workflow from a user perspective, including successful login, failed login attempts, and logout behaviour.
+
+| Test ID | Feature | Steps | Expected Result | Actual Result | Pass/Fail |
+|--------|---------|-------|-----------------|---------------|-----------|
+| MA01 | Login (valid) | Go to Login → enter correct username/password → submit | User is logged in and redirected | Logged in and redirected | Pass |
+| MA02 | Login (invalid – edge case) | Go to Login → enter correct username + wrong password → submit | Error shown, user not logged in | Error shown, not logged in | Pass |
+| MA03 | Logout | While logged in → click logout → confirm/logout (POST) | User logged out and returned to home | Logged out and redirected | Pass |
 
 ### Responsiveness Testing
 
