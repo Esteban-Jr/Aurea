@@ -344,17 +344,18 @@ python manage.py test bookings -v 2
 
 ### Manual Functional Testing – Bookings
 
-Manual functional testing was conducted by interacting with the application in a browser to verify that the bookings feature behaves correctly from a user perspective. This testing focused on validating user access control, successful booking creation, and handling of invalid input.
+Manual functional testing was conducted by interacting with the application in a browser to verify that the bookings feature behaves correctly from a user perspective. This testing focused on validating access control, successful booking creation, and correct handling of invalid input.
 
 The booking workflow was tested by logging in as a registered user, navigating to the booking creation page, submitting valid and invalid booking details, and observing the system’s responses.
 
 | Test ID | Feature | Steps | Expected Result | Actual Result | Pass/Fail |
-|------|--------|------|----------------|---------------|-----------|
+|--------|---------|-------|-----------------|---------------|-----------|
 | MB01 | Booking page access | Attempt to access the booking page while logged out | User is redirected to the login page | Redirected to login page | Pass |
 | MB02 | Create booking (valid input) | Login → navigate to booking page → select a future date → submit form | Booking is created and confirmation page is displayed | Booking created successfully and confirmation shown | Pass |
-| MB03 | Create booking (past date – edge case) | Login → navigate to booking page → select a past date → submit form | Validation error displayed and booking not saved | Error message shown and booking not saved | Pass |
+| MB03 | Create booking (past date – edge case) | Login → navigate to booking page → select a past date → submit form | Validation error displayed and booking is not saved | Error message displayed and booking not saved | Pass |
 
 This manual testing confirms that the bookings feature functions correctly under normal conditions and that appropriate validation is in place to prevent invalid bookings from being created.
+
 
 
 ### Responsiveness Testing
