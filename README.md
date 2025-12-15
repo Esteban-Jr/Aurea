@@ -337,10 +337,6 @@ The following automated tests were created for the bookings feature:
 - **Successful booking creation**: Verifies that a booking with valid input (including a future date) is saved to the database and the user is redirected to the booking success page.
 - **Edge case – past date booking**: Ensures that bookings using a past date are rejected and not saved to the database.
 
-Tests were executed locally using the following command:
-
-```bash
-python manage.py test bookings -v 2
 
 ### Manual Functional Testing – Bookings
 
