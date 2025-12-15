@@ -327,6 +327,36 @@ https://your-app-name.herokuapp.com/
 
 ---
 
+### Automated Testing – Bookings
+
+Automated tests were implemented using Django’s built-in `TestCase` framework to validate the core booking functionality of the application. These tests ensure that key booking-related features behave correctly and that invalid input is handled appropriately.
+
+The following automated tests were created for the bookings feature:
+
+- **Booking form rendering**: Confirms that the booking creation page loads correctly for authenticated users.
+- **Successful booking creation**: Verifies that a booking with valid input (including a future date) is saved to the database and the user is redirected to the booking success page.
+- **Edge case – past date booking**: Ensures that bookings using a past date are rejected and not saved to the database.
+
+Tests were executed locally using the following command:
+
+```bash
+python manage.py test bookings -v 2
+
+### Manual Functional Testing – Bookings
+
+Manual functional testing was conducted by interacting with the application in a browser to verify that the bookings feature behaves correctly from a user perspective. This testing focused on validating user access control, successful booking creation, and handling of invalid input.
+
+The booking workflow was tested by logging in as a registered user, navigating to the booking creation page, submitting valid and invalid booking details, and observing the system’s responses.
+
+| Test ID | Feature | Steps | Expected Result | Actual Result | Pass/Fail |
+|------|--------|------|----------------|---------------|-----------|
+| MB01 | Booking page access | Attempt to access the booking page while logged out | User is redirected to the login page | Redirected to login page | Pass |
+| MB02 | Create booking (valid input) | Login → navigate to booking page → select a future date → submit form | Booking is created and confirmation page is displayed | Booking created successfully and confirmation shown | Pass |
+| MB03 | Create booking (past date – edge case) | Login → navigate to booking page → select a past date → submit form | Validation error displayed and booking not saved | Error message shown and booking not saved | Pass |
+
+This manual testing confirms that the bookings feature functions correctly under normal conditions and that appropriate validation is in place to prevent invalid bookings from being created.
+
+
 ### Responsiveness Testing
 
 The site’s responsiveness was tested using:
