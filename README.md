@@ -368,6 +368,25 @@ Manual functional testing was conducted in a browser to verify the authenticatio
 | MA02 | Login (invalid – edge case) | Go to Login → enter correct username + wrong password → submit | Error shown, user not logged in | Error shown, not logged in | Pass |
 | MA03 | Logout | While logged in → click logout → confirm/logout (POST) | User logged out and returned to home | Logged out and redirected | Pass |
 
+
+### Automated Testing – Reviews
+
+Automated tests were implemented using Django’s `TestCase` framework to validate the reviews feature. The test suite confirms that the reviews list page renders correctly, that only authenticated users can access the add review page (edge case: unauthenticated users are redirected), and that logged-in users can successfully create, edit, and delete their own reviews.
+
+
+### Manual Functional Testing – Reviews
+
+Manual functional testing was conducted in a browser to verify review submission and review management from a user perspective.
+
+| Test ID | Feature | Steps | Expected Result | Actual Result | Pass/Fail |
+|--------|---------|-------|-----------------|---------------|-----------|
+| MR01 | View reviews | Navigate to the Reviews page | Reviews are displayed in correct order | Reviews displayed correctly | Pass |
+| MR02 | Add review (valid) | Login → go to Add Review → enter comment and select rating → submit | Review is saved and shown in the list | Review saved and shown in list | Pass |
+| MR03 | Add review (logged out – edge case) | Logout → attempt to access Add Review page | User is redirected to login page | Redirected to login page | Pass |
+| MR04 | Edit review | Login → edit own review → submit changes | Review is updated successfully | Review updated successfully | Pass |
+| MR05 | Delete review | Login → delete own review → confirm deletion | Review is removed from the list | Review removed successfully | Pass |
+
+
 ### Responsiveness Testing
 
 The site’s responsiveness was tested using:
