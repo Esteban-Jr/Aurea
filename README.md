@@ -369,6 +369,25 @@ Manual functional testing was conducted in a browser to verify the authenticatio
 | MA03 | Logout | While logged in → click logout → confirm/logout (POST) | User logged out and returned to home | Logged out and redirected | Pass |
 
 
+### Automated Testing – Pages
+
+Automated tests were implemented using Django’s `TestCase` framework to verify that key site pages render correctly and use the expected templates. Tests cover the home, about, menu, FAQ, and gallery pages. An edge case was also tested by requesting an invalid URL to confirm the application returns a 404 response.
+
+
+### Manual Functional Testing – Pages
+
+Manual functional testing was conducted in a browser to ensure that all static pages load correctly and that site navigation functions as expected across the application.
+
+| Test ID | Feature | Steps | Expected Result | Actual Result | Pass/Fail |
+|--------|---------|-------|-----------------|---------------|-----------|
+| MP01 | Home page | Navigate to the home page | Home page loads successfully | Home page loaded successfully | Pass |
+| MP02 | About page | Click the About link in the navigation bar | About page loads successfully | About page loaded successfully | Pass |
+| MP03 | Menu page | Click the Menu link in the navigation bar | Menu page loads successfully | Menu page loaded successfully | Pass |
+| MP04 | FAQ page | Click the FAQ link in the navigation bar | FAQ page loads successfully | FAQ page loaded successfully | Pass |
+| MP05 | Gallery page | Click the Gallery link in the navigation bar | Gallery page loads successfully | Gallery page loaded successfully | Pass |
+| MP06 | Invalid URL (edge case) | Enter a non-existent URL in the browser | 404 error page displayed | 404 error page displayed | Pass |
+
+
 ### Automated Testing – Reviews
 
 Automated tests were implemented using Django’s `TestCase` framework to validate the reviews feature. The test suite confirms that the reviews list page renders correctly, that only authenticated users can access the add review page (edge case: unauthenticated users are redirected), and that logged-in users can successfully create, edit, and delete their own reviews.
@@ -386,6 +405,8 @@ Manual functional testing was conducted in a browser to verify review submission
 | MR04 | Edit review | Login → edit own review → submit changes | Review is updated successfully | Review updated successfully | Pass |
 | MR05 | Delete review | Login → delete own review → confirm deletion | Review is removed from the list | Review removed successfully | Pass |
 
+
+---
 
 ### Responsiveness Testing
 
