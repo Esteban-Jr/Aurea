@@ -21,7 +21,18 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['aurea-project-53c55f91b857.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = os.environ.get(
+    'ALLOWED_HOSTS',
+    'aurea-project-53c55f91b857.herokuapp.com,127.0.0.1',
+).split(',')
+
+# Full origins (e.g. https://aurea.example.com) allowed to submit forms
+CSRF_TRUSTED_ORIGINS = [
+    o for o in os.environ.get('CSRF_TRUSTED_ORIGINS', '').split(',') if o
+]
+
+# Trust the HTTPS flag set by the reverse proxy (Nginx / Heroku router)
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
