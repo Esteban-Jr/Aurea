@@ -1,64 +1,45 @@
 {% extends "base.html" %}
-{% load static %}
+{% load i18n %}
 
-{% block title %}Add Review | Aurea{% endblock %}
+{% block title %}{% translate "Your review" %} | Aurea{% endblock %}
 
 {% block content %}
-<div class="container py-5">
-  <!-- Title -->
-  <div class="text-center mb-4">
-    <h2 class="about-title">Add Your Review</h2>
-  </div>
+<div class="container">
+  {% if form.instance.pk %}
+    {% include "includes/page_header.html" with eyebrow=_("Reviews") title=_("Edit Your Review") %}
+  {% else %}
+    {% include "includes/page_header.html" with eyebrow=_("Reviews") title=_("Add Your Review") %}
+  {% endif %}
 
-  <!-- Form -->
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="review-card p-4 shadow">
-        <form method="post">
-          {% csrf_token %}
-          
-          <!-- Comment field -->
-          <div class="mb-3">
-            {{ form.comment.label_tag }}
-            {{ form.comment }}
-          </div>
-          
-          <div class="mb-3">
-            <label class="form-label">Rating</label>
-            <div class="star-rating">
-              <input type="radio" id="star5" name="rating" value="5" class="star-input" />
-              <label for="star5" class="star-label">★</label>
+  <div class="panel panel-medium">
+    <form method="post">
+      {% csrf_token %}
+      {% if form.errors %}
+        <div class="alert alert-danger">{% translate "Please write a comment and choose a rating." %}</div>
+      {% endif %}
 
-              <input type="radio" id="star4" name="rating" value="4" class="star-input" />
-              <label for="star4" class="star-label">★</label>
-
-              <input type="radio" id="star3" name="rating" value="3" class="star-input" />
-              <label for="star3" class="star-label">★</label>
-
-              <input type="radio" id="star2" name="rating" value="2" class="star-input" />
-              <label for="star2" class="star-label">★</label>
-
-              <input type="radio" id="star1" name="rating" value="1" class="star-input" />
-              <label for="star1" class="star-label">★</label>
-            </div>
-          </div>
-
-          <!-- Buttons -->
-          <div class="text-end">
-            <button type="submit" class="btn btn-dark">
-              <i class="bi bi-check-circle"></i> Submit Review
-            </button>
-            <a href="{% url 'review_list' %}" class="btn btn-outline-secondary">
-              Cancel
-            </a>
-          </div>
-        </form>
+      <div class="mb-3">
+        <label class="form-label" for="{{ form.comment.id_for_label }}">{% translate "Comment" %}</label>
+        {{ form.comment }}
       </div>
-    </div>
+
+      <div class="mb-3">
+        <label class="form-label d-block">{% translate "Rating" %}</label>
+        {# Stars run 5→1 so the CSS "~" selector can light up the ones before the hovered star #}
+        <div class="star-rating">
+          {% for n in "54321"|make_list %}
+            <input type="radio" id="star{{ n }}" name="rating" value="{{ n }}" class="star-input"
+                   {% if form.rating.value|stringformat:"s" == n %}checked{% endif %}>
+            <label for="star{{ n }}" class="star-label" title="{{ n }}">★</label>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="text-end mt-4">
+        <a href="{% url 'review_list' %}" class="btn btn-outline-dark me-2">{% translate "Cancel" %}</a>
+        <button type="submit" class="btn btn-dark">{% translate "Submit review" %}</button>
+      </div>
+    </form>
   </div>
 </div>
-{% endblock %}
-
-{% block footer_text %}
-ADD REVIEW
 {% endblock %}

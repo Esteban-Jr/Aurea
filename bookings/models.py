@@ -1,11 +1,12 @@
 from django.db import models
 from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
+from django.utils.translation import gettext_lazy as _
 
 # Validator: UK local digits only
 uk_number_validator = RegexValidator(
     regex=r'^\d{9,10}$',  # Accept 9–10 digits
-    message="Enter the number without the +44 prefix."
+    message=_("Enter the number without the +44 prefix.")
 )
 
 class Booking(models.Model):
@@ -19,7 +20,7 @@ class Booking(models.Model):
     phone_number = models.CharField(
         max_length=10,
         validators=[uk_number_validator],
-        help_text="Enter the number without the +44 prefix."
+        help_text=_("Enter the number without the +44 prefix.")
     )
 
     def full_phone(self):

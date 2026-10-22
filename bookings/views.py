@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib import messages
+from django.utils.translation import gettext as _
 from .models import Booking
 from .forms import BookingForm
 
@@ -37,7 +38,7 @@ def edit_booking(request, pk):
         form = BookingForm(request.POST, instance=booking, user=request.user)  # pass user
         if form.is_valid():
             form.save()
-            messages.success(request, "Your booking has been updated successfully!")
+            messages.success(request, _("Your booking has been updated successfully!"))
             return redirect("profile")
     else:
         form = BookingForm(instance=booking, user=request.user)  # pass user
@@ -48,6 +49,6 @@ def delete_booking(request, pk):
     booking = get_object_or_404(Booking, pk=pk, user=request.user)
     if request.method == "POST":
         booking.delete()
-        messages.warning(request, "Your booking has been cancelled.")
+        messages.warning(request, _("Your booking has been cancelled."))
         return redirect("profile")
     return render(request, "bookings/delete_booking.html", {"booking": booking})

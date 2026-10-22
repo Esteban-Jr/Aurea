@@ -4,6 +4,7 @@ from .models import Review
 from .forms import ReviewForm
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
+from django.utils.translation import gettext as _
 
 def review_list(request):
     # Only show approved reviews
@@ -30,7 +31,7 @@ def edit_review(request, pk):
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
             form.save()
-            messages.success(request, "Your review was updated.")
+            messages.success(request, _("Your review was updated."))
             return redirect('review_list')
     else:
         form = ReviewForm(instance=review)
@@ -41,6 +42,6 @@ def delete_review(request, pk):
     review = get_object_or_404(Review, pk=pk, user=request.user)
     if request.method == 'POST':
         review.delete()
-        messages.success(request, "Your review was deleted.")
+        messages.success(request, _("Your review was deleted."))
         return redirect('review_list')
     return render(request, 'reviews/review_confirm_delete.html', {'review': review})

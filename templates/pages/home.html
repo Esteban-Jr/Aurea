@@ -1,48 +1,64 @@
 {% extends "base.html" %}
-{% load static %}
+{% load i18n %}
 
-{% block title %}Home | Aurea{% endblock %}
+{% block title %}Aurea · {% translate "Italian Food" %}{% endblock %}
+{% block body_class %}home{% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
-<div class="position-relative text-center py-5">
-  
-  <!-- Social Icons (left side) -->
-  <div class="position-absolute top-50 start-0 translate-middle-y ms-3 d-flex flex-column gap-3">
-  <!-- Instagram -->
-  <a href="https://www.instagram.com/" target="_blank" rel="noopener">
-    <i class="bi bi-instagram fs-4 text-dark"></i>
-  </a>
-
-  <!-- TikTok -->
-  <a href="https://www.tiktok.com/" target="_blank" rel="noopener">
-    <i class="bi bi-tiktok fs-4 text-dark"></i>
-  </a>
-
-  <!-- Facebook -->
-  <a href="https://www.facebook.com/" target="_blank" rel="noopener">
-    <i class="bi bi-facebook fs-4 text-dark"></i>
-  </a>
-</div>
-
-
-  <!-- Food Images -->
+<!-- Hero -->
+<section class="hero">
   <div class="container">
-    <div class="row justify-content-center g-5">
-      <div class="col-md-5">
-        <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759266418/spaghetti_kkczq0.jpg" class="img-fluid" style="width: 450px; height: 580px; object-fit: cover; border-radius: 50% / 35%;" alt="Pasta">
-      </div>
-      <div class="col-md-5">
-        <img src="https://res.cloudinary.com/diktmeiui/image/upload/v1759268554/pizza_tlxmkn.jpg" class="img-fluid" style="width: 450px; height: 580px; object-fit: cover; border-radius: 50% / 35%;" alt="Pizza">
-      </div>
+    <span class="eyebrow">{% translate "Italian Food" %}</span>
+    <h1>AUREA</h1>
+    <div class="divider">◆</div>
+    <p class="tagline">{% translate "Where Italy meets elegance, and every dish tells a story." %}</p>
+    <a class="btn btn-gold" href="{% url 'create_bookings' %}">{% translate "Book a table" %}</a>
+    <a class="btn btn-outline-light" href="{% url 'menu' %}">{% translate "See the menu" %}</a>
+  </div>
+</section>
+
+<!-- Intro -->
+<section class="section text-center">
+  <div class="container">
+    <span class="eyebrow">{% translate "Welcome" %}</span>
+    <h2 class="section-title">{% translate "A golden table for family and friends" %}</h2>
+    <div class="divider">◆</div>
+    <p class="lead-text">
+      {% blocktranslate trimmed %}
+        Aurea means “golden”. Handmade pasta, slow-cooked sauces and the finest Italian ingredients,
+        served in a warm, elegant room where every guest is part of our <em>famiglia</em>.
+      {% endblocktranslate %}
+    </p>
+    <a class="btn btn-outline-dark mt-4" href="{% url 'about' %}">{% translate "Our story" %}</a>
+  </div>
+</section>
+
+<!-- Signature dishes -->
+<section class="section pt-0">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="eyebrow">{% translate "From our kitchen" %}</span>
+      <h2 class="section-title">{% translate "Signature dishes" %}</h2>
+    </div>
+    <div class="row g-5 justify-content-center">
+      {% for name, description, image in signature %}
+        <div class="col-sm-8 col-md-4 dish-feature">
+          <img src="{{ image }}" alt="{{ name }}" loading="lazy">
+          <h3>{{ name }}</h3>
+          <p>{{ description }}</p>
+        </div>
+      {% endfor %}
     </div>
   </div>
-</div>
+</section>
 
-{% endblock %}
-
-{% block footer_text %}
-<div class="text-banner">
-  <h1 class="outlined-text">ITALIAN FOOD</h1>
-</div>
+<!-- Call to action -->
+<section class="section section-dark text-center">
+  <div class="container">
+    <span class="eyebrow">{% translate "Reservations" %}</span>
+    <h2 class="section-title">{% translate "Join us for dinner" %}</h2>
+    <p class="lead-text mt-3">{% translate "Open every day from 12:00 to 22:00. Book online in under a minute." %}</p>
+    <a class="btn btn-gold mt-4" href="{% url 'create_bookings' %}">{% translate "Book a table" %}</a>
+  </div>
+</section>
 {% endblock %}

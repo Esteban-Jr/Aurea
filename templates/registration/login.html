@@ -1,32 +1,25 @@
 {% extends "base.html" %}
-{% load static %}
+{% load i18n %}
 
-{% block title %}Login | Aurea{% endblock %}
+{% block title %}{% translate "Log in" %} | Aurea{% endblock %}
 
 {% block content %}
-<div class="container py-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-4">
-      <div class="card shadow p-4">
-        <h2 class="text-center mb-4 about-title">Login</h2>
-        <form method="post">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <div class="d-grid">
-            <button type="submit" class="btn btn-dark">Login</button>
-          </div>
-        </form>
-        <p class="text-center mt-3">
-          Don’t have an account? <a href="{% url 'signup' %}" class="text-decoration-none text-dark fw-bold">Sign up</a>
-        </p>
+<div class="container">
+  {% include "includes/page_header.html" with eyebrow=_("Welcome back") title=_("Log In") %}
+  <div class="panel panel-narrow">
+    {% if form.errors %}
+      <div class="alert alert-danger">{% translate "Your username and password didn't match. Please try again." %}</div>
+    {% endif %}
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="d-grid mt-2">
+        <button type="submit" class="btn btn-dark">{% translate "Log in" %}</button>
       </div>
-    </div>
+    </form>
+    <p class="text-center mt-4 mb-0">
+      {% translate "Don’t have an account?" %} <a href="{% url 'signup' %}">{% translate "Sign up" %}</a>
+    </p>
   </div>
-</div>
-{% endblock %}
-
-{% block footer_text %}
-<div class="text-banner">
-  <h1 class="outlined-text">LOGIN</h1>
 </div>
 {% endblock %}

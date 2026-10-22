@@ -1,0 +1,7 @@
+{# Title block for inner pages: {% include "includes/page_header.html" with eyebrow=_("…") title=_("…") intro=_("…") %} #}
+<header class="page-header">
+  {% if eyebrow %}<span class="eyebrow">{{ eyebrow }}</span>{% endif %}
+  <h1>{{ title }}</h1>
+  <div class="divider">◆</div>
+  {% if intro %}<p>{{ intro }}</p>{% endif %}
+</header>

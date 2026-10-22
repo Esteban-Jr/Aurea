@@ -1,78 +1,42 @@
 {% extends "base.html" %}
-{% load static %}
+{% load i18n %}
 
-{% block title %}Reviews | Aurea{% endblock %}
+{% block title %}{% translate "Reviews" %} | Aurea{% endblock %}
 
 {% block content %}
-<div class="reviews-section container py-5">
+<div class="container">
+  {% include "includes/page_header.html" with eyebrow=_("Our guests") title=_("Customer Reviews") %}
 
-  <div class="row align-items-center mb-5">
-  <!-- Empty left column -->
-  <div class="col-4"></div>
-
-  <!-- Centered title -->
-  <div class="col-4 text-center">
-    <h2 class="about-title m-0">Customer Reviews</h2>
+  <div class="text-center mb-5">
+    <a href="{% url 'add_review' %}" class="btn btn-dark"><i class="bi bi-plus-circle"></i> {% translate "Add a review" %}</a>
   </div>
 
-  <!-- Right button -->
-  <div class="col-4 text-end">
-    <a href="{% url 'add_review' %}" class="btn btn-dark">
-      <i class="bi bi-plus-circle"></i> Add Review
-    </a>
-  </div>
-</div>
-
-  <!-- Reviews Grid -->
   <div class="row g-4">
     {% for review in reviews %}
       <div class="col-md-6 col-lg-4">
-        <div class="review-card p-4 shadow-sm h-100">
-          
-          <!-- Rating as stars -->
-          <p class="review-rating">
+        <div class="review-card">
+          <p class="review-rating" aria-label="{% blocktranslate with n=review.rating %}{{ n }} out of 5 stars{% endblocktranslate %}">
             {% for i in "12345"|make_list %}
-              {% if forloop.counter <= review.rating %}
-                <span class="star filled">&#9733;</span>  {# ★ filled #}
-              {% else %}
-                <span class="star">&#9734;</span>         {# ☆ empty #}
-              {% endif %}
+              <span class="star {% if forloop.counter <= review.rating %}filled{% endif %}">&#9733;</span>
             {% endfor %}
           </p>
-
-          <!-- Comment -->
           <p class="review-text">“{{ review.comment }}”</p>
-
-          <!-- Author and date -->
           <p class="review-author">
-            – {{ review.user.username }} <br>
-            <small class="text-muted">{{ review.created_at|date:"F j, Y" }}</small>
+            {{ review.user.username }}<br>
+            <small class="text-muted fw-normal">{{ review.created_at|date:"j F Y" }}</small>
           </p>
 
-          <!-- Delete button (only show if it's their own review) -->
           {% if user.is_authenticated and user == review.user %}
             <div class="d-flex gap-2 mt-3">
-              <a href="{% url 'edit_review' review.id %}" 
-                class="btn btn-sm btn-outline-primary">
-                Edit
-              </a>
-              <a href="{% url 'delete_review' review.id %}" 
-                class="btn btn-sm btn-outline-danger">
-                Delete
-              </a>
+              <a href="{% url 'edit_review' review.id %}" class="btn btn-sm btn-outline-dark">{% translate "Edit" %}</a>
+              <a href="{% url 'delete_review' review.id %}" class="btn btn-sm btn-outline-danger">{% translate "Delete" %}</a>
             </div>
           {% endif %}
         </div>
       </div>
     {% empty %}
-      <p class="text-muted">No reviews yet. Be the first to share your experience!</p>
+      <p class="text-center text-muted">{% translate "No reviews yet. Be the first to share your experience!" %}</p>
     {% endfor %}
   </div>
-</div>
-{% endblock %}
-
-{% block footer_text %}
-<div class="text-banner">
-  <h1 class="outlined-text">REVIEWS</h1>
 </div>
 {% endblock %}

@@ -59,3 +59,31 @@ class BookingTests(TestCase):
         # Invalid form should re-render with status 200 and not save anything
         self.assertEqual(response.status_code, 200)
         self.assertEqual(Booking.objects.count(), 0)
+
+    def test_past_date_error_is_translated(self):
+        self.client.login(username="tester", password="password123")
+        self.client.cookies["django_language"] = "es"
+        past_date = date.today() - timedelta(days=1)
+        response = self.client.post(
+            reverse("create_bookings"),
+            {
+                "name": "Juan",
+                "date": past_date.strftime("%Y-%m-%d"),
+                "time": "18:30",
+                "guests": 2,
+                "phone_number": "7123456789",
+                "email": "juan@example.com",
+            },
+        )
+        self.assertContains(response, "No puedes reservar una fecha pasada.")
+
+    def test_edit_form_keeps_iso_date_in_spanish(self):
+        # <input type="date"> only understands 2026-10-22, not 22/10/2026
+        self.client.login(username="tester", password="password123")
+        self.client.cookies["django_language"] = "es"
+        booking = Booking.objects.create(
+            user=self.user, date=date.today() + timedelta(days=3), time="19:00",
+            guests=2, name="Juan", email="juan@example.com", phone_number="7123456789",
+        )
+        response = self.client.get(reverse("edit_booking", args=[booking.pk]))
+        self.assertContains(response, f'value="{booking.date.isoformat()}"')

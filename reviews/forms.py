@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.translation import gettext_lazy as _
 from .models import Review
 
 class ReviewForm(forms.ModelForm):
@@ -9,7 +10,7 @@ class ReviewForm(forms.ModelForm):
             'comment': forms.Textarea(attrs={
                 'class': 'form-control',
                 'rows': 4,
-                'placeholder': 'Write your review here...'
+                'placeholder': _('Write your review here...')
             }),
             'rating': forms.RadioSelect(
                 attrs={'class': 'star-radio'}

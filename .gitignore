@@ -9,3 +9,5 @@ node_modules/
 cloudinary_python.txt
 # Local development database
 db.sqlite3
+.venv/
+staticfiles/

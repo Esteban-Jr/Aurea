@@ -1,0 +1,883 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Aurea\n"
+"PO-Revision-Date: 2026-10-22\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: bookings/templates/bookings/_form.html
+msgid "Name"
+msgstr "Nombre"
+
+#: bookings/templates/bookings/_form.html
+msgid "Date"
+msgstr "Fecha"
+
+#: bookings/templates/bookings/_form.html
+msgid "Time"
+msgstr "Hora"
+
+#: bookings/templates/bookings/_form.html
+msgid "Guests"
+msgstr "Personas"
+
+#: bookings/templates/bookings/_form.html
+msgid "Phone number"
+msgstr "Teléfono"
+
+#: bookings/templates/bookings/_form.html
+msgid "Enter the number without the +44 prefix."
+msgstr "Escribe el número sin el prefijo +44."
+
+#: bookings/templates/bookings/_form.html
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: bookings/templates/bookings/_form.html
+msgid "Special requests"
+msgstr "Peticiones especiales"
+
+#: bookings/templates/bookings/_form.html
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: bookings/templates/bookings/booking_success.html
+msgid "Booking confirmed"
+msgstr "Reserva confirmada"
+
+#: bookings/templates/bookings/booking_success.html
+msgid "Grazie!"
+msgstr "¡Grazie!"
+
+#: bookings/templates/bookings/booking_success.html
+msgid "Booking Confirmed"
+msgstr "Reserva confirmada"
+
+#: bookings/templates/bookings/booking_success.html
+msgid "Your booking has been successfully made."
+msgstr "Tu reserva se ha realizado con éxito."
+
+#: bookings/templates/bookings/booking_success.html
+msgid "We look forward to welcoming you at Aurea."
+msgstr "Te esperamos con gusto en Aurea."
+
+#: bookings/templates/bookings/booking_success.html
+msgid "My bookings"
+msgstr "Mis reservas"
+
+#: bookings/templates/bookings/booking_success.html
+msgid "See the menu"
+msgstr "Ver la carta"
+
+#: bookings/templates/bookings/create_bookings.html
+msgid "Book a table"
+msgstr "Reservar mesa"
+
+#: bookings/templates/bookings/create_bookings.html
+msgid "Reservations"
+msgstr "Reservas"
+
+#: bookings/templates/bookings/create_bookings.html
+msgid "Book a Table"
+msgstr "Reserva una mesa"
+
+#: bookings/templates/bookings/create_bookings.html
+msgid "Reserve your spot and enjoy an authentic Italian experience at Aurea."
+msgstr ""
+"Reserva tu lugar y disfruta de una auténtica experiencia italiana en Aurea."
+
+#: bookings/templates/bookings/create_bookings.html
+msgid "Confirm booking"
+msgstr "Confirmar reserva"
+
+#: bookings/templates/bookings/delete_booking.html
+msgid "Cancel booking"
+msgstr "Cancelar reserva"
+
+#: bookings/templates/bookings/delete_booking.html
+msgid "Cancel Booking"
+msgstr "Cancelar reserva"
+
+#: bookings/templates/bookings/delete_booking.html
+msgid "Are you sure you want to cancel your booking?"
+msgstr "¿Seguro que quieres cancelar tu reserva?"
+
+#: bookings/templates/bookings/delete_booking.html
+#, python-format
+msgid "%(guests)s guest"
+msgid_plural "%(guests)s guests"
+msgstr[0] "%(guests)s persona"
+msgstr[1] "%(guests)s personas"
+
+#: bookings/templates/bookings/delete_booking.html
+msgid "Yes, cancel it"
+msgstr "Sí, cancelarla"
+
+#: bookings/templates/bookings/delete_booking.html
+msgid "No, go back"
+msgstr "No, volver"
+
+#: bookings/templates/bookings/edit_booking.html
+msgid "Edit booking"
+msgstr "Editar reserva"
+
+#: bookings/templates/bookings/edit_booking.html
+msgid "Edit Booking"
+msgstr "Editar reserva"
+
+#: bookings/templates/bookings/edit_booking.html
+msgid "Save changes"
+msgstr "Guardar cambios"
+
+#: templates/accounts/password_change.html
+msgid "Change password"
+msgstr "Cambiar contraseña"
+
+#: templates/accounts/password_change.html
+msgid "My account"
+msgstr "Mi cuenta"
+
+#: templates/accounts/password_change.html
+msgid "Change Password"
+msgstr "Cambiar contraseña"
+
+#: templates/accounts/password_change.html
+msgid "Update password"
+msgstr "Actualizar contraseña"
+
+#: templates/accounts/password_change_done.html
+msgid "Password updated"
+msgstr "Contraseña actualizada"
+
+#: templates/accounts/password_change_done.html
+msgid "Password Updated"
+msgstr "Contraseña actualizada"
+
+#: templates/accounts/password_change_done.html
+msgid "Your password has been changed successfully."
+msgstr "Tu contraseña se ha cambiado correctamente."
+
+#: templates/accounts/password_change_done.html
+msgid "Back to profile"
+msgstr "Volver al perfil"
+
+#: templates/accounts/profile.html
+msgid "Profile"
+msgstr "Perfil"
+
+#: templates/accounts/profile.html
+msgid "Your Profile"
+msgstr "Tu perfil"
+
+#: templates/accounts/profile.html
+msgid "Username"
+msgstr "Usuario"
+
+#: templates/accounts/profile.html
+msgid "Edit profile"
+msgstr "Editar perfil"
+
+#: templates/accounts/profile.html
+msgid "Your bookings"
+msgstr "Tus reservas"
+
+#: templates/accounts/profile.html
+msgid "New"
+msgstr "Nueva"
+
+#: templates/accounts/profile.html
+msgid "Edit"
+msgstr "Editar"
+
+#: templates/accounts/profile.html
+msgid "Past booking"
+msgstr "Reserva pasada"
+
+#: templates/accounts/profile.html
+msgid "You don’t have any bookings yet."
+msgstr "Todavía no tienes reservas."
+
+#: templates/accounts/profile_edit.html
+msgid "Edit Profile"
+msgstr "Editar perfil"
+
+#: templates/base.html
+msgid "Menu"
+msgstr "Carta"
+
+#: templates/base.html
+msgid "About"
+msgstr "Nosotros"
+
+#: templates/base.html
+msgid "Gallery"
+msgstr "Galería"
+
+#: templates/base.html
+msgid "Reviews"
+msgstr "Reseñas"
+
+#: templates/base.html
+msgid "FAQ"
+msgstr "Preguntas"
+
+#: templates/base.html
+msgid "Log out"
+msgstr "Cerrar sesión"
+
+#: templates/base.html
+msgid "Log in"
+msgstr "Iniciar sesión"
+
+#: templates/base.html
+msgid "Sign up"
+msgstr "Registrarse"
+
+#: templates/base.html
+msgid "Close"
+msgstr "Cerrar"
+
+#: templates/base.html
+msgid "Authentic Italian food, made with love and served like family."
+msgstr "Auténtica comida italiana, hecha con amor y servida como en familia."
+
+#: templates/base.html
+msgid "Opening hours"
+msgstr "Horario"
+
+#: templates/base.html
+msgid "Monday to Sunday"
+msgstr "De lunes a domingo"
+
+#: templates/base.html
+msgid "Visit"
+msgstr "Visítanos"
+
+#: templates/base.html
+msgid "Follow us"
+msgstr "Síguenos"
+
+#: templates/pages/about.html
+msgid "Our story"
+msgstr "Nuestra historia"
+
+#: templates/pages/about.html
+msgid "About Aurea"
+msgstr "Sobre Aurea"
+
+#: templates/pages/about.html
+msgid "Inside the Aurea restaurant"
+msgstr "El interior del restaurante Aurea"
+
+#: templates/pages/about.html
+msgid ""
+"At <strong>AUREA</strong>, we believe that every meal should be more than "
+"just food — it should be an <span class=\"highlight\">experience</span>. Our "
+"name, AUREA, meaning “golden”, reflects our commitment to creating moments "
+"that are timeless, warm and unforgettable, just like the glow of Italy’s rich"
+" culinary heritage."
+msgstr ""
+"En <strong>AUREA</strong> creemos que cada comida debe ser más que comida: "
+"debe ser una <span class=\"highlight\">experiencia</span>. Nuestro nombre, "
+"AUREA, que significa “dorada”, refleja nuestro compromiso de crear momentos "
+"atemporales, cálidos e inolvidables, como el brillo de la rica herencia "
+"culinaria de Italia."
+
+#: templates/pages/about.html
+msgid ""
+"Our story began with a passion for Italian cuisine and a dream to bring <span"
+" class=\"highlight\">authentic flavours</span>, fresh ingredients and the "
+"spirit of Italy to our community. Inspired by the artistry of traditional "
+"recipes and the vibrancy of modern dining, we built AUREA to be more than a "
+"restaurant — it’s a place where family, friends and good food come together."
+msgstr ""
+"Nuestra historia nació de la pasión por la cocina italiana y del sueño de "
+"traer <span class=\"highlight\">sabores auténticos</span>, ingredientes "
+"frescos y el espíritu de Italia a nuestra comunidad. Inspirados en el arte de"
+" las recetas tradicionales y en la energía de la cocina moderna, creamos "
+"AUREA para que fuera más que un restaurante: un lugar donde se reúnen la "
+"familia, los amigos y la buena comida."
+
+#: templates/pages/about.html
+msgid "The Aurea experience"
+msgstr "La experiencia Aurea"
+
+#: templates/pages/about.html
+msgid ""
+"Every detail of our space, from the warm brick walls to the elegant "
+"chandeliers and greenery, is designed to transport you to a <span "
+"class=\"highlight\">modern Italian oasis</span>. Whether you’re enjoying a "
+"glass of wine at our marble bar or sharing a handmade pasta dish at one of "
+"our tables, our goal is to create an atmosphere that feels both refined and "
+"welcoming."
+msgstr ""
+"Cada detalle de nuestro espacio, desde las cálidas paredes de ladrillo hasta "
+"las elegantes lámparas de araña y las plantas, está pensado para llevarte a "
+"un <span class=\"highlight\">oasis italiano moderno</span>. Ya sea "
+"disfrutando de una copa de vino en nuestra barra de mármol o compartiendo un "
+"plato de pasta artesanal en una de nuestras mesas, queremos crear un ambiente"
+" refinado y acogedor a la vez."
+
+#: templates/pages/about.html
+msgid "Our philosophy"
+msgstr "Nuestra filosofía"
+
+#: templates/pages/about.html
+msgid "Authenticity"
+msgstr "Autenticidad"
+
+#: templates/pages/about.html
+msgid "Honouring the roots of Italian tradition."
+msgstr "Honramos las raíces de la tradición italiana."
+
+#: templates/pages/about.html
+msgid "Quality"
+msgstr "Calidad"
+
+#: templates/pages/about.html
+msgid "Using only the finest ingredients."
+msgstr "Usamos solo los mejores ingredientes."
+
+#: templates/pages/about.html
+msgid "Hospitality"
+msgstr "Hospitalidad"
+
+#: templates/pages/about.html
+msgid "Treating every guest like part of our <em>famiglia</em>."
+msgstr "Tratamos a cada invitado como parte de nuestra <em>famiglia</em>."
+
+#: templates/pages/about.html
+msgid "Eat well, live well."
+msgstr "Come bien, vive bien."
+
+#: templates/pages/faq.html
+msgid "Good to know"
+msgstr "Bueno saberlo"
+
+#: templates/pages/faq.html
+msgid "Frequently Asked Questions"
+msgstr "Preguntas frecuentes"
+
+#: templates/pages/faq.html
+msgid "Here are some common questions about Aurea Italian Food."
+msgstr "Estas son algunas preguntas comunes sobre Aurea Italian Food."
+
+#: templates/pages/gallery.html
+msgid "Inside Aurea"
+msgstr "Dentro de Aurea"
+
+#: templates/pages/gallery.html
+#, python-format
+msgid "Open photo %(n)s"
+msgstr "Abrir foto %(n)s"
+
+#: templates/pages/gallery.html
+#, python-format
+msgid "The Aurea restaurant, photo %(n)s"
+msgstr "El restaurante Aurea, foto %(n)s"
+
+#: templates/pages/gallery.html
+msgid "Previous"
+msgstr "Anterior"
+
+#: templates/pages/gallery.html
+msgid "Next"
+msgstr "Siguiente"
+
+#: templates/pages/home.html
+msgid "Italian Food"
+msgstr "Comida italiana"
+
+#: templates/pages/home.html
+msgid "Where Italy meets elegance, and every dish tells a story."
+msgstr ""
+"Donde Italia se encuentra con la elegancia y cada plato cuenta una historia."
+
+#: templates/pages/home.html
+msgid "Welcome"
+msgstr "Bienvenidos"
+
+#: templates/pages/home.html
+msgid "A golden table for family and friends"
+msgstr "Una mesa dorada para familia y amigos"
+
+#: templates/pages/home.html
+msgid ""
+"Aurea means “golden”. Handmade pasta, slow-cooked sauces and the finest "
+"Italian ingredients, served in a warm, elegant room where every guest is part"
+" of our <em>famiglia</em>."
+msgstr ""
+"Aurea significa “dorada”. Pasta artesanal, salsas a fuego lento y los mejores"
+" ingredientes italianos, servidos en un salón cálido y elegante donde cada "
+"invitado es parte de nuestra <em>famiglia</em>."
+
+#: templates/pages/home.html
+msgid "From our kitchen"
+msgstr "De nuestra cocina"
+
+#: templates/pages/home.html
+msgid "Signature dishes"
+msgstr "Platos de la casa"
+
+#: templates/pages/home.html
+msgid "Join us for dinner"
+msgstr "Ven a cenar con nosotros"
+
+#: templates/pages/home.html
+msgid "Open every day from 12:00 to 22:00. Book online in under a minute."
+msgstr ""
+"Abierto todos los días de 12:00 a 22:00. Reserva en línea en menos de un "
+"minuto."
+
+#: templates/pages/menu.html
+msgid "À la carte"
+msgstr "A la carta"
+
+#: templates/pages/menu.html
+msgid "Our Menu"
+msgstr "Nuestra carta"
+
+#: templates/pages/menu.html
+msgid ""
+"Classic Italian recipes, made fresh every day with seasonal ingredients."
+msgstr ""
+"Recetas italianas clásicas, preparadas cada día con ingredientes de "
+"temporada."
+
+#: templates/pages/menu.html
+msgid "Menu sections"
+msgstr "Secciones de la carta"
+
+#: templates/pages/menu.html
+msgid "Please tell our staff about any allergies before ordering."
+msgstr ""
+"Por favor, informa a nuestro personal de cualquier alergia antes de pedir."
+
+#: templates/registration/login.html
+msgid "Welcome back"
+msgstr "Bienvenido de nuevo"
+
+#: templates/registration/login.html
+msgid "Log In"
+msgstr "Iniciar sesión"
+
+#: templates/registration/login.html
+msgid "Your username and password didn't match. Please try again."
+msgstr "El usuario y la contraseña no coinciden. Inténtalo de nuevo."
+
+#: templates/registration/login.html
+msgid "Don’t have an account?"
+msgstr "¿No tienes cuenta?"
+
+#: templates/registration/logout.html
+msgid "Log Out"
+msgstr "Cerrar sesión"
+
+#: templates/registration/logout.html
+msgid "Are you sure you want to log out?"
+msgstr "¿Seguro que quieres cerrar sesión?"
+
+#: templates/registration/signup.html
+msgid "Join us"
+msgstr "Únete"
+
+#: templates/registration/signup.html
+msgid "Create an Account"
+msgstr "Crea una cuenta"
+
+#: templates/registration/signup.html
+msgid "Sign up to book tables and share your reviews."
+msgstr "Regístrate para reservar mesa y compartir tus reseñas."
+
+#: templates/registration/signup.html
+msgid "Please fix the following:"
+msgstr "Por favor, corrige lo siguiente:"
+
+#: templates/registration/signup.html
+msgid "Already have an account?"
+msgstr "¿Ya tienes cuenta?"
+
+#: templates/reviews/review_confirm_delete.html
+msgid "Delete review"
+msgstr "Eliminar reseña"
+
+#: templates/reviews/review_confirm_delete.html
+msgid "Delete Review"
+msgstr "Eliminar reseña"
+
+#: templates/reviews/review_confirm_delete.html
+msgid "Are you sure you want to delete this review?"
+msgstr "¿Seguro que quieres eliminar esta reseña?"
+
+#: templates/reviews/review_confirm_delete.html
+msgid "Yes, delete"
+msgstr "Sí, eliminar"
+
+#: templates/reviews/review_form.html
+msgid "Your review"
+msgstr "Tu reseña"
+
+#: templates/reviews/review_form.html
+msgid "Edit Your Review"
+msgstr "Edita tu reseña"
+
+#: templates/reviews/review_form.html
+msgid "Add Your Review"
+msgstr "Escribe tu reseña"
+
+#: templates/reviews/review_form.html
+msgid "Please write a comment and choose a rating."
+msgstr "Escribe un comentario y elige una puntuación."
+
+#: templates/reviews/review_form.html
+msgid "Comment"
+msgstr "Comentario"
+
+#: templates/reviews/review_form.html
+msgid "Rating"
+msgstr "Puntuación"
+
+#: templates/reviews/review_form.html
+msgid "Submit review"
+msgstr "Enviar reseña"
+
+#: templates/reviews/review_list.html
+msgid "Our guests"
+msgstr "Nuestros clientes"
+
+#: templates/reviews/review_list.html
+msgid "Customer Reviews"
+msgstr "Reseñas de clientes"
+
+#: templates/reviews/review_list.html
+msgid "Add a review"
+msgstr "Escribir una reseña"
+
+#: templates/reviews/review_list.html
+#, python-format
+msgid "%(n)s out of 5 stars"
+msgstr "%(n)s de 5 estrellas"
+
+#: templates/reviews/review_list.html
+msgid "Delete"
+msgstr "Eliminar"
+
+#: templates/reviews/review_list.html
+msgid "No reviews yet. Be the first to share your experience!"
+msgstr "Aún no hay reseñas. ¡Sé el primero en compartir tu experiencia!"
+
+#: bookings/forms.py
+msgid "Past bookings cannot be edited."
+msgstr "Las reservas pasadas no se pueden editar."
+
+#: bookings/forms.py
+msgid "You cannot book a date in the past."
+msgstr "No puedes reservar una fecha pasada."
+
+#: bookings/forms.py
+msgid "You already have a booking at this time."
+msgstr "Ya tienes una reserva a esta hora."
+
+#: bookings/forms.py
+msgid "Your full name"
+msgstr "Tu nombre completo"
+
+#: bookings/forms.py
+msgid "Your email"
+msgstr "Tu correo electrónico"
+
+#: bookings/forms.py
+msgid "Any special requests?"
+msgstr "¿Alguna petición especial?"
+
+#: bookings/forms.py
+msgid "You cannot book a time that has already passed today."
+msgstr "No puedes reservar una hora que ya pasó hoy."
+
+#: bookings/views.py
+msgid "Your booking has been cancelled."
+msgstr "Tu reserva ha sido cancelada."
+
+#: bookings/views.py
+msgid "Your booking has been updated successfully!"
+msgstr "¡Tu reserva se ha actualizado correctamente!"
+
+#: accounts/forms.py
+msgid "First name"
+msgstr "Nombre"
+
+#: accounts/forms.py
+msgid "Enter your first name"
+msgstr "Escribe tu nombre"
+
+#: accounts/forms.py
+msgid "Last name"
+msgstr "Apellido"
+
+#: accounts/forms.py
+msgid "Enter your last name"
+msgstr "Escribe tu apellido"
+
+#: pages/content.py
+msgid "Entrées"
+msgstr "Entrantes"
+
+#: pages/content.py
+msgid "Mains"
+msgstr "Platos principales"
+
+#: pages/content.py
+msgid "Desserts"
+msgstr "Postres"
+
+#: pages/content.py
+msgid "Extras"
+msgstr "Acompañamientos"
+
+#: pages/content.py
+msgid "Drinks"
+msgstr "Bebidas"
+
+#: pages/content.py
+msgid "What type of cuisine do you serve?"
+msgstr "¿Qué tipo de cocina ofrecen?"
+
+#: pages/content.py
+msgid ""
+"We specialise in authentic Italian cuisine — handmade pastas, wood-fired "
+"pizzas, and fresh Mediterranean-inspired dishes."
+msgstr ""
+"Nos especializamos en auténtica cocina italiana: pastas artesanales, pizzas "
+"al horno de leña y platos frescos de inspiración mediterránea."
+
+#: pages/content.py
+msgid "Do you have vegetarian or vegan options?"
+msgstr "¿Tienen opciones vegetarianas o veganas?"
+
+#: pages/content.py
+msgid ""
+"Yes! We offer a variety of vegetarian and vegan dishes prepared with fresh "
+"seasonal ingredients."
+msgstr ""
+"¡Sí! Ofrecemos varios platos vegetarianos y veganos preparados con "
+"ingredientes frescos de temporada."
+
+#: pages/content.py
+msgid "How can I book a table?"
+msgstr "¿Cómo puedo reservar una mesa?"
+
+#: pages/content.py
+msgid ""
+"You can book online through our website or call us directly. Walk-ins are "
+"welcome too!"
+msgstr ""
+"Puedes reservar en línea en nuestra web o llamarnos directamente. ¡También "
+"eres bienvenido sin reserva!"
+
+#: pages/content.py
+msgid "Do you offer delivery or takeaway?"
+msgstr "¿Tienen servicio a domicilio o para llevar?"
+
+#: pages/content.py
+msgid ""
+"Yes! We offer both delivery and takeaway options. You can order online or by "
+"phone."
+msgstr ""
+"¡Sí! Tenemos servicio a domicilio y para llevar. Puedes pedir en línea o por "
+"teléfono."
+
+#: pages/content.py
+msgid "Do you accommodate food allergies?"
+msgstr "¿Atienden alergias alimentarias?"
+
+#: pages/content.py
+msgid ""
+"Absolutely! Please inform our staff about any allergies, and we’ll do our "
+"best to provide safe and delicious options."
+msgstr ""
+"¡Por supuesto! Informa a nuestro personal de cualquier alergia y haremos lo "
+"posible por ofrecerte opciones seguras y deliciosas."
+
+#: pages/content.py
+msgid "What are your opening hours?"
+msgstr "¿Cuál es su horario?"
+
+#: pages/content.py
+msgid "We are open Monday to Sunday, from 12:00 to 22:00."
+msgstr "Abrimos de lunes a domingo, de 12:00 a 22:00."
+
+#: pages/content.py
+msgid "Do you cater for events?"
+msgstr "¿Hacen catering para eventos?"
+
+#: pages/content.py
+msgid ""
+"Yes! We provide catering services for private parties, weddings, and "
+"corporate events. Contact us for more details."
+msgstr ""
+"¡Sí! Ofrecemos catering para fiestas privadas, bodas y eventos de empresa. "
+"Contáctanos para más detalles."
+
+#: pages/content.py
+msgid "Do you have parking available?"
+msgstr "¿Tienen estacionamiento?"
+
+#: pages/content.py
+msgid "Yes, we have free parking available for all our guests."
+msgstr "Sí, tenemos estacionamiento gratuito para todos nuestros clientes."
+
+#: pages/content.py
+msgid ""
+"Toasted rustic bread with marinated tomatoes, basil, and a drizzle of extra "
+"virgin olive oil."
+msgstr ""
+"Pan rústico tostado con tomates marinados, albahaca y un chorrito de aceite "
+"de oliva virgen extra."
+
+#: pages/content.py
+msgid ""
+"Thinly sliced beef tenderloin with arugula, parmesan shavings, and truffle "
+"oil."
+msgstr ""
+"Finas láminas de solomillo de res con rúcula, lascas de parmesano y aceite de"
+" trufa."
+
+#: pages/content.py
+msgid "Golden risotto croquettes filled with mozzarella and herbs."
+msgstr "Croquetas doradas de risotto rellenas de mozzarella y hierbas."
+
+#: pages/content.py
+msgid ""
+"Fresh buffalo mozzarella layered with heirloom tomatoes and basil, finished "
+"with balsamic pearls."
+msgstr ""
+"Mozzarella de búfala fresca con tomates tradicionales y albahaca, terminada "
+"con perlas de balsámico."
+
+#: pages/content.py
+msgid ""
+"A curated selection of Italian cured meats, artisanal cheeses, and olives."
+msgstr "Una selección de embutidos italianos, quesos artesanales y aceitunas."
+
+#: pages/content.py
+msgid "Lightly fried calamari with lemon aioli and fresh herbs."
+msgstr "Calamares ligeramente fritos con alioli de limón y hierbas frescas."
+
+#: pages/content.py
+msgid "Fresh ribbon pasta with a slow-cooked beef ragù."
+msgstr "Pasta fresca en cintas con ragú de res cocinado a fuego lento."
+
+#: pages/content.py
+msgid "Creamy arborio rice infused with black truffle and parmesan."
+msgstr "Cremoso arroz arborio con trufa negra y parmesano."
+
+#: pages/content.py
+msgid "Grilled Mediterranean sea bass with lemon butter and roasted fennel."
+msgstr ""
+"Lubina mediterránea a la parrilla con mantequilla de limón e hinojo asado."
+
+#: pages/content.py
+msgid ""
+"Breaded chicken breast with mozzarella, parmesan, and a light tomato sauce."
+msgstr ""
+"Pechuga de pollo empanizada con mozzarella, parmesano y una ligera salsa de "
+"tomate."
+
+#: pages/content.py
+msgid "Braised veal shank with saffron risotto and gremolata."
+msgstr "Jarrete de ternera estofado con risotto de azafrán y gremolata."
+
+#: pages/content.py
+msgid "Pasta with clams, mussels, shrimp, and calamari in a white wine sauce."
+msgstr ""
+"Pasta con almejas, mejillones, camarones y calamares en salsa de vino blanco."
+
+#: pages/content.py
+msgid "Layers of espresso-soaked ladyfingers with mascarpone cream and cocoa."
+msgstr ""
+"Capas de bizcochos bañados en espresso con crema de mascarpone y cacao."
+
+#: pages/content.py
+msgid "Silky vanilla cream topped with a wild berry coulis."
+msgstr "Suave crema de vainilla con coulis de frutos rojos."
+
+#: pages/content.py
+msgid "Crisp pastry shells filled with ricotta cream and candied orange."
+msgstr ""
+"Crujientes canutillos rellenos de crema de ricotta y naranja confitada."
+
+#: pages/content.py
+msgid "Vanilla gelato drowned in hot espresso."
+msgstr "Helado de vainilla bañado en espresso caliente."
+
+#: pages/content.py
+msgid "Flourless chocolate and almond cake with powdered sugar."
+msgstr "Torta de chocolate y almendras sin harina, con azúcar glas."
+
+#: pages/content.py
+msgid "Chef’s selection of artisanal Italian gelato flavors."
+msgstr "Selección del chef de helados artesanales italianos."
+
+#: pages/content.py
+msgid "Warm rosemary focaccia with olive oil."
+msgstr "Focaccia tibia de romero con aceite de oliva."
+
+#: pages/content.py
+msgid "Truffle-dusted potato wedges."
+msgstr "Gajos de papa con polvo de trufa."
+
+#: pages/content.py
+msgid "Grilled seasonal vegetables."
+msgstr "Verduras de temporada a la parrilla."
+
+#: pages/content.py
+msgid "Creamy parmesan polenta."
+msgstr "Polenta cremosa con parmesano."
+
+#: pages/content.py
+msgid "Sautéed mushrooms with garlic, parsley, and olive oil."
+msgstr "Champiñones salteados con ajo, perejil y aceite de oliva."
+
+#: pages/content.py
+msgid "Assorted house bread with dipping oils."
+msgstr "Surtido de panes de la casa con aceites para mojar."
+
+#: pages/content.py
+msgid "Sparkling, crisp, refreshing."
+msgstr "Espumoso, fresco y refrescante."
+
+#: pages/content.py
+msgid "Classic light Italian white."
+msgstr "Clásico vino blanco italiano, ligero."
+
+#: pages/content.py
+msgid "Robust Tuscan red."
+msgstr "Tinto toscano con cuerpo."
+
+#: pages/content.py
+msgid "The “King of Wines” from Piedmont."
+msgstr "El “Rey de los vinos” del Piamonte."
+
+#: pages/content.py
+msgid "Traditional Sicilian digestif."
+msgstr "Digestivo tradicional siciliano."
+
+#: pages/content.py
+msgid "Iconic lemon liqueur from the Amalfi coast."
+msgstr "El icónico licor de limón de la costa de Amalfi."
+
+#: reviews/forms.py
+msgid "Write your review here..."
+msgstr "Escribe aquí tu reseña..."
+
+#: reviews/views.py
+msgid "Your review was deleted."
+msgstr "Tu reseña fue eliminada."
+
+#: reviews/views.py
+msgid "Your review was updated."
+msgstr "Tu reseña fue actualizada."
