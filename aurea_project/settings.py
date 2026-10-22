@@ -149,7 +149,11 @@ CLOUDINARY_URL = os.environ.get("CLOUDINARY_URL")
 # Media files
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+# CSS/JS are served by WhiteNoise from STATIC_ROOT, with one manifest file every
+# Gunicorn worker reads. (The Cloudinary static storage kept its manifest in a folder
+# it couldn't write to on the server, so workers disagreed and half the visitors got
+# the old stylesheet.) Uploaded photos still go to Cloudinary.
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 if DEBUG:
     # Local preview: serve static files straight from /static and keep uploads on disk, no Cloudinary
     STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
