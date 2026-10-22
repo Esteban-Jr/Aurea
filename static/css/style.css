@@ -284,8 +284,37 @@ a:hover { color: var(--ink); }
   border: 1px solid var(--line);
   border-radius: 10px;
   padding: .7rem .9rem;
-  background: var(--cream);
+  background-color: var(--cream);   /* not "background:", which would hide the dropdown arrow */
   font-size: .95rem;
+}
+.panel select,
+.panel select.form-control {
+  padding-right: 2.25rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right .9rem center;
+  background-size: 14px 10px;
+  appearance: none;
+}
+
+/* Phone: country picker, then [+57][number] joined together */
+.phone-field .input-group { flex-wrap: nowrap; }
+.panel .phone-field .input-group > input.phone-number {
+  width: 1%;
+  flex: 1 1 auto;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.phone-prefix {
+  min-width: 4.2rem;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-right: 0;
+  border-radius: 10px 0 0 10px;
+  background: var(--gold-pale);
+  color: var(--ink);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 .form-control:focus,
 .form-select:focus,

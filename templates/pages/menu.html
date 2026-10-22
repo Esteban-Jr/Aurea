@@ -64,7 +64,9 @@
               <p class="mb-1" id="dishModalAllergens"></p>
             </div>
             <p class="dish-modal-note">{% translate "Allergen information is a guide. Please always tell our staff about any allergies." %}</p>
-            <a class="btn btn-dark mt-2" href="{% url 'create_bookings' %}">{% translate "Book a table" %}</a>
+            <div class="text-center mt-3">
+              <a class="btn btn-dark" href="{% url 'create_bookings' %}">{% translate "Book a table" %}</a>
+            </div>
           </div>
         </div>
       </div>

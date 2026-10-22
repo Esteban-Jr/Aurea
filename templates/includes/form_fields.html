@@ -1,0 +1,13 @@
+{# Like {{ form.as_p }}, but the phone fields are drawn as one prefix + number control #}
+{% for field in form %}
+  {% if field.name == "phone_country" %}
+    {% include "includes/phone_field.html" %}
+  {% elif field.name != "phone_number" %}
+    <p>
+      {{ field.label_tag }}
+      {{ field }}
+      {% if field.help_text %}<span class="helptext">{{ field.help_text|safe }}</span>{% endif %}
+      {{ field.errors }}
+    </p>
+  {% endif %}
+{% endfor %}

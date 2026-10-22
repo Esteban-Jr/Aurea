@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView, LogoutView
 from .forms import SignUpForm, UserUpdateForm
+from . import phone
+from .models import Profile
 from django.contrib.auth import logout
 from bookings.models import Booking
 from datetime import date
@@ -10,7 +12,8 @@ def signup_view(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save()
+            Profile.objects.create(user=user, phone=form.cleaned_data["phone"])
             return redirect('login')
     else:
         form = SignUpForm()
@@ -29,8 +32,10 @@ def logout_confirm(request):
 @login_required
 def profile_view(request):
     bookings = Booking.objects.filter(user=request.user).order_by('-date', '-time')
+    profile = getattr(request.user, 'profile', None)
     return render(request, 'accounts/profile.html', {
         'bookings': bookings,
+        'phone': phone.pretty(profile.phone) if profile and profile.phone else '',
         'today': date.today()
     })
 
@@ -39,7 +44,10 @@ def profile_edit_view(request):
     if request.method == 'POST':
         form = UserUpdateForm(request.POST, instance=request.user)
         if form.is_valid():
-            form.save()
+            user = form.save()
+            profile, _ = Profile.objects.get_or_create(user=user)
+            profile.phone = form.cleaned_data["phone"]
+            profile.save()
             return redirect('profile')
     else:
         form = UserUpdateForm(instance=request.user)

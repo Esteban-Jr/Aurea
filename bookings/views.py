@@ -21,7 +21,7 @@ def create_bookings(request):
         initial_data = {
             'name': request.user.get_full_name(),
             'email': request.user.email,
-            'phone_number': getattr(request.user, 'profile', None) and request.user.profile.phone_number or ''
+            'phone_number': getattr(getattr(request.user, 'profile', None), 'phone', ''),
         }
         form = BookingForm(initial=initial_data, user=request.user)  # pass user
 

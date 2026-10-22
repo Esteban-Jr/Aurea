@@ -30,10 +30,6 @@ msgid "Phone number"
 msgstr "Teléfono"
 
 #: bookings/templates/bookings/_form.html
-msgid "Enter the number without the +44 prefix."
-msgstr "Escribe el número sin el prefijo +44."
-
-#: bookings/templates/bookings/_form.html
 msgid "Email"
 msgstr "Correo electrónico"
 
@@ -1233,3 +1229,32 @@ msgid ""
 msgstr ""
 "Elaborado macerando cáscara de limón de Sorrento en alcohol y azúcar. Se "
 "sirve muy frío para terminar la comida."
+
+#: templates/includes/phone_field.html
+msgid "Country"
+msgstr "País"
+
+#: templates/includes/phone_field.html
+msgid "Choose your country, then type your number without the prefix."
+msgstr "Elige tu país y escribe tu número sin el prefijo."
+
+#: accounts/phone.py
+msgid "Popular"
+msgstr "Más usados"
+
+#: accounts/phone.py
+msgid "All countries"
+msgstr "Todos los países"
+
+#: accounts/phone.py
+#, python-format
+msgid "Enter a valid phone number for %(country)s (%(code)s)."
+msgstr "Escribe un número de teléfono válido de %(country)s (%(code)s)."
+
+#: accounts/models.py
+msgid "phone"
+msgstr "teléfono"
+
+#: accounts/models.py
+msgid "International format, e.g. +573001234567"
+msgstr "Formato internacional, p. ej. +573001234567"

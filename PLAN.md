@@ -15,6 +15,7 @@ Aurea (Django 4.2 restaurant site, repo Esteban-Jr/Aurea, live at aurea.206.189.
 - [x] Bugs 1–14 handled (9 was real: Spanish navbar overflowed at 1024px → menu now collapses below 1200px)
 - [x] 27 tests pass (19 old + 8 new)
 - [x] Extras asked for along the way: slimmer footer, scroll-down arrow on the home page, dish pop-up card on the menu (longer description, V/VG/GF tags, allergens)
+- [x] Phone numbers from any country: prefix picker at sign-up, edit profile and booking (idea 5 below); dish card button centred
 - [ ] Push to GitHub and `deploy aurea` on the server
 - [ ] Pick items from "Things you could add"
 
@@ -126,7 +127,7 @@ Things most restaurant sites have that Aurea is missing, most useful first:
 4. **Booking limits and a staff view.**
    - Right now any number of people can book the same time slot.
    - Add a maximum number of guests per slot and a simple staff page listing today's bookings.
-5. **International phone numbers.** Only UK numbers work.
+5. ✅ *Done 22/10/26.* **International phone numbers.** Only UK numbers work.
    - Spanish-speaking visitors with +34 or +57 numbers can't book.
    - Add a country code picker.
 6. **Privacy and cookie policy page.** The site collects names, emails and phone numbers, so UK/EU rules (GDPR) expect one.

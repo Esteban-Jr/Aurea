@@ -87,3 +87,23 @@ class BookingTests(TestCase):
         )
         response = self.client.get(reverse("edit_booking", args=[booking.pk]))
         self.assertContains(response, f'value="{booking.date.isoformat()}"')
+
+    def test_booking_with_colombian_number(self):
+        self.client.login(username="tester", password="password123")
+        response = self.client.post(reverse("create_bookings"), {
+            "name": "Ana", "date": (date.today() + timedelta(days=2)).isoformat(), "time": "20:00",
+            "guests": 3, "phone_country": "CO", "phone_number": "3001234567", "email": "ana@example.com",
+        })
+        self.assertRedirects(response, reverse("booking_success"))
+        booking = Booking.objects.get()
+        self.assertEqual(booking.phone_number, "+573001234567")
+        self.assertEqual(booking.full_phone(), "+573001234567")
+
+    def test_old_uk_number_without_country_still_works(self):
+        # the existing tests post only "7123456789": the picker defaults to the UK
+        self.client.login(username="tester", password="password123")
+        self.client.post(reverse("create_bookings"), {
+            "name": "Ana", "date": (date.today() + timedelta(days=2)).isoformat(), "time": "20:00",
+            "guests": 3, "phone_number": "7123456789", "email": "ana@example.com",
+        })
+        self.assertEqual(Booking.objects.get().phone_number, "+447123456789")

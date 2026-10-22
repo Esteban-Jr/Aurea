@@ -1,0 +1,31 @@
+{% load i18n %}
+{# Country prefix picker + number box. The prefix in front of the box follows the chosen country. #}
+<div class="mb-3 phone-field">
+  <label class="form-label" for="{{ form.phone_number.id_for_label }}">
+    {% translate "Phone number" %}{% if form.phone_number.field.required %} <span class="required-mark">*</span>{% endif %}
+  </label>
+  <label class="visually-hidden" for="{{ form.phone_country.id_for_label }}">{% translate "Country" %}</label>
+  {{ form.phone_country }}
+  <div class="input-group mt-2">
+    <span class="input-group-text phone-prefix" aria-hidden="true">+44</span>
+    {{ form.phone_number }}
+  </div>
+  <div class="form-text">{% translate "Choose your country, then type your number without the prefix." %}</div>
+  {% if form.phone_number.errors %}<div class="text-danger small">{{ form.phone_number.errors }}</div>{% endif %}
+</div>
+<script>
+  (function () {
+    const box = document.currentScript.previousElementSibling;
+    const select = box.querySelector('.phone-country');
+    const prefix = box.querySelector('.phone-prefix');
+    const input = box.querySelector('.phone-number');
+    function update() {
+      const option = select.options[select.selectedIndex];
+      if (!option) return;
+      prefix.textContent = option.dataset.dial || '';
+      input.placeholder = option.dataset.example || '';
+    }
+    select.addEventListener('change', () => { update(); input.focus(); });
+    update();
+  })();
+</script>

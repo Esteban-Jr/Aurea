@@ -9,7 +9,7 @@
   <div class="panel panel-narrow">
     <form method="post">
       {% csrf_token %}
-      {{ form.as_p }}
+      {% include "includes/form_fields.html" %}
       <div class="text-center mt-3">
         <button type="submit" class="btn btn-dark">{% translate "Save changes" %}</button>
         <a href="{% url 'profile' %}" class="btn btn-outline-dark ms-2">{% translate "Cancel" %}</a>

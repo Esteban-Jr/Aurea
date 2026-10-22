@@ -73,3 +73,44 @@ class AccountsTests(TestCase):
         # Confirm user is logged out by checking protected page redirects
         protected = self.client.get(reverse("profile"))
         self.assertEqual(protected.status_code, 302)
+
+
+class PhoneTests(TestCase):
+    def signup(self, **extra):
+        data = {
+            "username": "maria", "email": "maria@example.com", "first_name": "María", "last_name": "Gómez",
+            "password1": "StrongPass123!", "password2": "StrongPass123!",
+        }
+        data.update(extra)
+        return self.client.post(reverse("signup"), data)
+
+    def test_signup_with_colombian_number(self):
+        response = self.signup(phone_country="CO", phone_number="300 123 4567")
+        self.assertRedirects(response, reverse("login"))
+        self.assertEqual(User.objects.get(username="maria").profile.phone, "+573001234567")
+
+    def test_signup_without_number_is_fine(self):
+        self.assertRedirects(self.signup(), reverse("login"))
+        self.assertEqual(User.objects.get(username="maria").profile.phone, "")
+
+    def test_wrong_number_for_country_is_rejected(self):
+        response = self.signup(phone_country="CO", phone_number="12345")
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Enter a valid phone number for Colombia (+57).")
+        self.assertFalse(User.objects.filter(username="maria").exists())
+
+    def test_prefix_options_carry_dial_codes(self):
+        response = self.client.get(reverse("signup"))
+        self.assertContains(response, 'data-dial="+57"')
+        self.assertContains(response, "Colombia (+57)")
+
+    def test_country_names_follow_language(self):
+        self.client.cookies["django_language"] = "es"
+        self.assertContains(self.client.get(reverse("signup")), "Reino Unido (+44)")
+
+    def test_booking_form_is_prefilled_from_profile(self):
+        self.signup(phone_country="CO", phone_number="3001234567")
+        self.client.login(username="maria", password="StrongPass123!")
+        form = self.client.get(reverse("create_bookings")).context["form"]
+        self.assertEqual(form.initial["phone_country"], "CO")
+        self.assertEqual(form.initial["phone_number"], "3001234567")

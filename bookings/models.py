@@ -1,13 +1,5 @@
 from django.db import models
-from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
-from django.utils.translation import gettext_lazy as _
-
-# Validator: UK local digits only
-uk_number_validator = RegexValidator(
-    regex=r'^\d{9,10}$',  # Accept 9–10 digits
-    message=_("Enter the number without the +44 prefix.")
-)
 
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -17,15 +9,12 @@ class Booking(models.Model):
     special_requests = models.TextField(blank=True, null=True)
     name = models.CharField(max_length=100)
     email = models.EmailField()
-    phone_number = models.CharField(
-        max_length=10,
-        validators=[uk_number_validator],
-        help_text=_("Enter the number without the +44 prefix.")
-    )
+    # International format, e.g. +447123456789 or +573001234567 (checked in BookingForm)
+    phone_number = models.CharField(max_length=20)
 
     def full_phone(self):
-        """Return the full phone number with the +44 prefix."""
-        return f"+44{self.phone_number}"
+        """The phone number with its country prefix (older bookings were UK-only)."""
+        return self.phone_number if self.phone_number.startswith("+") else f"+44{self.phone_number}"
 
     def __str__(self):
         return f"{self.name} - {self.date} at {self.time}"

@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 from django.forms import TextInput, DateInput, NumberInput, Textarea
 from datetime import datetime, date
 from django.utils.translation import gettext as _, gettext_lazy
+from accounts import phone
 from .models import Booking
 
 # Every 30 minutes between 09:00–21:00
@@ -13,6 +14,9 @@ class BookingForm(forms.ModelForm):
         choices=TIME_CHOICES,
         widget=forms.Select(attrs={'class': 'form-control'})
     )
+    # Any country: the picker defaults to the UK, the number is stored as +447123456789
+    phone_country = phone.country_field(required=False)
+    phone_number = phone.number_field()
 
     class Meta:
         model = Booking
@@ -21,7 +25,6 @@ class BookingForm(forms.ModelForm):
             'name': TextInput(attrs={'class': 'form-control', 'placeholder': gettext_lazy('Your full name')}),
             'date': DateInput(format='%Y-%m-%d', attrs={'class': 'form-control', 'type': 'date'}),  # date inputs need ISO, whatever the language
             'guests': NumberInput(attrs={'class': 'form-control', 'min': 1, 'max': 25}),
-            'phone_number': TextInput(attrs={'class': 'form-control', 'placeholder': '7123456789'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': gettext_lazy('Your email')}),
             'special_requests': Textarea(attrs={
                 'class': 'form-control',
@@ -33,6 +36,14 @@ class BookingForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
+        # Show a saved number as country + local part again
+        saved = self.initial.get('phone_number', '')
+        if saved.startswith('+') and not self.is_bound:
+            self.initial['phone_country'], self.initial['phone_number'] = phone.split(saved)
+
+    def clean_phone_number(self):
+        return phone.to_e164(self.data.get('phone_country') or phone.DEFAULT_COUNTRY,
+                             self.cleaned_data['phone_number'])
 
     def clean(self):
         cleaned = super().clean()
