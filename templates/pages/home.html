@@ -15,10 +15,11 @@
     <a class="btn btn-gold" href="{% url 'create_bookings' %}">{% translate "Book a table" %}</a>
     <a class="btn btn-outline-light" href="{% url 'menu' %}">{% translate "See the menu" %}</a>
   </div>
+  <a class="scroll-hint" href="#welcome" aria-label="{% translate 'Scroll down' %}"><i class="bi bi-chevron-down"></i></a>
 </section>
 
 <!-- Intro -->
-<section class="section text-center">
+<section class="section text-center" id="welcome">
   <div class="container">
     <span class="eyebrow">{% translate "Welcome" %}</span>
     <h2 class="section-title">{% translate "A golden table for family and friends" %}</h2>

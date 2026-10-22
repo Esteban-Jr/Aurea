@@ -179,7 +179,8 @@ a:hover { color: var(--ink); }
 /* ---------- Home hero ---------- */
 .hero {
   position: relative;
-  min-height: 78vh;
+  min-height: calc(100vh - 81px);   /* fill the screen under the navbar */
+  min-height: calc(100svh - 81px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -614,3 +615,28 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 /* The home page hero sits right under the navbar, so no gap there */
 .home .main-content { margin-top: 0; }
 .section-dark .lead-text { color: rgba(255, 255, 255, .7); }
+
+/* Faint arrow at the bottom of the hero: "there's more below" */
+html { scroll-behavior: smooth; }
+.scroll-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, .35);
+  font-size: 1.6rem;
+  line-height: 1;
+  text-decoration: none;
+  animation: scroll-hint 2.4s ease-in-out infinite;
+  transition: color .2s ease;
+}
+.scroll-hint:hover,
+.scroll-hint:focus-visible { color: var(--gold); }
+@keyframes scroll-hint {
+  0%, 100% { transform: translate(-50%, 0); }
+  50%      { transform: translate(-50%, 8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .scroll-hint { animation: none; }
+}
