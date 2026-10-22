@@ -42,12 +42,12 @@
       <h2 class="section-title">{% translate "Signature dishes" %}</h2>
     </div>
     <div class="row g-5 justify-content-center">
-      {% for name, description, image in signature %}
-        <div class="col-sm-8 col-md-4 dish-feature">
-          <img src="{{ image }}" alt="{{ name }}" loading="lazy">
-          <h3>{{ name }}</h3>
-          <p>{{ description }}</p>
-        </div>
+      {% for dish in signature %}
+        <a class="col-sm-8 col-md-4 dish-feature" href="{% url 'menu' %}#{{ dish.slug }}">
+          <img src="{{ dish.image }}" alt="{{ dish.name }}" loading="lazy">
+          <h3>{{ dish.name }}</h3>
+          <p>{{ dish.description }}</p>
+        </a>
       {% endfor %}
     </div>
   </div>

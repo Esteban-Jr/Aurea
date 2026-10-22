@@ -16,18 +16,24 @@
 </nav>
 
 <div class="container">
+  <p class="text-center text-muted small mt-3 mb-0">{% translate "Tap a dish to see more." %}</p>
+
   {% for category in menu %}
     <section class="menu-section" id="{{ category.id }}">
       <h2>{{ category.name }}</h2>
       <div class="divider">◆</div>
-      {% for name, description, image in category.dishes %}
-        <article class="dish">
-          <img src="{{ image }}" alt="{{ name }}" loading="lazy">
-          <div>
-            <h3>{{ name }}</h3>
-            <p>{{ description }}</p>
-          </div>
-        </article>
+      {% for dish in category.dishes %}
+        <button type="button" class="dish" data-dish="{{ dish.slug }}" aria-haspopup="dialog">
+          <img src="{{ dish.image }}" alt="" loading="lazy">
+          <span class="dish-text">
+            <span class="dish-name">{{ dish.name }}</span>
+            <span class="dish-desc">{{ dish.description }}</span>
+            {% if dish.tags %}
+              <span class="dish-tags">{% for tag in dish.tags %}<span class="tag">{{ tag }}</span>{% endfor %}</span>
+            {% endif %}
+          </span>
+          <i class="bi bi-chevron-right dish-more" aria-hidden="true"></i>
+        </button>
       {% endfor %}
     </section>
   {% endfor %}
@@ -36,4 +42,80 @@
     <small>{% translate "Please tell our staff about any allergies before ordering." %}</small>
   </p>
 </div>
+
+<!-- Dish card (one modal, filled in by the script below) -->
+<div class="modal fade dish-modal" id="dishModal" tabindex="-1" aria-labelledby="dishModalName" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{% translate 'Close' %}"></button>
+      <div class="row g-0">
+        <div class="col-md-6">
+          <img class="dish-modal-img" id="dishModalImg" src="" alt="">
+        </div>
+        <div class="col-md-6">
+          <div class="dish-modal-body">
+            <h2 id="dishModalName"></h2>
+            <div class="divider justify-content-start ms-0">◆</div>
+            <p class="dish-modal-desc" id="dishModalDesc"></p>
+            <p id="dishModalStory"></p>
+            <div class="dish-tags mb-3" id="dishModalTags"></div>
+            <div id="dishModalAllergenBox">
+              <h3 class="dish-modal-label">{% translate "Allergens" %}</h3>
+              <p class="mb-1" id="dishModalAllergens"></p>
+            </div>
+            <p class="dish-modal-note">{% translate "Allergen information is a guide. Please always tell our staff about any allergies." %}</p>
+            <a class="btn btn-dark mt-2" href="{% url 'create_bookings' %}">{% translate "Book a table" %}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ dish_data|json_script:"dish-data" }}
+{% translate "No major allergens" as no_allergens %}
+<span hidden id="no-allergens">{{ no_allergens }}</span>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  (function () {
+    const dishes = JSON.parse(document.getElementById('dish-data').textContent);
+    const noAllergens = document.getElementById('no-allergens').textContent;
+    const el = id => document.getElementById(id);
+    const modalEl = el('dishModal');
+    const modal = new bootstrap.Modal(modalEl);
+
+    function show(slug) {
+      const d = dishes[slug];
+      if (!d) return false;
+      el('dishModalImg').src = d.image;
+      el('dishModalImg').alt = d.name;
+      el('dishModalName').textContent = d.name;
+      el('dishModalDesc').textContent = d.description;
+      el('dishModalStory').textContent = d.story;
+      el('dishModalTags').replaceChildren(...d.tags.map(t => {
+        const s = document.createElement('span'); s.className = 'tag'; s.textContent = t; return s;
+      }));
+      el('dishModalAllergens').textContent = d.allergens.length ? d.allergens.join(' · ') : noAllergens;
+      modal.show();
+      history.replaceState(null, '', '#' + slug);   // the link can be shared
+      return true;
+    }
+
+    document.querySelectorAll('[data-dish]').forEach(btn =>
+      btn.addEventListener('click', () => show(btn.dataset.dish)));
+
+    // Closing the card takes the dish out of the address bar again
+    modalEl.addEventListener('hidden.bs.modal', () => {
+      if (dishes[location.hash.slice(1)]) history.replaceState(null, '', location.pathname + location.search);
+    });
+
+    // Opened from a link like /menu/#risotto-al-tartufo (e.g. the home page)
+    const fromLink = location.hash.slice(1);
+    if (dishes[fromLink]) {
+      document.querySelector(`[data-dish="${fromLink}"]`).scrollIntoView({block: 'center'});
+      show(fromLink);
+    }
+  })();
+</script>
 {% endblock %}

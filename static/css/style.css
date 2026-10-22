@@ -401,10 +401,20 @@ textarea.form-control { min-height: 120px; resize: vertical; }
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  padding: 1.1rem 0;
+  width: 100%;
+  padding: 1.1rem .75rem;
+  border: 0;
   border-bottom: 1px dashed var(--line);
+  background: none;
+  text-align: left;
+  color: inherit;
+  border-radius: 10px;
+  transition: background .2s ease;
 }
 .dish:last-child { border-bottom: 0; }
+.dish:hover,
+.dish:focus-visible { background: var(--paper); outline: none; }
+.dish:focus-visible { box-shadow: 0 0 0 2px var(--gold); }
 .dish img {
   flex: 0 0 84px;
   width: 84px;
@@ -412,12 +422,86 @@ textarea.form-control { min-height: 120px; resize: vertical; }
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid var(--gold-pale);
+  transition: transform .3s ease;
 }
-.dish h3 { font-size: 1.45rem; margin: 0 0 .15rem; }
-.dish p { margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.5; }
+.dish:hover img { transform: scale(1.06); }
+.dish-text { flex: 1; display: block; }
+.dish-name {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: .15rem;
+}
+.dish-desc { display: block; color: var(--muted); font-size: .95rem; line-height: 1.5; }
+.dish-more { color: var(--gold); opacity: .5; transition: opacity .2s ease, transform .2s ease; }
+.dish:hover .dish-more { opacity: 1; transform: translateX(3px); }
 @media (max-width: 480px) {
   .dish img { flex-basis: 64px; width: 64px; height: 64px; }
+  .dish { padding: 1rem .25rem; gap: 1rem; }
 }
+
+/* V / VG / GF badges */
+.dish-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .45rem; }
+.tag {
+  display: inline-block;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #4d6b3c;
+  background: #eef3e6;
+  border-radius: 999px;
+  padding: .15rem .6rem;
+}
+
+/* Dish pop-up card */
+.dish-modal .modal-content {
+  border: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--paper);
+}
+.dish-modal .btn-close {
+  position: absolute;
+  top: .9rem;
+  right: .9rem;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, .9);
+  border-radius: 50%;
+  padding: .6rem;
+  opacity: 1;
+}
+.dish-modal-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  max-height: 520px;
+  object-fit: cover;
+}
+@media (max-width: 767.98px) { .dish-modal-img { height: 260px; } }
+.dish-modal-body { padding: 2.25rem 2rem; }
+.dish-modal-body h2 { font-size: 2.3rem; margin: 0; padding-right: 2rem; }
+.dish-modal-body .divider { margin: .9rem 0; max-width: 140px; }
+.dish-modal-desc { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--ink); }
+.dish-modal-label {
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin: 0 0 .25rem;
+}
+.dish-modal-note { font-size: .78rem; color: var(--muted); margin-top: .75rem; }
+.modal-backdrop.show { opacity: .7; }
+
+/* Home: signature dishes link to their card on the menu */
+a.dish-feature { color: inherit; text-decoration: none; }
+a.dish-feature:hover h3 { color: var(--gold-dark); }
 
 /* ---------- Gallery ---------- */
 .gallery-grid {

@@ -74,3 +74,23 @@ class LanguageTests(TestCase):
             for name in ("home", "about", "menu", "faq", "gallery", "review_list", "login", "signup"):
                 with self.subTest(lang=lang, page=name):
                     self.assertEqual(self.client.get(reverse(name)).status_code, 200)
+
+
+class DishCardTests(TestCase):
+    def test_menu_has_card_data_for_every_dish(self):
+        import json
+        response = self.client.get(reverse("menu"))
+        data = json.loads(response.context["dish_data"] and json.dumps(response.context["dish_data"]))
+        self.assertEqual(len(data), 30)
+        risotto = data["risotto-al-tartufo"]
+        self.assertIn("Vegetarian", risotto["tags"])
+        self.assertIn("Milk", risotto["allergens"])
+        self.assertContains(response, 'data-dish="risotto-al-tartufo"')
+        self.assertContains(response, 'id="dish-data"')
+
+    def test_card_text_is_spanish(self):
+        self.client.cookies["django_language"] = "es"
+        data = self.client.get(reverse("menu")).context["dish_data"]
+        self.assertIn("Sin gluten", data["risotto-al-tartufo"]["tags"])
+        self.assertTrue(data["risotto-al-tartufo"]["story"].startswith("Arroz arborio"))
+        self.assertEqual(data["risotto-al-tartufo"]["name"], "Risotto al Tartufo")

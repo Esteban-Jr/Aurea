@@ -14,6 +14,7 @@ Aurea (Django 4.2 restaurant site, repo Esteban-Jr/Aurea, live at aurea.206.189.
 - [x] 3. Local preview works (see "How to preview" below)
 - [x] Bugs 1–14 handled (9 was real: Spanish navbar overflowed at 1024px → menu now collapses below 1200px)
 - [x] 27 tests pass (19 old + 8 new)
+- [x] Extras asked for along the way: slimmer footer, scroll-down arrow on the home page, dish pop-up card on the menu (longer description, V/VG/GF tags, allergens)
 - [ ] Push to GitHub and `deploy aurea` on the server
 - [ ] Pick items from "Things you could add"
 

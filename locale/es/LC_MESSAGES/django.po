@@ -887,3 +887,349 @@ msgstr "Tu reseña fue actualizada."
 #: templates/pages/home.html
 msgid "Scroll down"
 msgstr "Desplázate hacia abajo"
+
+#: templates/pages/menu.html
+msgid "Tap a dish to see more."
+msgstr "Toca un plato para ver más."
+
+#: templates/pages/menu.html
+msgid "Allergens"
+msgstr "Alérgenos"
+
+#: templates/pages/menu.html
+msgid ""
+"Allergen information is a guide. Please always tell our staff about any "
+"allergies."
+msgstr ""
+"La información sobre alérgenos es orientativa. Por favor, informa siempre a "
+"nuestro personal de cualquier alergia."
+
+#: templates/pages/menu.html
+msgid "No major allergens"
+msgstr "Sin alérgenos principales"
+
+#: pages/content.py
+msgid "Vegetarian"
+msgstr "Vegetariano"
+
+#: pages/content.py
+msgid "Vegan"
+msgstr "Vegano"
+
+#: pages/content.py
+msgid "Gluten-free"
+msgstr "Sin gluten"
+
+#: pages/content.py
+msgid "Gluten"
+msgstr "Gluten"
+
+#: pages/content.py
+msgid "Crustaceans"
+msgstr "Crustáceos"
+
+#: pages/content.py
+msgid "Eggs"
+msgstr "Huevo"
+
+#: pages/content.py
+msgid "Fish"
+msgstr "Pescado"
+
+#: pages/content.py
+msgid "Peanuts"
+msgstr "Cacahuetes"
+
+#: pages/content.py
+msgid "Soya"
+msgstr "Soja"
+
+#: pages/content.py
+msgid "Milk"
+msgstr "Lácteos"
+
+#: pages/content.py
+msgid "Nuts"
+msgstr "Frutos secos"
+
+#: pages/content.py
+msgid "Celery"
+msgstr "Apio"
+
+#: pages/content.py
+msgid "Mustard"
+msgstr "Mostaza"
+
+#: pages/content.py
+msgid "Sesame"
+msgstr "Sésamo"
+
+#: pages/content.py
+msgid "Sulphites"
+msgstr "Sulfitos"
+
+#: pages/content.py
+msgid "Lupin"
+msgstr "Altramuces"
+
+#: pages/content.py
+msgid "Molluscs"
+msgstr "Moluscos"
+
+#: pages/content.py
+msgid ""
+"Our bread is baked every morning, grilled over the flame and rubbed with "
+"garlic, then topped with ripe tomatoes marinated in olive oil and torn "
+"basil. A Tuscan farmhouse classic."
+msgstr ""
+"Nuestro pan se hornea cada mañana, se tuesta a la llama y se frota con ajo; "
+"luego lo cubrimos con tomates maduros marinados en aceite de oliva y "
+"albahaca fresca. Un clásico de las granjas de la Toscana."
+
+#: pages/content.py
+msgid ""
+"Prime beef tenderloin, chilled and sliced paper-thin, dressed with lemon, "
+"peppery rocket, aged Parmigiano Reggiano and a few drops of black truffle "
+"oil. The dish was created in Venice in 1950."
+msgstr ""
+"Solomillo de res de primera, frío y cortado finísimo, aliñado con limón, "
+"rúcula, Parmigiano Reggiano añejo y unas gotas de aceite de trufa negra. "
+"Este plato nació en Venecia en 1950."
+
+#: pages/content.py
+msgid ""
+"Sicily’s favourite street food: saffron risotto shaped by hand around a "
+"heart of melting mozzarella, rolled in breadcrumbs and fried until golden."
+msgstr ""
+"La comida callejera favorita de Sicilia: risotto de azafrán formado a mano "
+"alrededor de un corazón de mozzarella fundida, rebozado en pan rallado y "
+"frito hasta dorarse."
+
+#: pages/content.py
+msgid ""
+"A tribute to the island of Capri in the colours of the Italian flag: creamy "
+"buffalo mozzarella from Campania, heirloom tomatoes and basil, finished with"
+" pearls of aged balsamic from Modena."
+msgstr ""
+"Un homenaje a la isla de Capri con los colores de la bandera italiana: "
+"mozzarella de búfala de Campania, tomates tradicionales y albahaca, con "
+"perlas de balsámico añejo de Módena."
+
+#: pages/content.py
+msgid ""
+"A sharing board for the table: prosciutto di Parma, salame and mortadella, "
+"aged pecorino and gorgonzola, marinated olives and crisp grissini."
+msgstr ""
+"Una tabla para compartir: prosciutto di Parma, salame y mortadela, pecorino "
+"añejo y gorgonzola, aceitunas marinadas y grissini crujientes."
+
+#: pages/content.py
+msgid ""
+"Tender squid dusted in seasoned flour and fried in seconds so it stays light"
+" and crisp, served the Neapolitan way with lemon and a garlicky lemon aioli."
+msgstr ""
+"Calamar tierno pasado por harina sazonada y frito en segundos para que quede"
+" ligero y crujiente, servido al estilo napolitano con limón y alioli de "
+"limón."
+
+#: pages/content.py
+msgid ""
+"Our ragù simmers for four hours with beef, pork, vegetables, red wine and a "
+"splash of milk, just like in Bologna. Tossed with egg tagliatelle rolled by "
+"hand every morning."
+msgstr ""
+"Nuestro ragú se cocina cuatro horas con res, cerdo, verduras, vino tinto y "
+"un chorrito de leche, como en Bolonia. Lo servimos con tagliatelle de huevo "
+"hechos a mano cada mañana."
+
+#: pages/content.py
+msgid ""
+"Arborio rice stirred slowly with white wine and vegetable stock, finished "
+"with butter, Parmigiano and shavings of black truffle. Patience in a bowl."
+msgstr ""
+"Arroz arborio removido lentamente con vino blanco y caldo de verduras, "
+"terminado con mantequilla, Parmigiano y láminas de trufa negra. Paciencia en"
+" un plato."
+
+#: pages/content.py
+msgid ""
+"Mediterranean sea bass grilled skin-side down until crisp, with lemon butter"
+" and fennel roasted until sweet and caramelised."
+msgstr ""
+"Lubina mediterránea a la parrilla por el lado de la piel hasta que queda "
+"crujiente, con mantequilla de limón e hinojo asado hasta caramelizarse."
+
+#: pages/content.py
+msgid ""
+"Chicken breast pounded thin, breaded and pan-fried, then baked under tomato "
+"sauce, mozzarella and Parmigiano until bubbling. Comfort food from southern "
+"Italy."
+msgstr ""
+"Pechuga de pollo aplanada, empanizada y dorada, luego horneada con salsa de "
+"tomate, mozzarella y Parmigiano hasta gratinar. Comida reconfortante del sur"
+" de Italia."
+
+#: pages/content.py
+msgid ""
+"Veal shank braised slowly in white wine and vegetables until it falls from "
+"the bone, served with saffron risotto and a fresh gremolata of lemon zest, "
+"parsley and garlic."
+msgstr ""
+"Jarrete de ternera estofado lentamente en vino blanco y verduras hasta que "
+"se desprende del hueso, con risotto de azafrán y gremolata fresca de limón, "
+"perejil y ajo."
+
+#: pages/content.py
+msgid ""
+"Linguine tossed with clams, mussels, prawns and squid in white wine, garlic,"
+" chilli and parsley: the taste of a summer evening on the Amalfi coast."
+msgstr ""
+"Linguine con almejas, mejillones, camarones y calamares en vino blanco, ajo,"
+" guindilla y perejil: el sabor de una tarde de verano en la costa de Amalfi."
+
+#: pages/content.py
+msgid ""
+"Savoiardi biscuits dipped in fresh espresso, layered with whipped "
+"mascarpone, rested overnight and dusted with cocoa. Its name means “pick me "
+"up”."
+msgstr ""
+"Bizcochos savoiardi mojados en espresso, en capas con crema de mascarpone, "
+"reposados toda la noche y espolvoreados con cacao. Su nombre significa "
+"“levántame el ánimo”."
+
+#: pages/content.py
+msgid ""
+"“Cooked cream” from Piedmont: cream gently set with real vanilla, with a "
+"sharp coulis of wild berries."
+msgstr ""
+"“Nata cocida” del Piamonte: crema cuajada suavemente con vainilla natural, "
+"con un coulis ácido de frutos rojos."
+
+#: pages/content.py
+msgid ""
+"Crisp pastry tubes filled to order, so they never go soft, with sweet "
+"ricotta, candied orange and a sprinkle of pistachio."
+msgstr ""
+"Canutillos crujientes rellenos al momento, para que nunca se ablanden, con "
+"ricotta dulce, naranja confitada y un toque de pistacho."
+
+#: pages/content.py
+msgid ""
+"Simple and perfect: a scoop of vanilla gelato “drowned” at the table in a "
+"shot of hot espresso."
+msgstr ""
+"Sencillo y perfecto: una bola de helado de vainilla “ahogada” en la mesa con"
+" un espresso caliente."
+
+#: pages/content.py
+msgid ""
+"Born by happy accident in Capri when a baker forgot the flour: a rich, fudgy"
+" cake of dark chocolate and ground almonds."
+msgstr ""
+"Nació por un feliz accidente en Capri, cuando un pastelero olvidó la harina:"
+" una torta densa y jugosa de chocolate negro y almendra molida."
+
+#: pages/content.py
+msgid ""
+"Three scoops from our daily selection, churned in small batches. Ask for "
+"today’s flavours; pistachio and stracciatella are guest favourites."
+msgstr ""
+"Tres bolas de nuestra selección del día, hechas en pequeñas tandas. Pregunta"
+" por los sabores de hoy; el pistacho y la stracciatella son los favoritos."
+
+#: pages/content.py
+msgid ""
+"Light, airy Ligurian focaccia, dimpled by hand, soaked with olive oil and "
+"baked with rosemary and sea salt."
+msgstr ""
+"Focaccia ligur ligera y esponjosa, marcada a mano, bañada en aceite de oliva"
+" y horneada con romero y sal marina."
+
+#: pages/content.py
+msgid ""
+"Potato wedges roasted until crisp, then tossed with truffle salt and fresh "
+"herbs."
+msgstr ""
+"Gajos de papa asados hasta quedar crujientes, con sal de trufa y hierbas "
+"frescas."
+
+#: pages/content.py
+msgid ""
+"Courgette, aubergine, peppers and red onion, chargrilled and dressed with "
+"olive oil, garlic and fresh herbs."
+msgstr ""
+"Calabacín, berenjena, pimientos y cebolla morada a la brasa, aliñados con "
+"aceite de oliva, ajo y hierbas frescas."
+
+#: pages/content.py
+msgid ""
+"Golden cornmeal cooked slowly and finished with butter and Parmigiano, a "
+"northern Italian classic."
+msgstr ""
+"Harina de maíz cocinada lentamente y terminada con mantequilla y Parmigiano,"
+" un clásico del norte de Italia."
+
+#: pages/content.py
+msgid ""
+"Mushrooms sautéed in olive oil with garlic and parsley. “Trifolati” means "
+"cooked the way you would cook truffles."
+msgstr ""
+"Champiñones salteados en aceite de oliva con ajo y perejil. “Trifolati” "
+"significa cocinados como se cocina la trufa."
+
+#: pages/content.py
+msgid ""
+"A basket of our breads baked that morning, with extra virgin olive oil and "
+"aged balsamic for dipping."
+msgstr ""
+"Una cesta de nuestros panes horneados esa misma mañana, con aceite de oliva "
+"virgen extra y balsámico añejo para mojar."
+
+#: pages/content.py
+msgid ""
+"From the hills of Valdobbiadene in the Veneto: fine bubbles with notes of "
+"green apple and white flowers. The perfect start to a meal."
+msgstr ""
+"De las colinas de Valdobbiadene, en el Véneto: burbuja fina con notas de "
+"manzana verde y flores blancas. El comienzo perfecto."
+
+#: pages/content.py
+msgid ""
+"Fresh and dry, with hints of pear and citrus. A lovely match for seafood and"
+" light pasta."
+msgstr ""
+"Fresco y seco, con notas de pera y cítricos. Ideal con mariscos y pastas "
+"ligeras."
+
+#: pages/content.py
+msgid ""
+"Sangiovese from the heart of Tuscany, aged at least two years: cherry, "
+"leather and spice. Made for our ragù and grilled meats."
+msgstr ""
+"Sangiovese del corazón de la Toscana, con al menos dos años de crianza: "
+"cereza, cuero y especias. Hecho para nuestro ragú y las carnes a la "
+"parrilla."
+
+#: pages/content.py
+msgid ""
+"Nebbiolo from Piedmont, aged at least three years. Powerful and elegant, "
+"with notes of roses and dark cherry."
+msgstr ""
+"Nebbiolo del Piamonte, con al menos tres años de crianza. Potente y "
+"elegante, con notas de rosas y cereza negra."
+
+#: pages/content.py
+msgid ""
+"A Sicilian herbal liqueur made since 1868, bittersweet with orange, "
+"liquorice and herbs. Served after dinner."
+msgstr ""
+"Licor siciliano de hierbas elaborado desde 1868, agridulce, con naranja, "
+"regaliz y hierbas. Se sirve después de cenar."
+
+#: pages/content.py
+msgid ""
+"Made by steeping Sorrento lemon peel in alcohol and sugar. Served ice-cold "
+"to finish the meal."
+msgstr ""
+"Elaborado macerando cáscara de limón de Sorrento en alcohol y azúcar. Se "
+"sirve muy frío para terminar la comida."
