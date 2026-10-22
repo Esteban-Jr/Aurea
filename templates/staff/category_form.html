@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Category" %} | Aurea{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% if category %}
+    {% include "includes/page_header.html" with eyebrow=_("Manage menu") title=category.name %}
+  {% else %}
+    {% include "includes/page_header.html" with eyebrow=_("Manage menu") title=_("Add a Category") %}
+  {% endif %}
+  <form method="post" class="panel panel-narrow">
+    {% csrf_token %}
+    {% include "includes/form_fields.html" %}
+    <div class="text-center mt-3">
+      <button type="submit" class="btn btn-dark">{% translate "Save" %}</button>
+      <a href="{% url 'manage_menu' %}" class="btn btn-outline-dark ms-2">{% translate "Cancel" %}</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

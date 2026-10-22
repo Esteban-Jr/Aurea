@@ -16,6 +16,7 @@ Aurea (Django 4.2 restaurant site, repo Esteban-Jr/Aurea, live at aurea.206.189.
 - [x] 27 tests pass (19 old + 8 new)
 - [x] Extras asked for along the way: slimmer footer, scroll-down arrow on the home page, dish pop-up card on the menu (longer description, V/VG/GF tags, allergens)
 - [x] Phone numbers from any country: prefix picker at sign-up, edit profile and booking (idea 5 below); dish card button centred
+- [x] Staff tools: menu in the database, Manage menu + Bookings pages, Admin panel button on the profile, “Back to website” in the admin (idea 4's staff view)
 - [ ] Push to GitHub and `deploy aurea` on the server
 - [ ] Pick items from "Things you could add"
 

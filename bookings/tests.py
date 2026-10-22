@@ -107,3 +107,41 @@ class BookingTests(TestCase):
             "guests": 3, "phone_number": "7123456789", "email": "ana@example.com",
         })
         self.assertEqual(Booking.objects.get().phone_number, "+447123456789")
+
+
+class StaffBookingTests(TestCase):
+    def setUp(self):
+        self.staff = User.objects.create_user("host", password="pass12345!", is_staff=True)
+        self.guest = User.objects.create_user("guest", password="pass12345!")
+        self.booking = Booking.objects.create(
+            user=self.guest, date=date.today() + timedelta(days=1), time="19:00", guests=2,
+            name="Laura Pérez", email="laura@example.com", phone_number="+573001234567",
+        )
+        Booking.objects.create(user=self.guest, date=date.today() - timedelta(days=3), time="13:00", guests=4,
+                               name="Old Booking", email="old@example.com", phone_number="+447123456789")
+        self.client.login(username="host", password="pass12345!")
+
+    def test_list_shows_upcoming_by_default_and_past_on_request(self):
+        response = self.client.get(reverse("staff_bookings"))
+        self.assertContains(response, "Laura Pérez")
+        self.assertNotContains(response, "Old Booking")
+        self.assertContains(self.client.get(reverse("staff_bookings") + "?show=past"), "Old Booking")
+
+    def test_search(self):
+        response = self.client.get(reverse("staff_bookings") + "?show=all&q=laura")
+        self.assertContains(response, "Laura Pérez")
+        self.assertNotContains(response, "Old Booking")
+
+    def test_staff_can_edit_someone_elses_booking(self):
+        response = self.client.post(reverse("staff_booking_edit", args=[self.booking.pk]), {
+            "name": "Laura Pérez", "date": self.booking.date.isoformat(), "time": "20:30", "guests": 6,
+            "phone_country": "CO", "phone_number": "3001234567", "email": "laura@example.com",
+        })
+        self.assertRedirects(response, reverse("staff_bookings"))
+        self.booking.refresh_from_db()
+        self.assertEqual(self.booking.guests, 6)
+        self.assertEqual(self.booking.user, self.guest)   # still the guest's booking
+
+    def test_staff_can_cancel_a_booking(self):
+        self.client.post(reverse("staff_booking_cancel", args=[self.booking.pk]))
+        self.assertFalse(Booking.objects.filter(pk=self.booking.pk).exists())

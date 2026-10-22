@@ -11,20 +11,28 @@
 <!-- Jump to a section -->
 <nav class="menu-tabs" aria-label="{% translate 'Menu sections' %}">
   {% for category in menu %}
-    <a href="#{{ category.id }}">{{ category.name }}</a>
+    <a href="#{{ category.slug }}">{{ category.name }}</a>
   {% endfor %}
 </nav>
 
 <div class="container">
+  {% if user.is_staff %}
+    <div class="staff-bar">
+      <i class="bi bi-person-badge"></i> {% translate "You’re signed in as staff." %}
+      <a class="btn btn-sm btn-gold" href="{% url 'manage_menu' %}">{% translate "Manage menu" %}</a>
+      <a class="btn btn-sm btn-outline-dark" href="{% url 'dish_create' %}"><i class="bi bi-plus-lg"></i> {% translate "Add a dish" %}</a>
+    </div>
+  {% endif %}
   <p class="text-center text-muted small mt-3 mb-0">{% translate "Tap a dish to see more." %}</p>
 
   {% for category in menu %}
-    <section class="menu-section" id="{{ category.id }}">
+    <section class="menu-section" id="{{ category.slug }}">
       <h2>{{ category.name }}</h2>
       <div class="divider">◆</div>
-      {% for dish in category.dishes %}
+      {% for dish in category.visible_dishes %}
+        <div class="dish-row">
         <button type="button" class="dish" data-dish="{{ dish.slug }}" aria-haspopup="dialog">
-          <img src="{{ dish.image }}" alt="" loading="lazy">
+          <img src="{{ dish.photo }}" alt="" loading="lazy">
           <span class="dish-text">
             <span class="dish-name">{{ dish.name }}</span>
             <span class="dish-desc">{{ dish.description }}</span>
@@ -34,6 +42,10 @@
           </span>
           <i class="bi bi-chevron-right dish-more" aria-hidden="true"></i>
         </button>
+        {% if user.is_staff %}
+          <a class="dish-edit" href="{% url 'dish_edit' dish.pk %}?next={% url 'menu' %}%23{{ category.slug }}" title="{% translate 'Edit' %} {{ dish.name }}" aria-label="{% translate 'Edit' %} {{ dish.name }}"><i class="bi bi-pencil"></i></a>
+        {% endif %}
+        </div>
       {% endfor %}
     </section>
   {% endfor %}

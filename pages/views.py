@@ -1,33 +1,35 @@
+from django.db.models import Prefetch
 from django.shortcuts import render
 
-from .content import FAQ, GALLERY, MENU, SIGNATURE
-
-
-def all_dishes():
-    return [d for category in MENU for d in category["dishes"]]
+from .content import FAQ, GALLERY
+from .models import Category, Dish
 
 
 def home(request):
-    dishes = {d["name"]: d for d in all_dishes()}
-    return render(request, "pages/home.html", {"signature": [dishes[n] for n in SIGNATURE]})
+    signature = Dish.objects.filter(available=True, featured=True)[:3]
+    return render(request, "pages/home.html", {"signature": signature})
 
 def about(request):
     return render(request, "pages/about.html")
 
 def menu(request):
-    # The pop-up card reads its text from this JSON (strings already in the visitor's language)
+    categories = Category.objects.prefetch_related(
+        Prefetch("dishes", queryset=Dish.objects.filter(available=True), to_attr="visible_dishes")
+    )
+    menu = [c for c in categories if c.visible_dishes]
+    # The pop-up card reads its text from this JSON (in the visitor's language)
     dish_data = {
-        d["slug"]: {
-            "name": d["name"],
-            "description": str(d["description"]),
-            "story": str(d["story"]),
-            "image": d["image"],
-            "tags": [str(t) for t in d["tags"]],
-            "allergens": [str(a) for a in d["allergens"]],
+        d.slug: {
+            "name": d.name,
+            "description": d.description,
+            "story": d.story,
+            "image": d.photo,
+            "tags": d.tags,
+            "allergens": d.allergen_labels,
         }
-        for d in all_dishes()
+        for c in menu for d in c.visible_dishes
     }
-    return render(request, "pages/menu.html", {"menu": MENU, "dish_data": dish_data})
+    return render(request, "pages/menu.html", {"menu": menu, "dish_data": dish_data})
 
 def faq(request):
     return render(request, "pages/faq.html", {"faq": FAQ})

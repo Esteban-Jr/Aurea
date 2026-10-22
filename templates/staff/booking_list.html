@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Bookings" %} | Aurea{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% include "includes/page_header.html" with eyebrow=_("Staff") title=_("Bookings") %}
+
+  <p class="text-center mb-4">
+    {% blocktranslate trimmed count n=today_count with guests=today_guests %}
+      Today: <strong>{{ n }} booking</strong>, {{ guests }} guests in total.
+    {% plural %}
+      Today: <strong>{{ n }} bookings</strong>, {{ guests }} guests in total.
+    {% endblocktranslate %}
+  </p>
+
+  <form method="get" class="panel panel-full staff-filters mb-4">
+    <div class="btn-group flex-wrap" role="group" aria-label="{% translate 'Show' %}">
+      {% for value, label in filters %}
+        <a class="btn btn-sm {% if show == value and not on %}btn-dark{% else %}btn-outline-dark{% endif %}"
+           href="?show={{ value }}{% if q %}&amp;q={{ q|urlencode }}{% endif %}">{{ label }}</a>
+      {% endfor %}
+    </div>
+    <input type="hidden" name="show" value="{{ show }}">
+    <label class="visually-hidden" for="on">{% translate "Date" %}</label>
+    <input class="form-control" type="date" id="on" name="date" value="{{ on }}">
+    <label class="visually-hidden" for="q">{% translate "Search" %}</label>
+    <input class="form-control" type="search" id="q" name="q" value="{{ q }}" placeholder="{% translate 'Name, email or phone' %}">
+    <button class="btn btn-sm btn-gold" type="submit"><i class="bi bi-search"></i> {% translate "Search" %}</button>
+    {% if on or q %}<a class="btn btn-sm btn-outline-dark" href="?show={{ show }}">{% translate "Clear" %}</a>{% endif %}
+  </form>
+
+  <div class="panel panel-full p-0 overflow-hidden">
+    <div class="table-responsive">
+      <table class="table staff-table mb-0">
+        <thead>
+          <tr>
+            <th>{% translate "Date" %}</th>
+            <th>{% translate "Time" %}</th>
+            <th>{% translate "Name" %}</th>
+            <th class="text-center">{% translate "Guests" %}</th>
+            <th>{% translate "Contact" %}</th>
+            <th>{% translate "Special requests" %}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for booking in bookings %}
+            <tr>
+              <td class="text-nowrap">{{ booking.date|date:"D j M Y" }}</td>
+              <td>{{ booking.time|time:"H:i" }}</td>
+              <td>{{ booking.name }}<div class="text-muted small">@{{ booking.user.username }}</div></td>
+              <td class="text-center">{{ booking.guests }}</td>
+              <td class="small">
+                <a href="tel:{{ booking.full_phone }}">{{ booking.pretty_phone }}</a><br>
+                <a href="mailto:{{ booking.email }}">{{ booking.email }}</a>
+              </td>
+              <td class="small">{{ booking.special_requests|default:"—" }}</td>
+              <td class="text-end text-nowrap">
+                <a class="btn btn-sm btn-gold" href="{% url 'staff_booking_edit' booking.pk %}?next={{ request.get_full_path|urlencode }}" aria-label="{% translate 'Edit' %}"><i class="bi bi-pencil"></i></a>
+                <a class="btn btn-sm btn-outline-danger" href="{% url 'staff_booking_cancel' booking.pk %}" aria-label="{% translate 'Cancel booking' %}"><i class="bi bi-x-lg"></i></a>
+              </td>
+            </tr>
+          {% empty %}
+            <tr><td colspan="7" class="text-center text-muted py-4">{% translate "No bookings to show." %}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

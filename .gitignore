@@ -11,3 +11,6 @@ cloudinary_python.txt
 db.sqlite3
 .venv/
 staticfiles/
+
+# Uploaded dish photos (local preview only; the server stores them on Cloudinary)
+media/

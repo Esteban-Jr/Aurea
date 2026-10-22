@@ -620,26 +620,6 @@ msgid "Enter your last name"
 msgstr "Escribe tu apellido"
 
 #: pages/content.py
-msgid "Entrées"
-msgstr "Entrantes"
-
-#: pages/content.py
-msgid "Mains"
-msgstr "Platos principales"
-
-#: pages/content.py
-msgid "Desserts"
-msgstr "Postres"
-
-#: pages/content.py
-msgid "Extras"
-msgstr "Acompañamientos"
-
-#: pages/content.py
-msgid "Drinks"
-msgstr "Bebidas"
-
-#: pages/content.py
 msgid "What type of cuisine do you serve?"
 msgstr "¿Qué tipo de cocina ofrecen?"
 
@@ -726,147 +706,6 @@ msgstr "¿Tienen estacionamiento?"
 #: pages/content.py
 msgid "Yes, we have free parking available for all our guests."
 msgstr "Sí, tenemos estacionamiento gratuito para todos nuestros clientes."
-
-#: pages/content.py
-msgid ""
-"Toasted rustic bread with marinated tomatoes, basil, and a drizzle of extra "
-"virgin olive oil."
-msgstr ""
-"Pan rústico tostado con tomates marinados, albahaca y un chorrito de aceite "
-"de oliva virgen extra."
-
-#: pages/content.py
-msgid ""
-"Thinly sliced beef tenderloin with arugula, parmesan shavings, and truffle "
-"oil."
-msgstr ""
-"Finas láminas de solomillo de res con rúcula, lascas de parmesano y aceite "
-"de trufa."
-
-#: pages/content.py
-msgid "Golden risotto croquettes filled with mozzarella and herbs."
-msgstr "Croquetas doradas de risotto rellenas de mozzarella y hierbas."
-
-#: pages/content.py
-msgid ""
-"Fresh buffalo mozzarella layered with heirloom tomatoes and basil, finished "
-"with balsamic pearls."
-msgstr ""
-"Mozzarella de búfala fresca con tomates tradicionales y albahaca, terminada "
-"con perlas de balsámico."
-
-#: pages/content.py
-msgid ""
-"A curated selection of Italian cured meats, artisanal cheeses, and olives."
-msgstr "Una selección de embutidos italianos, quesos artesanales y aceitunas."
-
-#: pages/content.py
-msgid "Lightly fried calamari with lemon aioli and fresh herbs."
-msgstr "Calamares ligeramente fritos con alioli de limón y hierbas frescas."
-
-#: pages/content.py
-msgid "Fresh ribbon pasta with a slow-cooked beef ragù."
-msgstr "Pasta fresca en cintas con ragú de res cocinado a fuego lento."
-
-#: pages/content.py
-msgid "Creamy arborio rice infused with black truffle and parmesan."
-msgstr "Cremoso arroz arborio con trufa negra y parmesano."
-
-#: pages/content.py
-msgid "Grilled Mediterranean sea bass with lemon butter and roasted fennel."
-msgstr ""
-"Lubina mediterránea a la parrilla con mantequilla de limón e hinojo asado."
-
-#: pages/content.py
-msgid ""
-"Breaded chicken breast with mozzarella, parmesan, and a light tomato sauce."
-msgstr ""
-"Pechuga de pollo empanizada con mozzarella, parmesano y una ligera salsa de "
-"tomate."
-
-#: pages/content.py
-msgid "Braised veal shank with saffron risotto and gremolata."
-msgstr "Jarrete de ternera estofado con risotto de azafrán y gremolata."
-
-#: pages/content.py
-msgid "Pasta with clams, mussels, shrimp, and calamari in a white wine sauce."
-msgstr ""
-"Pasta con almejas, mejillones, camarones y calamares en salsa de vino "
-"blanco."
-
-#: pages/content.py
-msgid "Layers of espresso-soaked ladyfingers with mascarpone cream and cocoa."
-msgstr ""
-"Capas de bizcochos bañados en espresso con crema de mascarpone y cacao."
-
-#: pages/content.py
-msgid "Silky vanilla cream topped with a wild berry coulis."
-msgstr "Suave crema de vainilla con coulis de frutos rojos."
-
-#: pages/content.py
-msgid "Crisp pastry shells filled with ricotta cream and candied orange."
-msgstr ""
-"Crujientes canutillos rellenos de crema de ricotta y naranja confitada."
-
-#: pages/content.py
-msgid "Vanilla gelato drowned in hot espresso."
-msgstr "Helado de vainilla bañado en espresso caliente."
-
-#: pages/content.py
-msgid "Flourless chocolate and almond cake with powdered sugar."
-msgstr "Torta de chocolate y almendras sin harina, con azúcar glas."
-
-#: pages/content.py
-msgid "Chef’s selection of artisanal Italian gelato flavors."
-msgstr "Selección del chef de helados artesanales italianos."
-
-#: pages/content.py
-msgid "Warm rosemary focaccia with olive oil."
-msgstr "Focaccia tibia de romero con aceite de oliva."
-
-#: pages/content.py
-msgid "Truffle-dusted potato wedges."
-msgstr "Gajos de papa con polvo de trufa."
-
-#: pages/content.py
-msgid "Grilled seasonal vegetables."
-msgstr "Verduras de temporada a la parrilla."
-
-#: pages/content.py
-msgid "Creamy parmesan polenta."
-msgstr "Polenta cremosa con parmesano."
-
-#: pages/content.py
-msgid "Sautéed mushrooms with garlic, parsley, and olive oil."
-msgstr "Champiñones salteados con ajo, perejil y aceite de oliva."
-
-#: pages/content.py
-msgid "Assorted house bread with dipping oils."
-msgstr "Surtido de panes de la casa con aceites para mojar."
-
-#: pages/content.py
-msgid "Sparkling, crisp, refreshing."
-msgstr "Espumoso, fresco y refrescante."
-
-#: pages/content.py
-msgid "Classic light Italian white."
-msgstr "Clásico vino blanco italiano, ligero."
-
-#: pages/content.py
-msgid "Robust Tuscan red."
-msgstr "Tinto toscano con cuerpo."
-
-#: pages/content.py
-msgid "The “King of Wines” from Piedmont."
-msgstr "El “Rey de los vinos” del Piamonte."
-
-#: pages/content.py
-msgid "Traditional Sicilian digestif."
-msgstr "Digestivo tradicional siciliano."
-
-#: pages/content.py
-msgid "Iconic lemon liqueur from the Amalfi coast."
-msgstr "El icónico licor de limón de la costa de Amalfi."
 
 #: reviews/forms.py
 msgid "Write your review here..."
@@ -972,264 +811,6 @@ msgstr "Altramuces"
 msgid "Molluscs"
 msgstr "Moluscos"
 
-#: pages/content.py
-msgid ""
-"Our bread is baked every morning, grilled over the flame and rubbed with "
-"garlic, then topped with ripe tomatoes marinated in olive oil and torn "
-"basil. A Tuscan farmhouse classic."
-msgstr ""
-"Nuestro pan se hornea cada mañana, se tuesta a la llama y se frota con ajo; "
-"luego lo cubrimos con tomates maduros marinados en aceite de oliva y "
-"albahaca fresca. Un clásico de las granjas de la Toscana."
-
-#: pages/content.py
-msgid ""
-"Prime beef tenderloin, chilled and sliced paper-thin, dressed with lemon, "
-"peppery rocket, aged Parmigiano Reggiano and a few drops of black truffle "
-"oil. The dish was created in Venice in 1950."
-msgstr ""
-"Solomillo de res de primera, frío y cortado finísimo, aliñado con limón, "
-"rúcula, Parmigiano Reggiano añejo y unas gotas de aceite de trufa negra. "
-"Este plato nació en Venecia en 1950."
-
-#: pages/content.py
-msgid ""
-"Sicily’s favourite street food: saffron risotto shaped by hand around a "
-"heart of melting mozzarella, rolled in breadcrumbs and fried until golden."
-msgstr ""
-"La comida callejera favorita de Sicilia: risotto de azafrán formado a mano "
-"alrededor de un corazón de mozzarella fundida, rebozado en pan rallado y "
-"frito hasta dorarse."
-
-#: pages/content.py
-msgid ""
-"A tribute to the island of Capri in the colours of the Italian flag: creamy "
-"buffalo mozzarella from Campania, heirloom tomatoes and basil, finished with"
-" pearls of aged balsamic from Modena."
-msgstr ""
-"Un homenaje a la isla de Capri con los colores de la bandera italiana: "
-"mozzarella de búfala de Campania, tomates tradicionales y albahaca, con "
-"perlas de balsámico añejo de Módena."
-
-#: pages/content.py
-msgid ""
-"A sharing board for the table: prosciutto di Parma, salame and mortadella, "
-"aged pecorino and gorgonzola, marinated olives and crisp grissini."
-msgstr ""
-"Una tabla para compartir: prosciutto di Parma, salame y mortadela, pecorino "
-"añejo y gorgonzola, aceitunas marinadas y grissini crujientes."
-
-#: pages/content.py
-msgid ""
-"Tender squid dusted in seasoned flour and fried in seconds so it stays light"
-" and crisp, served the Neapolitan way with lemon and a garlicky lemon aioli."
-msgstr ""
-"Calamar tierno pasado por harina sazonada y frito en segundos para que quede"
-" ligero y crujiente, servido al estilo napolitano con limón y alioli de "
-"limón."
-
-#: pages/content.py
-msgid ""
-"Our ragù simmers for four hours with beef, pork, vegetables, red wine and a "
-"splash of milk, just like in Bologna. Tossed with egg tagliatelle rolled by "
-"hand every morning."
-msgstr ""
-"Nuestro ragú se cocina cuatro horas con res, cerdo, verduras, vino tinto y "
-"un chorrito de leche, como en Bolonia. Lo servimos con tagliatelle de huevo "
-"hechos a mano cada mañana."
-
-#: pages/content.py
-msgid ""
-"Arborio rice stirred slowly with white wine and vegetable stock, finished "
-"with butter, Parmigiano and shavings of black truffle. Patience in a bowl."
-msgstr ""
-"Arroz arborio removido lentamente con vino blanco y caldo de verduras, "
-"terminado con mantequilla, Parmigiano y láminas de trufa negra. Paciencia en"
-" un plato."
-
-#: pages/content.py
-msgid ""
-"Mediterranean sea bass grilled skin-side down until crisp, with lemon butter"
-" and fennel roasted until sweet and caramelised."
-msgstr ""
-"Lubina mediterránea a la parrilla por el lado de la piel hasta que queda "
-"crujiente, con mantequilla de limón e hinojo asado hasta caramelizarse."
-
-#: pages/content.py
-msgid ""
-"Chicken breast pounded thin, breaded and pan-fried, then baked under tomato "
-"sauce, mozzarella and Parmigiano until bubbling. Comfort food from southern "
-"Italy."
-msgstr ""
-"Pechuga de pollo aplanada, empanizada y dorada, luego horneada con salsa de "
-"tomate, mozzarella y Parmigiano hasta gratinar. Comida reconfortante del sur"
-" de Italia."
-
-#: pages/content.py
-msgid ""
-"Veal shank braised slowly in white wine and vegetables until it falls from "
-"the bone, served with saffron risotto and a fresh gremolata of lemon zest, "
-"parsley and garlic."
-msgstr ""
-"Jarrete de ternera estofado lentamente en vino blanco y verduras hasta que "
-"se desprende del hueso, con risotto de azafrán y gremolata fresca de limón, "
-"perejil y ajo."
-
-#: pages/content.py
-msgid ""
-"Linguine tossed with clams, mussels, prawns and squid in white wine, garlic,"
-" chilli and parsley: the taste of a summer evening on the Amalfi coast."
-msgstr ""
-"Linguine con almejas, mejillones, camarones y calamares en vino blanco, ajo,"
-" guindilla y perejil: el sabor de una tarde de verano en la costa de Amalfi."
-
-#: pages/content.py
-msgid ""
-"Savoiardi biscuits dipped in fresh espresso, layered with whipped "
-"mascarpone, rested overnight and dusted with cocoa. Its name means “pick me "
-"up”."
-msgstr ""
-"Bizcochos savoiardi mojados en espresso, en capas con crema de mascarpone, "
-"reposados toda la noche y espolvoreados con cacao. Su nombre significa "
-"“levántame el ánimo”."
-
-#: pages/content.py
-msgid ""
-"“Cooked cream” from Piedmont: cream gently set with real vanilla, with a "
-"sharp coulis of wild berries."
-msgstr ""
-"“Nata cocida” del Piamonte: crema cuajada suavemente con vainilla natural, "
-"con un coulis ácido de frutos rojos."
-
-#: pages/content.py
-msgid ""
-"Crisp pastry tubes filled to order, so they never go soft, with sweet "
-"ricotta, candied orange and a sprinkle of pistachio."
-msgstr ""
-"Canutillos crujientes rellenos al momento, para que nunca se ablanden, con "
-"ricotta dulce, naranja confitada y un toque de pistacho."
-
-#: pages/content.py
-msgid ""
-"Simple and perfect: a scoop of vanilla gelato “drowned” at the table in a "
-"shot of hot espresso."
-msgstr ""
-"Sencillo y perfecto: una bola de helado de vainilla “ahogada” en la mesa con"
-" un espresso caliente."
-
-#: pages/content.py
-msgid ""
-"Born by happy accident in Capri when a baker forgot the flour: a rich, fudgy"
-" cake of dark chocolate and ground almonds."
-msgstr ""
-"Nació por un feliz accidente en Capri, cuando un pastelero olvidó la harina:"
-" una torta densa y jugosa de chocolate negro y almendra molida."
-
-#: pages/content.py
-msgid ""
-"Three scoops from our daily selection, churned in small batches. Ask for "
-"today’s flavours; pistachio and stracciatella are guest favourites."
-msgstr ""
-"Tres bolas de nuestra selección del día, hechas en pequeñas tandas. Pregunta"
-" por los sabores de hoy; el pistacho y la stracciatella son los favoritos."
-
-#: pages/content.py
-msgid ""
-"Light, airy Ligurian focaccia, dimpled by hand, soaked with olive oil and "
-"baked with rosemary and sea salt."
-msgstr ""
-"Focaccia ligur ligera y esponjosa, marcada a mano, bañada en aceite de oliva"
-" y horneada con romero y sal marina."
-
-#: pages/content.py
-msgid ""
-"Potato wedges roasted until crisp, then tossed with truffle salt and fresh "
-"herbs."
-msgstr ""
-"Gajos de papa asados hasta quedar crujientes, con sal de trufa y hierbas "
-"frescas."
-
-#: pages/content.py
-msgid ""
-"Courgette, aubergine, peppers and red onion, chargrilled and dressed with "
-"olive oil, garlic and fresh herbs."
-msgstr ""
-"Calabacín, berenjena, pimientos y cebolla morada a la brasa, aliñados con "
-"aceite de oliva, ajo y hierbas frescas."
-
-#: pages/content.py
-msgid ""
-"Golden cornmeal cooked slowly and finished with butter and Parmigiano, a "
-"northern Italian classic."
-msgstr ""
-"Harina de maíz cocinada lentamente y terminada con mantequilla y Parmigiano,"
-" un clásico del norte de Italia."
-
-#: pages/content.py
-msgid ""
-"Mushrooms sautéed in olive oil with garlic and parsley. “Trifolati” means "
-"cooked the way you would cook truffles."
-msgstr ""
-"Champiñones salteados en aceite de oliva con ajo y perejil. “Trifolati” "
-"significa cocinados como se cocina la trufa."
-
-#: pages/content.py
-msgid ""
-"A basket of our breads baked that morning, with extra virgin olive oil and "
-"aged balsamic for dipping."
-msgstr ""
-"Una cesta de nuestros panes horneados esa misma mañana, con aceite de oliva "
-"virgen extra y balsámico añejo para mojar."
-
-#: pages/content.py
-msgid ""
-"From the hills of Valdobbiadene in the Veneto: fine bubbles with notes of "
-"green apple and white flowers. The perfect start to a meal."
-msgstr ""
-"De las colinas de Valdobbiadene, en el Véneto: burbuja fina con notas de "
-"manzana verde y flores blancas. El comienzo perfecto."
-
-#: pages/content.py
-msgid ""
-"Fresh and dry, with hints of pear and citrus. A lovely match for seafood and"
-" light pasta."
-msgstr ""
-"Fresco y seco, con notas de pera y cítricos. Ideal con mariscos y pastas "
-"ligeras."
-
-#: pages/content.py
-msgid ""
-"Sangiovese from the heart of Tuscany, aged at least two years: cherry, "
-"leather and spice. Made for our ragù and grilled meats."
-msgstr ""
-"Sangiovese del corazón de la Toscana, con al menos dos años de crianza: "
-"cereza, cuero y especias. Hecho para nuestro ragú y las carnes a la "
-"parrilla."
-
-#: pages/content.py
-msgid ""
-"Nebbiolo from Piedmont, aged at least three years. Powerful and elegant, "
-"with notes of roses and dark cherry."
-msgstr ""
-"Nebbiolo del Piamonte, con al menos tres años de crianza. Potente y "
-"elegante, con notas de rosas y cereza negra."
-
-#: pages/content.py
-msgid ""
-"A Sicilian herbal liqueur made since 1868, bittersweet with orange, "
-"liquorice and herbs. Served after dinner."
-msgstr ""
-"Licor siciliano de hierbas elaborado desde 1868, agridulce, con naranja, "
-"regaliz y hierbas. Se sirve después de cenar."
-
-#: pages/content.py
-msgid ""
-"Made by steeping Sorrento lemon peel in alcohol and sugar. Served ice-cold "
-"to finish the meal."
-msgstr ""
-"Elaborado macerando cáscara de limón de Sorrento en alcohol y azúcar. Se "
-"sirve muy frío para terminar la comida."
-
 #: templates/includes/phone_field.html
 msgid "Country"
 msgstr "País"
@@ -1258,3 +839,347 @@ msgstr "teléfono"
 #: accounts/models.py
 msgid "International format, e.g. +573001234567"
 msgstr "Formato internacional, p. ej. +573001234567"
+
+#: templates/accounts/profile.html
+msgid "Staff tools"
+msgstr "Herramientas del personal"
+
+#: templates/accounts/profile.html
+msgid "You can manage the restaurant from here."
+msgstr "Desde aquí puedes gestionar el restaurante."
+
+#: templates/accounts/profile.html
+msgid "Bookings"
+msgstr "Reservas"
+
+#: templates/accounts/profile.html
+msgid "Manage menu"
+msgstr "Gestionar carta"
+
+#: templates/accounts/profile.html
+msgid "Admin panel"
+msgstr "Panel de administración"
+
+#: templates/admin/base_site.html
+msgid "Admin"
+msgstr "Administración"
+
+#: templates/admin/base_site.html
+msgid "Back to website"
+msgstr "Volver a la web"
+
+#: templates/pages/menu.html
+msgid "You’re signed in as staff."
+msgstr "Has iniciado sesión como personal."
+
+#: templates/pages/menu.html
+msgid "Add a dish"
+msgstr "Añadir plato"
+
+#: templates/staff/booking_edit.html
+msgid "Staff"
+msgstr "Personal"
+
+#: templates/staff/booking_edit.html
+#, python-format
+msgid "Booked by @%(user)s"
+msgstr "Reservado por @%(user)s"
+
+#: templates/staff/booking_list.html
+#, python-format
+msgid "Today: <strong>%(n)s booking</strong>, %(guests)s guests in total."
+msgid_plural ""
+"Today: <strong>%(n)s bookings</strong>, %(guests)s guests in total."
+msgstr[0] "Hoy: <strong>%(n)s reserva</strong>, %(guests)s personas en total."
+msgstr[1] ""
+"Hoy: <strong>%(n)s reservas</strong>, %(guests)s personas en total."
+
+#: templates/staff/booking_list.html
+msgid "Show"
+msgstr "Mostrar"
+
+#: templates/staff/booking_list.html
+msgid "Search"
+msgstr "Buscar"
+
+#: templates/staff/booking_list.html
+msgid "Name, email or phone"
+msgstr "Nombre, correo o teléfono"
+
+#: templates/staff/booking_list.html
+msgid "Clear"
+msgstr "Limpiar"
+
+#: templates/staff/booking_list.html
+msgid "Contact"
+msgstr "Contacto"
+
+#: templates/staff/booking_list.html
+msgid "No bookings to show."
+msgstr "No hay reservas que mostrar."
+
+#: templates/staff/category_form.html
+msgid "Category"
+msgstr "Categoría"
+
+#: templates/staff/category_form.html
+msgid "Add a Category"
+msgstr "Añadir categoría"
+
+#: templates/staff/category_form.html
+msgid "Save"
+msgstr "Guardar"
+
+#: templates/staff/dish_form.html
+msgid "Edit dish"
+msgstr "Editar plato"
+
+#: templates/staff/dish_form.html
+msgid "Add a Dish"
+msgstr "Añadir plato"
+
+#: templates/staff/dish_form.html
+msgid "If a Spanish box is left empty, Spanish visitors see the English text."
+msgstr ""
+"Si una casilla en español queda vacía, los visitantes en español verán el "
+"texto en inglés."
+
+#: templates/staff/dish_form.html
+msgid "Dietary"
+msgstr "Dieta"
+
+#: templates/staff/dish_form.html
+msgid "Visibility"
+msgstr "Visibilidad"
+
+#: templates/staff/dish_form.html
+msgid "Save dish"
+msgstr "Guardar plato"
+
+#: templates/staff/menu_manage.html
+msgid "Manage Menu"
+msgstr "Gestionar carta"
+
+#: templates/staff/menu_manage.html
+msgid ""
+"Add, edit, hide or remove dishes. Changes show on the menu straight away."
+msgstr ""
+"Añade, edita, oculta o elimina platos. Los cambios aparecen en la carta al "
+"instante."
+
+#: templates/staff/menu_manage.html
+msgid "Add a category"
+msgstr "Añadir categoría"
+
+#: templates/staff/menu_manage.html
+msgid "View menu"
+msgstr "Ver carta"
+
+#: templates/staff/menu_manage.html
+msgid "Dish"
+msgstr "Plato"
+
+#: templates/staff/menu_manage.html
+msgid "Edit category"
+msgstr "Editar categoría"
+
+#: templates/staff/menu_manage.html
+msgid "Delete category"
+msgstr "Eliminar categoría"
+
+#: templates/staff/menu_manage.html
+msgid "Home page"
+msgstr "Portada"
+
+#: templates/staff/menu_manage.html
+msgid "Hidden"
+msgstr "Oculto"
+
+#: templates/staff/menu_manage.html
+msgid "Hide from menu"
+msgstr "Ocultar de la carta"
+
+#: templates/staff/menu_manage.html
+msgid "Show on menu"
+msgstr "Mostrar en la carta"
+
+#: templates/staff/menu_manage.html
+msgid "No dishes in this category yet."
+msgstr "Todavía no hay platos en esta categoría."
+
+#: bookings/staff_views.py
+#, python-format
+msgid "The booking for %(name)s was updated."
+msgstr "La reserva de %(name)s se ha actualizado."
+
+#: bookings/staff_views.py
+#, python-format
+msgid "The booking for %(name)s was cancelled."
+msgstr "La reserva de %(name)s se ha cancelado."
+
+#: bookings/staff_views.py
+#, python-format
+msgid "Cancel the booking for %(name)s on %(date)s at %(time)s?"
+msgstr "¿Cancelar la reserva de %(name)s el %(date)s a las %(time)s?"
+
+#: bookings/staff_views.py
+msgid "Today"
+msgstr "Hoy"
+
+#: bookings/staff_views.py
+msgid "Upcoming"
+msgstr "Próximas"
+
+#: bookings/staff_views.py
+msgid "Past"
+msgstr "Pasadas"
+
+#: bookings/staff_views.py
+msgid "All"
+msgstr "Todas"
+
+#: pages/models.py
+msgid "name (English)"
+msgstr "nombre (inglés)"
+
+#: pages/models.py
+msgid "name (Spanish)"
+msgstr "nombre (español)"
+
+#: pages/models.py
+msgid "order"
+msgstr "orden"
+
+#: pages/models.py
+msgid "menu category"
+msgstr "categoría de la carta"
+
+#: pages/models.py
+msgid "menu categories"
+msgstr "categorías de la carta"
+
+#: pages/models.py
+msgid "name"
+msgstr "nombre"
+
+#: pages/models.py
+msgid "short description (English)"
+msgstr "descripción corta (inglés)"
+
+#: pages/models.py
+msgid "short description (Spanish)"
+msgstr "descripción corta (español)"
+
+#: pages/models.py
+msgid "longer description (English)"
+msgstr "descripción larga (inglés)"
+
+#: pages/models.py
+msgid "longer description (Spanish)"
+msgstr "descripción larga (español)"
+
+#: pages/models.py
+msgid "photo"
+msgstr "foto"
+
+#: pages/models.py
+msgid "or photo link"
+msgstr "o enlace a la foto"
+
+#: pages/models.py
+msgid "vegetarian"
+msgstr "vegetariano"
+
+#: pages/models.py
+msgid "vegan"
+msgstr "vegano"
+
+#: pages/models.py
+msgid "gluten-free"
+msgstr "sin gluten"
+
+#: pages/models.py
+msgid "allergens"
+msgstr "alérgenos"
+
+#: pages/models.py
+msgid "featured on the home page"
+msgstr "destacado en la portada"
+
+#: pages/models.py
+msgid "available"
+msgstr "disponible"
+
+#: pages/models.py
+msgid "dish"
+msgstr "plato"
+
+#: pages/models.py
+msgid "dishes"
+msgstr "platos"
+
+#: pages/models.py
+msgid "Lower numbers come first."
+msgstr "Los números más bajos aparecen primero."
+
+#: pages/models.py
+msgid "category"
+msgstr "categoría"
+
+#: pages/models.py
+msgid "Usually the Italian name; it is not translated."
+msgstr "Normalmente el nombre en italiano; no se traduce."
+
+#: pages/models.py
+msgid "Used when no photo is uploaded."
+msgstr "Se usa si no se sube ninguna foto."
+
+#: pages/models.py
+msgid "Allergen codes separated by spaces, e.g. 'gluten milk'."
+msgstr "Códigos de alérgenos separados por espacios, p. ej. 'gluten milk'."
+
+#: pages/models.py
+msgid "Untick to hide the dish without deleting it."
+msgstr "Desmárcalo para ocultar el plato sin eliminarlo."
+
+#: pages/staff_views.py
+msgid "Delete dish"
+msgstr "Eliminar plato"
+
+#: pages/staff_views.py
+#, python-format
+msgid "“%(name)s” was removed from the menu."
+msgstr "“%(name)s” se ha eliminado de la carta."
+
+#: pages/staff_views.py
+#, python-format
+msgid ""
+"Delete “%(name)s” from the menu? This can’t be undone. To hide it for a "
+"while instead, untick “Available”."
+msgstr ""
+"¿Eliminar “%(name)s” de la carta? No se puede deshacer. Para ocultarlo un "
+"tiempo, desmarca “Disponible”."
+
+#: pages/staff_views.py
+#, python-format
+msgid "“%(name)s” was saved."
+msgstr "“%(name)s” se ha guardado."
+
+#: pages/staff_views.py
+#, python-format
+msgid "Delete the category “%(name)s”?"
+msgstr "¿Eliminar la categoría “%(name)s”?"
+
+#: pages/staff_views.py
+#, python-format
+msgid "“%(name)s” was deleted."
+msgstr "“%(name)s” se ha eliminado."
+
+#: pages/staff_views.py
+#, python-format
+msgid "Move or delete the dishes in “%(name)s” first."
+msgstr "Primero mueve o elimina los platos de “%(name)s”."
+
+#: pages/forms.py
+msgid "Upload a photo or paste a photo link."
+msgstr "Sube una foto o pega un enlace a una foto."

@@ -16,5 +16,10 @@ class Booking(models.Model):
         """The phone number with its country prefix (older bookings were UK-only)."""
         return self.phone_number if self.phone_number.startswith("+") else f"+44{self.phone_number}"
 
+    def pretty_phone(self):
+        """'+573001234567' -> '+57 300 1234567'."""
+        from accounts.phone import pretty
+        return pretty(self.full_phone())
+
     def __str__(self):
         return f"{self.name} - {self.date} at {self.time}"

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Edit booking" %} | Aurea{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% include "includes/page_header.html" with eyebrow=_("Staff") title=_("Edit Booking") %}
+  <p class="text-center text-muted">{% blocktranslate with user=booking.user.username %}Booked by @{{ user }}{% endblocktranslate %}</p>
+  <div class="panel panel-medium">
+    {% url 'staff_bookings' as cancel_url %}
+    {% translate "Save changes" as submit_label %}
+    {% include "bookings/_form.html" %}
+  </div>
+</div>
+{% endblock %}

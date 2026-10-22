@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% if dish %}{% translate "Edit dish" %}{% else %}{% translate "Add a dish" %}{% endif %} | Aurea{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% if dish %}
+    {% include "includes/page_header.html" with eyebrow=_("Manage menu") title=dish.name %}
+  {% else %}
+    {% include "includes/page_header.html" with eyebrow=_("Manage menu") title=_("Add a Dish") %}
+  {% endif %}
+
+  <form method="post" enctype="multipart/form-data" class="panel panel-wide">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}">
+    {% if form.non_field_errors %}<div class="alert alert-danger">{{ form.non_field_errors }}</div>{% endif %}
+
+    <div class="row g-3">
+      <div class="col-md-7">
+        <label class="form-label" for="{{ form.name.id_for_label }}">{{ form.name.label }} <span class="required-mark">*</span></label>
+        {{ form.name }}
+        <div class="form-text">{{ form.name.help_text }}</div>
+        <div class="text-danger small">{{ form.name.errors }}</div>
+      </div>
+      <div class="col-md-5">
+        <label class="form-label" for="{{ form.category.id_for_label }}">{{ form.category.label }} <span class="required-mark">*</span></label>
+        {{ form.category }}
+        <div class="text-danger small">{{ form.category.errors }}</div>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label" for="{{ form.description_en.id_for_label }}">🇬🇧 {{ form.description_en.label }} <span class="required-mark">*</span></label>
+        {{ form.description_en }}
+        <div class="text-danger small">{{ form.description_en.errors }}</div>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="{{ form.description_es.id_for_label }}">🇪🇸 {{ form.description_es.label }}</label>
+        {{ form.description_es }}
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="{{ form.story_en.id_for_label }}">🇬🇧 {{ form.story_en.label }}</label>
+        {{ form.story_en }}
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="{{ form.story_es.id_for_label }}">🇪🇸 {{ form.story_es.label }}</label>
+        {{ form.story_es }}
+      </div>
+      <div class="col-12 form-text mt-1">{% translate "If a Spanish box is left empty, Spanish visitors see the English text." %}</div>
+
+      <div class="col-md-6">
+        <label class="form-label" for="{{ form.image.id_for_label }}">{{ form.image.label }}</label>
+        {% if dish.photo %}<img class="staff-photo-preview" src="{{ dish.photo }}" alt="">{% endif %}
+        {{ form.image }}
+        <div class="text-danger small">{{ form.image.errors }}</div>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="{{ form.image_url.id_for_label }}">{{ form.image_url.label }}</label>
+        {{ form.image_url }}
+        <div class="form-text">{{ form.image_url.help_text }}</div>
+        <div class="text-danger small">{{ form.image_url.errors }}</div>
+      </div>
+
+      <div class="col-md-4">
+        <span class="form-label d-block">{% translate "Dietary" %}</span>
+        {% for field in form %}{% if field.name == "vegetarian" or field.name == "vegan" or field.name == "gluten_free" %}
+          <div class="form-check">{{ field }} <label class="form-check-label" for="{{ field.id_for_label }}">{{ field.label|capfirst }}</label></div>
+        {% endif %}{% endfor %}
+        <span class="form-label d-block mt-3">{% translate "Visibility" %}</span>
+        <div class="form-check">{{ form.available }} <label class="form-check-label" for="{{ form.available.id_for_label }}">{{ form.available.label|capfirst }}</label></div>
+        <div class="form-check">{{ form.featured }} <label class="form-check-label" for="{{ form.featured.id_for_label }}">{{ form.featured.label|capfirst }}</label></div>
+        <label class="form-label mt-3" for="{{ form.order.id_for_label }}">{{ form.order.label|capfirst }}</label>
+        {{ form.order }}
+        <div class="form-text">{{ form.order.help_text }}</div>
+      </div>
+      <div class="col-md-8">
+        <span class="form-label d-block">{{ form.allergen_list.label }}</span>
+        <div class="allergen-grid">
+          {% for box in form.allergen_list %}
+            <div class="form-check">{{ box.tag }} <label class="form-check-label" for="{{ box.id_for_label }}">{{ box.choice_label }}</label></div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <button type="submit" class="btn btn-dark">{% translate "Save dish" %}</button>
+      <a href="{% if next %}{{ next }}{% else %}{% url 'manage_menu' %}{% endif %}" class="btn btn-outline-dark ms-2">{% translate "Cancel" %}</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

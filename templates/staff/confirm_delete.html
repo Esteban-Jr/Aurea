@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | Aurea{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% include "includes/page_header.html" with eyebrow=_("Staff") title=title %}
+  <div class="panel panel-narrow text-center">
+    <p>{{ question }}</p>
+    <form method="post" class="mt-4">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> {% translate "Yes, delete" %}</button>
+      <a href="{% url cancel_url %}" class="btn btn-outline-dark ms-2">{% translate "Cancel" %}</a>
+    </form>
+  </div>
+</div>
+{% endblock %}

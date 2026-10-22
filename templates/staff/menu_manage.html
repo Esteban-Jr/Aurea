@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Manage menu" %} | Aurea{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% include "includes/page_header.html" with eyebrow=_("Staff") title=_("Manage Menu") intro=_("Add, edit, hide or remove dishes. Changes show on the menu straight away.") %}
+
+  <div class="staff-actions">
+    <a class="btn btn-gold" href="{% url 'dish_create' %}"><i class="bi bi-plus-lg"></i> {% translate "Add a dish" %}</a>
+    <a class="btn btn-outline-dark" href="{% url 'category_create' %}"><i class="bi bi-folder-plus"></i> {% translate "Add a category" %}</a>
+    <a class="btn btn-outline-dark" href="{% url 'menu' %}"><i class="bi bi-eye"></i> {% translate "View menu" %}</a>
+  </div>
+
+  {% for category in categories %}
+    <section class="panel panel-wide mb-4">
+      <div class="staff-cat-head">
+        <h2>{{ category.name }} <small>{{ category.dishes.all|length }}</small></h2>
+        <div class="d-flex gap-2">
+          <a class="btn btn-sm btn-outline-dark" href="{% url 'dish_create' %}?category={{ category.pk }}"><i class="bi bi-plus-lg"></i> {% translate "Dish" %}</a>
+          <a class="btn btn-sm btn-outline-dark" href="{% url 'category_edit' category.pk %}" aria-label="{% translate 'Edit category' %}"><i class="bi bi-pencil"></i></a>
+          <a class="btn btn-sm btn-outline-danger" href="{% url 'category_delete' category.pk %}" aria-label="{% translate 'Delete category' %}"><i class="bi bi-trash"></i></a>
+        </div>
+      </div>
+
+      {% for dish in category.dishes.all %}
+        <div class="staff-dish {% if not dish.available %}is-hidden{% endif %}">
+          <img src="{{ dish.photo }}" alt="" loading="lazy">
+          <div class="flex-grow-1">
+            <strong>{{ dish.name }}</strong>
+            {% if dish.featured %}<span class="tag tag-gold">{% translate "Home page" %}</span>{% endif %}
+            {% if not dish.available %}<span class="tag tag-muted">{% translate "Hidden" %}</span>{% endif %}
+            <div class="text-muted small">{{ dish.description }}</div>
+          </div>
+          <div class="d-flex gap-2 flex-shrink-0">
+            <form method="post" action="{% url 'dish_toggle' dish.pk %}">
+              {% csrf_token %}
+              <button class="btn btn-sm btn-outline-dark" type="submit"
+                      title="{% if dish.available %}{% translate 'Hide from menu' %}{% else %}{% translate 'Show on menu' %}{% endif %}">
+                <i class="bi {% if dish.available %}bi-eye-slash{% else %}bi-eye{% endif %}"></i>
+              </button>
+            </form>
+            <a class="btn btn-sm btn-gold" href="{% url 'dish_edit' dish.pk %}"><i class="bi bi-pencil"></i> {% translate "Edit" %}</a>
+            <a class="btn btn-sm btn-outline-danger" href="{% url 'dish_delete' dish.pk %}" aria-label="{% translate 'Delete' %}"><i class="bi bi-trash"></i></a>
+          </div>
+        </div>
+      {% empty %}
+        <p class="text-muted mb-0">{% translate "No dishes in this category yet." %}</p>
+      {% endfor %}
+    </section>
+  {% endfor %}
+</div>
+{% endblock %}
