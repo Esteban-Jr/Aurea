@@ -574,9 +574,9 @@ textarea.form-control { min-height: 120px; resize: vertical; }
 .site-footer {
   background: var(--ink);
   color: rgba(255, 255, 255, .7);
-  padding: 4rem 0 2rem;
-  margin-top: 5rem;
-  font-size: .92rem;
+  padding: 2.5rem 0 1.25rem;
+  margin-top: 3.5rem;
+  font-size: .9rem;
 }
 .site-footer h2 {
   color: var(--gold);
@@ -585,28 +585,28 @@ textarea.form-control { min-height: 120px; resize: vertical; }
   font-weight: 600;
   letter-spacing: .25em;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: .6rem;
 }
 .site-footer a { color: rgba(255, 255, 255, .8); text-decoration: none; }
 .site-footer a:hover { color: var(--gold); }
 .site-footer ul { list-style: none; padding: 0; margin: 0; }
-.site-footer li { margin-bottom: .35rem; }
+.site-footer li { margin-bottom: .2rem; }
 .site-footer .social a { font-size: 1.3rem; margin-right: 1rem; }
 .footer-wordmark {
   font-family: var(--serif);
-  font-size: clamp(3.5rem, 16vw, 10rem);
+  font-size: clamp(2.5rem, 9vw, 5rem);
   font-weight: 600;
   letter-spacing: .15em;
   line-height: 1;
   text-align: center;
   color: transparent;
   -webkit-text-stroke: 1px rgba(201, 162, 74, .35);
-  margin: 3rem 0 1.5rem;
+  margin: 1.5rem 0 .75rem;
   user-select: none;
 }
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, .1);
-  padding-top: 1.25rem;
+  padding-top: 1rem;
   font-size: .8rem;
   text-align: center;
   color: rgba(255, 255, 255, .45);
